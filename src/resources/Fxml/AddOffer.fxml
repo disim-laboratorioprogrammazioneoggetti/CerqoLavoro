@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.AddOfferController">
+   <children>
+      <Pane layoutX="141.0" layoutY="24.0" prefHeight="493.0" prefWidth="418.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <TextField fx:id="PositionField" layoutX="78.0" layoutY="49.0" prefHeight="25.0" prefWidth="321.0" promptText="Breve e concisa" />
+            <Text layoutX="16.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Posizione">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="MinWageField" layoutX="15.0" layoutY="201.0" prefHeight="25.0" prefWidth="74.0" promptText="MIN" />
+            <Text layoutX="15.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retribuzione (MIN-MAX)">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="16.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Altre info sulla Retribuzione ">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="16.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo di contratto">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="16.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titolo/i di Studio">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <ChoiceBox fx:id="ContractTypeChoice" layoutX="16.0" layoutY="149.0" prefHeight="25.0" prefWidth="166.0" />
+            <ChoiceBox fx:id="ContractTimeChoice" layoutX="233.0" layoutY="149.0" prefHeight="25.0" prefWidth="166.0" />
+            <TextField fx:id="MaxWageField" layoutX="109.0" layoutY="200.0" prefHeight="25.0" prefWidth="74.0" promptText="MAX" />
+            <TextField fx:id="WageInfoField" layoutX="16.0" layoutY="296.0" prefHeight="25.0" prefWidth="386.0" promptText="es: benefit bonus, ecc.   Scrivi  &quot;Nessuno&quot; se non ci sono bonus" />
+            <ChoiceBox fx:id="WageTimeChoice" layoutX="233.0" layoutY="200.0" prefHeight="25.0" prefWidth="166.0" />
+            <Text layoutX="233.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retribuzione per Tempo">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Button fx:id="AddOfferbtn" layoutX="149.0" layoutY="450.0" mnemonicParsing="false" onAction="#AddOffer" prefHeight="34.0" prefWidth="128.0" styleClass="chart-plot-background" stylesheets="@../Stylesheet/fullpackstyling.css" text="Crea Annuncio" />
+            <Text layoutX="16.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrizione Lavoro">
+               <font>
+               <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <TextArea fx:id="WorkInfoArea" layoutX="16.0" layoutY="340.0" prefHeight="100.0" prefWidth="386.0" promptText="Lascia una breve descizione sul lavoro (facoltativa). es: il tempo contratto è di 36 ore settimanali,ecc." />
+            <Text layoutX="17.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titolo Annuncio" wrappingWidth="58.0">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="TitleField" layoutX="78.0" layoutY="13.0" prefHeight="25.0" prefWidth="321.0" promptText="Es:&quot;CERCASI INFORMATICI ESPERTI IN JAVA&quot;" />
+            <TextField fx:id="StudyTitleField" layoutX="16.0" layoutY="250.0" prefHeight="25.0" prefWidth="166.0" promptText="es: Laurea in Lettere,Diploma,ecc." />
+            <Text layoutX="233.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regione">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <ChoiceBox fx:id="RegionChoice" layoutX="233.0" layoutY="99.0" prefHeight="25.0" prefWidth="166.0" />
+            <ChoiceBox fx:id="CategoryChoice" layoutX="15.0" layoutY="99.0" prefHeight="25.0" prefWidth="166.0" />
+            <Text layoutX="16.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoria Lavoro" wrappingWidth="99.85546875">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="232.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esperienza Richiesta">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <ChoiceBox fx:id="ExpChoice" layoutX="233.0" layoutY="250.0" prefHeight="25.0" prefWidth="166.0" />
+            <Text layoutX="232.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fulltime/Partime">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Label fx:id="eadEmail" layoutX="50.0" layoutY="205.0" textFill="#0d5de8" />
+   </children>
+</AnchorPane>
