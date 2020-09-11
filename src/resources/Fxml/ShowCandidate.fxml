@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.ShowCandidateController">
+   <children>
+      <Text layoutX="100.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CERQO LAVORO" wrappingWidth="186.205078125">
+         <font>
+            <Font name="Aharoni Bold" size="44.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+      <Label layoutX="392.0" layoutY="51.0" prefHeight="23.0" prefWidth="105.0" text="ANNUNCIO:">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="AnntitleLabel" layoutX="392.0" layoutY="72.0" prefHeight="23.0" prefWidth="330.0" text="TITOLO ANNUNCIO" textAlignment="CENTER">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+      </Label>
+      <Pane fx:id="mexPane" layoutX="17.0" layoutY="112.0" prefHeight="473.0" prefWidth="346.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Label fx:id="mexName" layoutX="28.0" layoutY="45.0" prefHeight="19.0" prefWidth="105.0" text="Nome">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="MexSurname" layoutX="213.0" layoutY="45.0" prefHeight="19.0" prefWidth="105.0" text="Cognome">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="MexArea" layoutX="28.0" layoutY="75.0" prefHeight="339.0" prefWidth="290.0" promptText="Lascia un messaggio al candidato selezionato." />
+            <Button fx:id="SendMexBtn" layoutX="242.0" layoutY="440.0" mnemonicParsing="false" onAction="#SendMex" prefHeight="25.0" prefWidth="67.0" text="Invia" />
+            <Label layoutX="137.0" layoutY="14.0" prefHeight="19.0" prefWidth="73.0" text="Contatta :">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="386.0" layoutY="112.0" prefHeight="269.0" prefWidth="402.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Label fx:id="namelabel" layoutX="85.0" layoutY="63.0" prefHeight="19.0" prefWidth="105.0" text="NOME">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="explabel" layoutX="262.0" layoutY="91.0" prefHeight="19.0" prefWidth="105.0" text="ESPERIENZA">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="surnamelabel" layoutX="263.0" layoutY="65.0" prefHeight="19.0" prefWidth="105.0" text="COGNOME">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="sectorlabel" layoutX="85.0" layoutY="89.0" prefHeight="19.0" prefWidth="105.0" text="SETTORE">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="regionlabel" layoutX="84.0" layoutY="112.0" prefHeight="19.0" prefWidth="105.0" text="REGIONE">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="citylabel" layoutX="84.0" layoutY="138.0" prefHeight="19.0" prefWidth="105.0" text="CITTA'">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="6.0" prefHeight="23.0" prefWidth="114.0" text="CANDIDATO">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="TitleCLabel" layoutX="144.0" layoutY="6.0" prefHeight="23.0" prefWidth="129.0" text="COGNOME">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="provlabel" layoutX="262.0" layoutY="114.0" prefHeight="19.0" prefWidth="105.0" text="PROVINCIA">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="TitleNlabel" layoutX="277.0" layoutY="6.0" prefHeight="23.0" prefWidth="120.0" text="NOME">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="instrctnlabel" layoutX="263.0" layoutY="140.0" prefHeight="19.0" prefWidth="136.0" text="ISTRUZIONE">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="DescriptionArea" layoutX="32.0" layoutY="184.0" prefHeight="67.0" prefWidth="346.0" />
+            <Label layoutX="32.0" layoutY="165.0" prefHeight="19.0" prefWidth="67.0" text="Descrizione :">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="63.0" prefHeight="19.0" prefWidth="49.0" text="Nome:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="89.0" prefHeight="19.0" prefWidth="49.0" text="Settore:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="112.0" prefHeight="19.0" prefWidth="49.0" text="Regione:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="137.0" prefHeight="19.0" prefWidth="36.0" text="Citta':">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="196.0" layoutY="63.0" prefHeight="19.0" prefWidth="58.0" text="Cognome:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="197.0" layoutY="89.0" prefHeight="19.0" prefWidth="67.0" text="Esperienza:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="197.0" layoutY="112.0" prefHeight="19.0" prefWidth="58.0" text="Provincia:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="197.0" layoutY="138.0" prefHeight="19.0" prefWidth="58.0" text="Istruzione:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="maillabel" layoutX="88.0" layoutY="37.0" prefHeight="19.0" prefWidth="23.0">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Text layoutX="29.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+         </children>
+      </Pane>
+      <Pane layoutX="388.0" layoutY="406.0" prefHeight="180.0" prefWidth="402.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Label layoutY="17.0" prefHeight="23.0" prefWidth="163.0" text="IL TUO ANNUNCIO">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="177.0" layoutY="16.0" prefHeight="23.0" prefWidth="129.0" text="IL CANDIDATO">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="4.0" layoutY="42.0" prefHeight="19.0" prefWidth="49.0" text="Regione:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="4.0" layoutY="61.0" prefHeight="19.0" prefWidth="49.0" text="Settore:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="4.0" layoutY="80.0" prefHeight="19.0" prefWidth="67.0" text="Esperienza:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="177.0" layoutY="41.0" prefHeight="19.0" prefWidth="49.0" text="Regione:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="177.0" layoutY="60.0" prefHeight="19.0" prefWidth="49.0" text="Settore:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="178.0" layoutY="79.0" prefHeight="19.0" prefWidth="67.0" text="Esperienza:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="CompareRegionCan" layoutX="240.0" layoutY="41.0" prefHeight="19.0" prefWidth="96.0" text="REGIONE">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="CompareSectorCan" layoutX="241.0" layoutY="59.0" prefHeight="19.0" prefWidth="96.0" text="SETTORE">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="CompareExpCan" layoutX="241.0" layoutY="79.0" prefHeight="19.0" prefWidth="96.0" text="ESPERIENZA">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="CompareRegionAnn" layoutX="66.0" layoutY="42.0" prefHeight="19.0" prefWidth="96.0" text="REGIONE">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="CompareSectornAnn" layoutX="66.0" layoutY="61.0" prefHeight="19.0" prefWidth="96.0" text="SETTORE">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="CompareExpAnn" layoutX="65.0" layoutY="80.0" prefHeight="19.0" prefWidth="96.0" text="ESPERIENZA">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="Contactbutton" layoutX="48.0" layoutY="146.0" mnemonicParsing="false" onAction="#Contactbtnpushed" prefHeight="25.0" prefWidth="67.0" text="Contatta" />
+            <Button fx:id="Rejectbutton" layoutX="223.0" layoutY="146.0" mnemonicParsing="false" onAction="#rejectBtn" prefHeight="25.0" prefWidth="129.0" text="Rifiuta Candidatura" />
+            <Label fx:id="ResultLabel" layoutX="351.0" layoutY="40.0" prefHeight="19.0" prefWidth="49.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ResultLabel1" layoutX="351.0" layoutY="59.0" prefHeight="19.0" prefWidth="49.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ResultLabel2" layoutX="351.0" layoutY="78.0" prefHeight="19.0" prefWidth="49.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutX="165.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="180.0" prefWidth="7.0" />
+         </children>
+      </Pane>
+      <Separator layoutX="371.0" layoutY="96.0" orientation="VERTICAL" prefHeight="504.0" prefWidth="7.0" />
+      <Separator layoutX="374.0" layoutY="394.0" prefHeight="2.0" prefWidth="426.0" />
+      <Button fx:id="scExitButton" layoutX="690.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitButtonAction" stylesheets="@../Stylesheet/fullpackstyling.css" text="Torna indietro" />
+      <Label fx:id="emplEmail" layoutX="31.0" layoutY="578.0" prefHeight="17.0" prefWidth="31.0" textFill="WHITE" />
+   </children>
+</AnchorPane>

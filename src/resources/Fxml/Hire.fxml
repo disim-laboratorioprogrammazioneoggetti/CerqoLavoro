@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.HireController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="1024.0">
+         <children>
+            <ToolBar prefHeight="40.0" prefWidth="1024.0" style="-fx-background-color: DODGERBLUE;">
+              <items>
+                  <Button fx:id="ShowOfferbtn" mnemonicParsing="false" onAction="#ShowOffer" style="-fx-background-color: #7bb6ee;" stylesheets="@../Stylesheet/fullpackstyling.css" text="Mostra Lista Annunci" />
+                  <Label fx:id="eoEmail" prefHeight="15.0" prefWidth="144.0" textFill="DODGERBLUE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+              </items>
+            </ToolBar>
+            <Pane layoutY="40.0" />
+            <Pane fx:id="Annuncio1" layoutY="40.0" prefHeight="184.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
+               <children>
+                  <Button fx:id="Editbtn1" layoutX="627.0" layoutY="148.0" mnemonicParsing="false" onAction="#editbtnpushed" prefHeight="25.0" prefWidth="72.0" styleClass="button2" stylesheets="@../../Stylesheet/fullpackstyling.css" text="Modifica " />
+                  <TextField fx:id="EditTitleField" layoutX="14.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Titolo" />
+                  <TextField fx:id="EditPositionField" layoutX="14.0" layoutY="40.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Posizione" />
+                  <TextField fx:id="EditRetribution" layoutX="14.0" layoutY="138.0" prefHeight="25.0" prefWidth="159.0" promptText="MIN-MAX" />
+                  <Label fx:id="TitleLabel" layoutX="186.0" layoutY="12.0" prefHeight="17.0" prefWidth="127.0" text="TITOLO ANNUNCIO">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="PositionLabel" layoutX="186.0" layoutY="43.0" prefHeight="17.0" prefWidth="127.0" text="POSIZIONE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="ContractTypeLabel" layoutX="186.0" layoutY="77.0" prefHeight="17.0" prefWidth="127.0" text="TIPO DI CONTRATTO">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="ContractTimeLabel" layoutX="186.0" layoutY="110.0" prefHeight="17.0" prefWidth="134.0" text="TEMPO DEL CONTRATTO">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="RetributionLabel" layoutX="186.0" layoutY="143.0" prefHeight="17.0" prefWidth="127.0" text="RETRIBUZIONE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="SectorLabel" layoutX="489.0" layoutY="12.0" prefHeight="17.0" prefWidth="111.0" text="SETTORE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="RegionLabel" layoutX="489.0" layoutY="44.0" prefHeight="17.0" prefWidth="111.0" text="REGIONE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <ChoiceBox fx:id="EditTypeContBox" layoutX="14.0" layoutY="72.0" prefHeight="25.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="EditTimeContBox" layoutX="14.0" layoutY="105.0" prefHeight="25.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="EditRegionBox" layoutX="323.0" layoutY="40.0" prefHeight="25.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="EditRetxTField" layoutX="323.0" layoutY="105.0" prefHeight="25.0" prefWidth="159.0" />
+                  <Label fx:id="RetxTLabel" layoutX="489.0" layoutY="110.0" prefHeight="17.0" prefWidth="111.0" text="RETRIBUZIONE x T">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <TextField fx:id="EditDegreeField" layoutX="323.0" layoutY="73.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Titolo di Studio" />
+                  <Label fx:id="DegreeLabel" layoutX="489.0" layoutY="77.0" prefHeight="17.0" prefWidth="127.0" text="TITOLO DI STUDIO">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <TextArea fx:id="EditWorkInfoArea" layoutX="627.0" layoutY="46.0" prefHeight="91.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="EditSectorBOx" layoutX="323.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" />
+                  <TextField fx:id="EditBonusField" layoutX="323.0" layoutY="138.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Bonus" />
+                  <Label fx:id="BonusLabel" layoutX="489.0" layoutY="143.0" prefHeight="17.0" prefWidth="111.0" text="BONUS">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Button fx:id="Removebtn" layoutX="714.0" layoutY="147.0" mnemonicParsing="false" onAction="#Removebtnpushed1" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #ff7474;" text="Rimuovi" />
+                  <Label fx:id="candTitle1" layoutX="796.0" layoutY="40.0" onMouseClicked="#showclist1" prefHeight="25.0" prefWidth="217.0" text="MOSTRA LISTA CANDIDATI" underline="true">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="c1p1" layoutX="846.0" layoutY="77.0" onMouseClicked="#expandc1p1" prefHeight="17.0" prefWidth="141.0" text="CANDIDATURA #1" textFill="#171ec4" underline="true">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="c2p1" layoutX="846.0" layoutY="109.0" onMouseClicked="#expandc2p1" prefHeight="17.0" prefWidth="141.0" text="CANDIDATURA #2" textFill="#171ec4" underline="true">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="c3p1" layoutX="846.0" layoutY="143.0" onMouseClicked="#expandc3p1" prefHeight="17.0" prefWidth="141.0" text="CANDIDATURA #3" textFill="#171ec4" underline="true">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="EditExpbox" layoutX="627.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" />
+                  <Label fx:id="ExpLabel" layoutX="793.0" layoutY="12.0" prefHeight="17.0" prefWidth="111.0" text="ESPERIENZA">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="mailc1p1" layoutX="793.0" layoutY="76.0" text="Label" />
+                  <Label fx:id="mailc2p1" layoutX="793.0" layoutY="109.0" text="Label" />
+                  <Label fx:id="mailc3p1" layoutX="793.0" layoutY="142.0" text="Label" />
+               </children>
+            </Pane>
+            <Pane fx:id="Annuncio2" layoutY="228.0" prefHeight="184.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
+               <children>
+                  <Button fx:id="Editbtn2" layoutX="627.0" layoutY="149.0" mnemonicParsing="false" onAction="#editbtn2pushed" prefHeight="25.0" prefWidth="72.0" styleClass="button2" stylesheets="@../../Stylesheet/fullpackstyling.css" text="Modifica" />
+                  <TextField fx:id="EditTitleField1" layoutX="14.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Titolo" />
+                  <TextField fx:id="EditPositionField1" layoutX="14.0" layoutY="40.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Posizione" />
+                  <TextField fx:id="EditRetribution1" layoutX="14.0" layoutY="138.0" prefHeight="25.0" prefWidth="159.0" promptText="MIN-MAX" />
+                  <Label fx:id="TitleLabel1" layoutX="186.0" layoutY="12.0" prefHeight="17.0" prefWidth="127.0" text="TITOLO ANNUNCIO">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="PositionLabel1" layoutX="186.0" layoutY="43.0" prefHeight="17.0" prefWidth="127.0" text="POSIZIONE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="ContractTypeLabel1" layoutX="186.0" layoutY="77.0" prefHeight="17.0" prefWidth="127.0" text="TIPO DI CONTRATTO">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="ContractTimeLabel1" layoutX="186.0" layoutY="110.0" prefHeight="17.0" prefWidth="134.0" text="TEMPO DEL CONTRATTO">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="RetributionLabel1" layoutX="186.0" layoutY="143.0" prefHeight="17.0" prefWidth="127.0" text="RETRIBUZIONE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="SectorLabel1" layoutX="489.0" layoutY="12.0" prefHeight="17.0" prefWidth="111.0" text="SETTORE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="RegionLabel1" layoutX="489.0" layoutY="44.0" prefHeight="17.0" prefWidth="111.0" text="REGIONE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <ChoiceBox fx:id="EditTypeContBox1" layoutX="14.0" layoutY="72.0" prefHeight="25.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="EditTimeContBox1" layoutX="14.0" layoutY="105.0" prefHeight="25.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="EditRegionBox1" layoutX="323.0" layoutY="40.0" prefHeight="25.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="EditRetxTField1" layoutX="323.0" layoutY="106.0" prefHeight="25.0" prefWidth="159.0" />
+                  <Label fx:id="RetxTLabel1" layoutX="489.0" layoutY="109.0" prefHeight="17.0" prefWidth="111.0" text="RETRIBUZIONE x T">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <TextField fx:id="EditDegreeField1" layoutX="323.0" layoutY="73.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Titolo di Studio" />
+                  <Label fx:id="DegreeLabel1" layoutX="489.0" layoutY="76.0" prefHeight="17.0" prefWidth="127.0" text="TITOLO DI STUDIO">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <TextArea fx:id="EditWorkInfoArea1" layoutX="627.0" layoutY="46.0" prefHeight="91.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="EditSectorBOx1" layoutX="323.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" />
+                  <TextField fx:id="EditBonusField1" layoutX="323.0" layoutY="140.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Bonus" />
+                  <Label fx:id="BonusLabel1" layoutX="489.0" layoutY="144.0" prefHeight="17.0" prefWidth="111.0" text="BONUS">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Button fx:id="Removebtn1" layoutX="714.0" layoutY="149.0" mnemonicParsing="false" onAction="#Removebtnpushed2" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #ff7474;" text="Rimuovi" />
+                  <Label fx:id="candTitle2" layoutX="798.0" layoutY="40.0" onMouseClicked="#showclist2" prefHeight="25.0" prefWidth="217.0" text="MOSTRA LISTA CANDIDATI" underline="true">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="c1p2" layoutX="850.0" layoutY="76.0" onMouseClicked="#expandc1p2" prefHeight="17.0" prefWidth="141.0" text="CANDIDATURA #1" textFill="#171ec4" underline="true">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="c2p2" layoutX="850.0" layoutY="109.0" onMouseClicked="#expandc2p2" prefHeight="17.0" prefWidth="141.0" text="CANDIDATURA #2" textFill="#171ec4" underline="true">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="c3p2" layoutX="850.0" layoutY="144.0" onMouseClicked="#expandc3p2" prefHeight="17.0" prefWidth="141.0" text="CANDIDATURA #3" textFill="#171ec4" underline="true">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="EditExpbox1" layoutX="627.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" />
+                  <Label fx:id="ExpLabel1" layoutX="795.0" layoutY="12.0" prefHeight="17.0" prefWidth="111.0" text="ESPERIENZA">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="mailc1p2" layoutX="799.0" layoutY="80.0" text="Label" />
+                  <Label fx:id="mailc2p2" layoutX="799.0" layoutY="110.0" text="Label" />
+                  <Label fx:id="mailc3p2" layoutX="799.0" layoutY="143.0" text="Label" />
+               </children>
+            </Pane>
+            <Pane fx:id="Annuncio3" layoutY="416.0" prefHeight="184.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
+               <children>
+                  <Button fx:id="Editbtn3" layoutX="627.0" layoutY="148.0" mnemonicParsing="false" onAction="#editbtn3pushed" prefHeight="25.0" prefWidth="72.0" styleClass="button2" stylesheets="@../../Stylesheet/fullpackstyling.css" text="Modifica" />
+                  <TextField fx:id="EditTitleField11" layoutX="14.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Titolo" />
+                  <TextField fx:id="EditPositionField11" layoutX="14.0" layoutY="40.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Posizione" />
+                  <TextField fx:id="EditRetribution11" layoutX="14.0" layoutY="138.0" prefHeight="25.0" prefWidth="159.0" promptText="MIN-MAX" />
+                  <Label fx:id="TitleLabel11" layoutX="186.0" layoutY="12.0" prefHeight="17.0" prefWidth="127.0" text="TITOLO ANNUNCIO">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="PositionLabel11" layoutX="186.0" layoutY="43.0" prefHeight="17.0" prefWidth="127.0" text="POSIZIONE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="ContractTypeLabel11" layoutX="186.0" layoutY="77.0" prefHeight="17.0" prefWidth="127.0" text="TIPO DI CONTRATTO">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="ContractTimeLabel11" layoutX="186.0" layoutY="110.0" prefHeight="17.0" prefWidth="134.0" text="TEMPO DEL CONTRATTO">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="RetributionLabel11" layoutX="186.0" layoutY="143.0" prefHeight="17.0" prefWidth="127.0" text="RETRIBUZIONE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="SectorLabel11" layoutX="489.0" layoutY="12.0" prefHeight="17.0" prefWidth="111.0" text="SETTORE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="RegionLabel11" layoutX="489.0" layoutY="44.0" prefHeight="17.0" prefWidth="111.0" text="REGIONE">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <ChoiceBox fx:id="EditTypeContBox11" layoutX="14.0" layoutY="72.0" prefHeight="25.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="EditTimeContBox11" layoutX="14.0" layoutY="105.0" prefHeight="25.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="EditRegionBox11" layoutX="323.0" layoutY="40.0" prefHeight="25.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="EditRetxTField11" layoutX="323.0" layoutY="106.0" prefHeight="25.0" prefWidth="159.0" />
+                  <Label fx:id="RetxTLabel11" layoutX="489.0" layoutY="109.0" prefHeight="17.0" prefWidth="111.0" text="RETRIBUZIONE x T">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <TextField fx:id="EditDegreeField11" layoutX="323.0" layoutY="73.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Titolo di Studio" />
+                  <Label fx:id="DegreeLabel11" layoutX="489.0" layoutY="77.0" prefHeight="17.0" prefWidth="127.0" text="TITOLO DI STUDIO">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <TextArea fx:id="EditWorkInfoArea11" layoutX="627.0" layoutY="46.0" prefHeight="91.0" prefWidth="159.0" />
+                  <ChoiceBox fx:id="EditSectorBOx11" layoutX="323.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" />
+                  <TextField fx:id="EditBonusField11" layoutX="323.0" layoutY="140.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Bonus" />
+                  <Label fx:id="BonusLabel11" layoutX="489.0" layoutY="144.0" prefHeight="17.0" prefWidth="111.0" text="BONUS">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font></Label>
+                  <Button fx:id="Removebtn11" layoutX="714.0" layoutY="148.0" mnemonicParsing="false" onAction="#Removebtnpushed3" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #ff7474;" text="Rimuovi" />
+                  <Label fx:id="c1p3" layoutX="849.0" layoutY="76.0" onMouseClicked="#expandc1p3" prefHeight="17.0" prefWidth="141.0" text="CANDIDATURA #1" textFill="#171ec4" underline="true">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="c2p3" layoutX="849.0" layoutY="109.0" onMouseClicked="#expandc2p3" prefHeight="17.0" prefWidth="141.0" text="CANDIDATURA #2" textFill="#171ec4" underline="true">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="c3p3" layoutX="849.0" layoutY="143.0" onMouseClicked="#expandc3p3" prefHeight="17.0" prefWidth="141.0" text="CANDIDATURA #3" textFill="#171ec4" underline="true">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="candTitle21" layoutX="796.0" layoutY="40.0" onMouseClicked="#showclist3" prefHeight="25.0" prefWidth="217.0" text="MOSTRA LISTA CANDIDATI" underline="true">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="EditExpbox11" layoutX="627.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" />
+                  <Label fx:id="ExpLabel11" layoutX="793.0" layoutY="12.0" prefHeight="17.0" prefWidth="111.0" text="ESPERIENZA">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="mailc1p3" layoutX="796.0" layoutY="76.0" text="Label" />
+                  <Label fx:id="mailc2p3" layoutX="796.0" layoutY="109.0" text="Label" />
+                  <Label fx:id="mailc3p3" layoutX="796.0" layoutY="142.0" text="Label" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

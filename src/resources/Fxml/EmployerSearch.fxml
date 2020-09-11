@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.SearchableComboBox?>
+
+<AnchorPane prefHeight="610.0" prefWidth="1000.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.EmployerSearchController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="90.0" stroke="BLACK" strokeType="INSIDE" width="1001.0" />
+      <SearchableComboBox fx:id="SectorSrc" layoutX="265.0" layoutY="59.0" />
+      <Text fill="WHITE" layoutX="25.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regione">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="265.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settore" wrappingWidth="50.17968749999994">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Text>
+      <SearchableComboBox fx:id="regionSrc" layoutX="14.0" layoutY="60.0" />
+      <Button fx:id="srcImp" layoutX="535.0" layoutY="58.0" mnemonicParsing="false" onAction="#searchImp" style="-fx-background-color: #1f1fff;" text="Cerca" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Button>
+      <Pane fx:id="annuncio1" layoutY="90.0" prefHeight="84.0" prefWidth="1000.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Label fx:id="ImpName" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="112.0" text="NOME" textFill="#1b2ce1" underline="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="Contactbtn" layoutX="924.0" layoutY="45.0" mnemonicParsing="false" onAction="#Contact1" style="-fx-background-color: #7bb6ee;" text="Invia" textFill="WHITE" />
+            <Label fx:id="ImpSurN" layoutX="137.0" layoutY="7.0" prefHeight="23.0" prefWidth="147.0" text="COGNOME" textFill="#1b2ce1" underline="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpExp" layoutX="8.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="ESPERIENZA" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpInstr" layoutX="8.0" layoutY="57.0" prefHeight="23.0" prefWidth="174.0" text="ISTRUZIONE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpRegion" layoutX="200.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="REGIONE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpCity" layoutX="200.0" layoutY="57.0" prefHeight="23.0" prefWidth="112.0" text="CITTA'" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpProv" layoutX="347.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="PROVINCIA" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpSec" layoutX="347.0" layoutY="57.0" prefHeight="23.0" prefWidth="112.0" text="SETTORE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="ImpDesc" layoutX="507.0" layoutY="11.0" prefHeight="68.0" prefWidth="200.0" />
+            <Label fx:id="mailUser1" layoutX="347.0" layoutY="7.0" prefHeight="23.0" prefWidth="62.0" text="MAIL USER" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutX="711.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="84.0" prefWidth="6.0" />
+            <TextArea fx:id="mex1" layoutX="717.0" layoutY="11.0" prefHeight="68.0" prefWidth="200.0" promptText="Invia un messaggio" />
+         </children>
+      </Pane>
+      <Pane fx:id="annuncio11" layoutY="175.0" prefHeight="84.0" prefWidth="1000.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Label fx:id="ImpName1" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="112.0" text="NOME" textFill="#1b2ce1" underline="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="Contactbtn1" layoutX="924.0" layoutY="45.0" mnemonicParsing="false" onAction="#Contact2" style="-fx-background-color: #7bb6ee;" text="Invia" textFill="WHITE" />
+            <Label fx:id="ImpSurN1" layoutX="137.0" layoutY="7.0" prefHeight="23.0" prefWidth="147.0" text="COGNOME" textFill="#1b2ce1" underline="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpExp1" layoutX="8.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="ESPERIENZA" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpInstr1" layoutX="8.0" layoutY="57.0" prefHeight="23.0" prefWidth="174.0" text="ISTRUZIONE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpRegion1" layoutX="200.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="REGIONE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpCity1" layoutX="200.0" layoutY="57.0" prefHeight="23.0" prefWidth="112.0" text="CITTA'" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpProv1" layoutX="347.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="PROVINCIA" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpSec1" layoutX="347.0" layoutY="57.0" prefHeight="23.0" prefWidth="112.0" text="SETTORE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="ImpDesc1" layoutX="507.0" layoutY="8.0" prefHeight="68.0" prefWidth="200.0" />
+            <Label fx:id="mailUser2" layoutX="347.0" layoutY="7.0" prefHeight="23.0" prefWidth="62.0" text="MAIL USER" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutX="711.0" orientation="VERTICAL" prefHeight="84.0" prefWidth="0.0" />
+            <TextArea fx:id="mex2" layoutX="717.0" layoutY="8.0" prefHeight="68.0" prefWidth="200.0" promptText="Invia un messaggio" />
+         </children>
+      </Pane>
+      <Pane fx:id="annuncio12" layoutY="260.0" prefHeight="84.0" prefWidth="1000.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Label fx:id="ImpName2" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="112.0" text="NOME" textFill="#1b2ce1" underline="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="Contactbtn2" layoutX="924.0" layoutY="45.0" mnemonicParsing="false" onAction="#Contact3" style="-fx-background-color: #7bb6ee;" text="Invia" textFill="WHITE" />
+            <Label fx:id="ImpSurN2" layoutX="137.0" layoutY="7.0" prefHeight="23.0" prefWidth="147.0" text="COGNOME" textFill="#1b2ce1" underline="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpExp2" layoutX="8.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="ESPERIENZA" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpInstr2" layoutX="8.0" layoutY="57.0" prefHeight="23.0" prefWidth="174.0" text="ISTRUZIONE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpRegion2" layoutX="200.0" layoutY="32.0" prefHeight="23.0" prefWidth="112.0" text="REGIONE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpCity2" layoutX="200.0" layoutY="57.0" prefHeight="23.0" prefWidth="112.0" text="CITTA'" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpProv2" layoutX="347.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="PROVINCIA" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpSec2" layoutX="347.0" layoutY="57.0" prefHeight="23.0" prefWidth="112.0" text="SETTORE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="ImpDesc2" layoutX="507.0" layoutY="11.0" prefHeight="68.0" prefWidth="200.0" />
+            <Label fx:id="mailUser3" layoutX="347.0" layoutY="3.0" prefHeight="23.0" prefWidth="62.0" text="MAIL USER" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutX="711.0" orientation="VERTICAL" prefHeight="84.0" prefWidth="0.0" />
+            <TextArea fx:id="mex3" layoutX="717.0" layoutY="11.0" prefHeight="68.0" prefWidth="200.0" promptText="Invia un messaggio" />
+         </children>
+      </Pane>
+      <Pane fx:id="annuncio13" layoutY="345.0" prefHeight="84.0" prefWidth="1000.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Label fx:id="ImpName3" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="112.0" text="NOME" textFill="#1b2ce1" underline="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="Contactbtn3" layoutX="924.0" layoutY="45.0" mnemonicParsing="false" onAction="#Contact4" style="-fx-background-color: #7bb6ee;" text="Invia" textFill="WHITE" />
+            <Label fx:id="ImpSurN3" layoutX="137.0" layoutY="7.0" prefHeight="23.0" prefWidth="147.0" text="COGNOME" textFill="#1b2ce1" underline="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpExp3" layoutX="8.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="ESPERIENZA" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpInstr3" layoutX="8.0" layoutY="57.0" prefHeight="23.0" prefWidth="174.0" text="ISTRUZIONE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpRegion3" layoutX="200.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="REGIONE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpCity3" layoutX="200.0" layoutY="57.0" prefHeight="23.0" prefWidth="112.0" text="CITTA'" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpProv3" layoutX="347.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="PROVINCIA" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpSec3" layoutX="347.0" layoutY="57.0" prefHeight="23.0" prefWidth="112.0" text="SETTORE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="ImpDesc3" layoutX="507.0" layoutY="11.0" prefHeight="68.0" prefWidth="200.0" />
+            <Label fx:id="mailUser4" layoutX="347.0" layoutY="7.0" prefHeight="23.0" prefWidth="62.0" text="MAIL USER" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutX="711.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="84.0" prefWidth="0.0" />
+            <TextArea fx:id="mex4" layoutX="717.0" layoutY="10.0" prefHeight="68.0" prefWidth="200.0" promptText="Invia un messaggio" />
+         </children>
+      </Pane>
+      <Pane fx:id="annuncio14" layoutY="430.0" prefHeight="84.0" prefWidth="1000.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Label fx:id="ImpName4" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="112.0" text="NOME" textFill="#1b2ce1" underline="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="Contactbtn4" layoutX="924.0" layoutY="45.0" mnemonicParsing="false" onAction="#Contact5" style="-fx-background-color: #7bb6ee;" text="Invia" textFill="WHITE" />
+            <Label fx:id="ImpSurN4" layoutX="137.0" layoutY="7.0" prefHeight="23.0" prefWidth="147.0" text="COGNOME" textFill="#1b2ce1" underline="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpExp4" layoutX="8.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="ESPERIENZA" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpInstr4" layoutX="8.0" layoutY="57.0" prefHeight="23.0" prefWidth="174.0" text="ISTRUZIONE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpRegion4" layoutX="200.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="REGIONE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpCity4" layoutX="200.0" layoutY="57.0" prefHeight="23.0" prefWidth="112.0" text="CITTA'" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpProv4" layoutX="347.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="PROVINCIA" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpSec4" layoutX="347.0" layoutY="57.0" prefHeight="23.0" prefWidth="112.0" text="SETTORE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="ImpDesc4" layoutX="508.0" layoutY="11.0" prefHeight="68.0" prefWidth="200.0" />
+            <Label fx:id="mailUser5" layoutX="343.0" layoutY="7.0" prefHeight="23.0" prefWidth="62.0" text="MAIL USER" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutX="711.0" orientation="VERTICAL" prefHeight="84.0" prefWidth="0.0" />
+            <TextArea fx:id="mex5" layoutX="717.0" layoutY="10.0" prefHeight="68.0" prefWidth="200.0" promptText="Invia un messaggio" />
+         </children>
+      </Pane>
+      <Pane fx:id="annuncio15" layoutY="516.0" prefHeight="84.0" prefWidth="1000.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Label fx:id="ImpName5" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="112.0" text="NOME" textFill="#1b2ce1" underline="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="Contactbtn5" layoutX="924.0" layoutY="45.0" mnemonicParsing="false" onAction="#Contact6" style="-fx-background-color: #7bb6ee;" text="Invia" textFill="WHITE" />
+            <Label fx:id="ImpSurN5" layoutX="137.0" layoutY="7.0" prefHeight="23.0" prefWidth="147.0" text="COGNOME" textFill="#1b2ce1" underline="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpExp5" layoutX="8.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="ESPERIENZA" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpInstr5" layoutX="8.0" layoutY="57.0" prefHeight="23.0" prefWidth="174.0" text="ISTRUZIONE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpRegion5" layoutX="200.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="REGIONE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpCity5" layoutX="200.0" layoutY="57.0" prefHeight="23.0" prefWidth="112.0" text="CITTA'" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpProv5" layoutX="347.0" layoutY="34.0" prefHeight="23.0" prefWidth="112.0" text="PROVINCIA" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ImpSec5" layoutX="347.0" layoutY="57.0" prefHeight="23.0" prefWidth="112.0" text="SETTORE" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="ImpDesc5" layoutX="507.0" layoutY="11.0" prefHeight="68.0" prefWidth="200.0" />
+            <Label fx:id="mailUser6" layoutX="344.0" layoutY="9.0" prefHeight="23.0" prefWidth="62.0" text="MAIL USER" textFill="#1b2ce1">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutX="711.0" orientation="VERTICAL" prefHeight="84.0" prefWidth="0.0" />
+            <TextArea fx:id="mex6" layoutX="717.0" layoutY="10.0" prefHeight="68.0" prefWidth="200.0" promptText="Invia un messaggio" />
+         </children>
+      </Pane>
+      <Label fx:id="esEmail" layoutX="174.0" layoutY="42.0" text="Label" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.UserSignUpController">
+   <children>
+      <Pane layoutX="51.0" layoutY="108.0" prefHeight="378.0" prefWidth="678.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <TextField fx:id="cityField" layoutX="419.0" layoutY="140.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci città di residenza" />
+            <TextField fx:id="nameField" layoutX="100.0" layoutY="15.0" prefHeight="16.0" prefWidth="232.0" promptText="Inserisci il tuo nome" />
+            <TextField fx:id="surnameField" layoutX="419.0" layoutY="14.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci il tuo cognome" />
+            <TextField fx:id="numberField" layoutX="419.0" layoutY="78.0" prefHeight="16.0" prefWidth="232.0" promptText="Inserisci un numero di cellulare valido" />
+            <TextField fx:id="provinceField" layoutX="101.0" layoutY="174.0" prefHeight="16.0" prefWidth="232.0" promptText="Inserisci provincia di residenza" />
+            <ChoiceBox fx:id="regionChoice" layoutX="101.0" layoutY="141.0" prefHeight="16.0" prefWidth="232.0" />
+            <Text layoutX="32.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" wrappingWidth="43.48779296875">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="347.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cognome:" wrappingWidth="58.0">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="32.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" wrappingWidth="34.0">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="32.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data di nascita:" wrappingWidth="47.51953125">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="348.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cellulare:" wrappingWidth="52.552734375">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="32.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regione:" wrappingWidth="47.51953125">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="33.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Provincia:" wrappingWidth="54.345703125">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="349.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Città:" wrappingWidth="34.0">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="34.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cap:" wrappingWidth="43.48779296875">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="capField" layoutX="101.0" layoutY="206.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci codice postale" />
+            <Text layoutX="33.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Istruzione:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="348.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrizione:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <DatePicker fx:id="dateField" layoutX="101.0" layoutY="78.0" prefHeight="25.0" prefWidth="232.0" promptText="Inserisci la tua data di nascita" />
+            <Text layoutX="348.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="passwordField" layoutX="419.0" layoutY="46.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci una password difficile" />
+            <TextField fx:id="emailField" layoutX="101.0" layoutY="47.0" prefHeight="25.0" prefWidth="232.0" promptText="Inserisci una email valida" />
+            <TextField fx:id="addressField" layoutX="419.0" layoutY="172.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci il tuo indirizzo" />
+            <Text layoutX="349.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indirizzo:">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <TextArea fx:id="descriptionArea" layoutX="419.0" layoutY="207.0" prefHeight="134.0" prefWidth="232.0" promptText="Descrivi brevemente le tue esperienze lavorative.." text="Nessuna Descrizione" />
+            <Text layoutX="33.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settore d'interesse:" wrappingWidth="64.0">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <ChoiceBox fx:id="sectorChoice" layoutX="101.0" layoutY="109.0" prefHeight="25.0" prefWidth="232.0" />
+            <ChoiceBox fx:id="ExpChoice" layoutX="419.0" layoutY="109.0" prefHeight="16.0" prefWidth="232.0" />
+            <Text layoutX="348.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esperienza" wrappingWidth="64.00000000000006">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="instructionField" layoutX="101.0" layoutY="239.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci il tuo livello di istruzione" />
+            <Button layoutX="296.0" layoutY="325.0" mnemonicParsing="false" onAction="#userRegistration" prefHeight="32.0" prefWidth="87.0" stylesheets="@../Stylesheet/fullpackstyling.css" text="Iscriviti" />
+         </children>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="765.0" />
+      <Text fill="WHITE" layoutX="87.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRAZIONE DIPENDENTE" wrappingWidth="338.296875">
+         <font>
+            <Font name="Aharoni Bold" size="44.0" />
+         </font>
+      </Text>
+      <Label fx:id="nameLabel" layoutX="388.0" layoutY="39.0" textFill="WHITE" />
+      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/logoCQcrop.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="722.0" layoutY="7.0" mnemonicParsing="false" onAction="#usersignupBackopening" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: WHITE; -fx-background-radius: 5em;" text="&lt;-" />
+   </children>
+</AnchorPane>

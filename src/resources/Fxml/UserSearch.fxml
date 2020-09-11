@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.SearchableComboBox?>
+
+<AnchorPane prefHeight="540.0" prefWidth="700.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.UserSearchController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" stroke="BLACK" strokeType="INSIDE" width="805.0" />
+      <Pane fx:id="annuncio2" layoutY="185.0" prefHeight="115.0" prefWidth="805.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Button fx:id="subann2" layoutX="254.0" layoutY="80.0" mnemonicParsing="false" onAction="#candidati2" stylesheets="@../Stylesheet/fullpackstyling.css" text="Candidati" />
+            <Label fx:id="regann2" layoutX="14.0" layoutY="37.0" text="Regione" />
+            <Label fx:id="ann2" layoutX="7.0" layoutY="6.0" prefHeight="27.0" prefWidth="365.0" text="Annuncio #2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="annBio2" layoutX="321.0" layoutY="35.0" prefHeight="38.0" prefWidth="307.0" />
+            <Label fx:id="posann2" layoutX="121.0" layoutY="37.0" text="Posizione" />
+            <Label fx:id="eduann2" layoutX="14.0" layoutY="63.0" text="Titolo di studio" />
+            <Text layoutX="321.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retribuzione:" wrappingWidth="72.728515625" />
+            <Label fx:id="wageann2" layoutX="403.0" layoutY="12.0" prefHeight="17.0" prefWidth="63.0" text="€" />
+            <Label fx:id="ctypeann2" layoutX="121.0" layoutY="63.0" text="Tipo di Contratto" />
+            <Label fx:id="ctimeann2" layoutX="443.0" layoutY="12.0" text="Cadenza" />
+            <Label fx:id="wgtimeann2" layoutX="517.0" layoutY="12.0" text="Info" />
+            <Label fx:id="bonusann2" layoutX="590.0" layoutY="13.0" text="Label" />
+            <Label fx:id="expann2" layoutX="636.0" layoutY="33.0" text="Label" />
+         </children></Pane>
+      <Pane fx:id="annuncio3" layoutY="303.0" prefHeight="115.0" prefWidth="805.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Label fx:id="ann3" layoutX="8.0" layoutY="8.0" prefHeight="27.0" prefWidth="365.0" text="Annuncio #3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="regann3" layoutX="14.0" layoutY="38.0" text="Regione" />
+            <TextArea fx:id="annBio3" layoutX="376.0" layoutY="36.0" prefHeight="38.0" prefWidth="307.0" />
+            <Button fx:id="subann3" layoutX="256.0" layoutY="77.0" mnemonicParsing="false" onAction="#candidati3" stylesheets="@../Stylesheet/fullpackstyling.css" text="Candidati" />
+            <Label fx:id="posann3" layoutX="121.0" layoutY="38.0" text="Posizione" />
+            <Label fx:id="eduann3" layoutX="14.0" layoutY="60.0" text="Titolo di studio" />
+            <Text layoutX="387.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retribuzione:" wrappingWidth="72.728515625" />
+            <Label fx:id="wageann3" layoutX="467.0" layoutY="14.0" prefHeight="17.0" prefWidth="63.0" text="€" />
+            <Label fx:id="ctypeann3" layoutX="121.0" layoutY="60.0" text="Tipo di Contratto" />
+            <Label fx:id="ctimeann3" layoutX="536.0" layoutY="14.0" text="Cadenza" />
+            <Label fx:id="wgtimeann3" layoutX="620.0" layoutY="14.0" prefHeight="17.0" prefWidth="21.0" text="Info" />
+            <Label fx:id="bonusann3" layoutX="276.0" layoutY="37.0" text="Label" />
+            <Label fx:id="expann3" layoutX="693.0" layoutY="24.0" text="Label" />
+         </children></Pane>
+      <Pane fx:id="annuncio4" layoutY="421.0" prefHeight="115.0" prefWidth="805.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <TextArea fx:id="annBio4" layoutX="377.0" layoutY="36.0" prefHeight="38.0" prefWidth="307.0" />
+            <Button fx:id="subann4" layoutX="256.0" layoutY="77.0" mnemonicParsing="false" onAction="#candidati4" stylesheets="@../Stylesheet/fullpackstyling.css" text="Candidati" />
+            <Label fx:id="ann4" layoutX="8.0" layoutY="8.0" prefHeight="27.0" prefWidth="365.0" text="Annuncio #4">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="regann4" layoutX="14.0" layoutY="38.0" text="Regione" />
+            <Label fx:id="posann4" layoutX="122.0" layoutY="38.0" text="Posizione" />
+            <Label fx:id="eduann4" layoutX="14.0" layoutY="60.0" text="Titolo di studio" />
+            <Text layoutX="387.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retribuzione:" wrappingWidth="72.728515625" />
+            <Label fx:id="wageann4" layoutX="468.0" layoutY="13.0" prefHeight="17.0" prefWidth="63.0" text="€" />
+            <Label fx:id="ctypeann4" layoutX="122.0" layoutY="60.0" text="Tipo di Contratto" />
+            <Label fx:id="ctimeann4" layoutX="537.0" layoutY="13.0" text="Cadenza" />
+            <Label fx:id="wgtimeann4" layoutX="621.0" layoutY="13.0" text="Info" />
+            <Label fx:id="bonusann4" layoutX="282.0" layoutY="39.0" text="Label" />
+            <Label fx:id="expann4" layoutX="690.0" layoutY="16.0" text="Label" />
+         </children></Pane>
+      <Label fx:id="usEmail" layoutX="439.0" layoutY="43.0" prefHeight="17.0" prefWidth="101.0" textFill="WHITE" />
+      <SearchableComboBox fx:id="categorySrc" layoutX="253.0" layoutY="33.0" />
+      <Text fill="WHITE" layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regione:">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="253.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoria:">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Text>
+      <SearchableComboBox fx:id="regionSrc" layoutX="14.0" layoutY="33.0" />
+      <Button fx:id="srcOffer" layoutX="505.0" layoutY="32.0" mnemonicParsing="false" onAction="#searchOffer" style="-fx-background-color: #1f1fff;" text="Cerca" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Button>
+      <Pane fx:id="annuncio1" layoutY="65.0" prefHeight="115.0" prefWidth="805.0" style="-fx-background-color: #f1efef;">
+         <children>
+            <Label fx:id="ann1" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="365.0" text="Annuncio #1">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="subann1" layoutX="253.0" layoutY="76.0" mnemonicParsing="false" onAction="#candidati1" stylesheets="@../Stylesheet/fullpackstyling.css" text="Candidati" />
+            <Label fx:id="regann1" layoutX="14.0" layoutY="34.0" text="Regione" />
+            <Label fx:id="posann1" layoutX="122.0" layoutY="34.0" text="Posizione" />
+            <Label fx:id="eduann1" layoutX="14.0" layoutY="60.0" text="Titolo di studio">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="ctypeann1" layoutX="122.0" layoutY="59.0" text="Tipo di Contratto" />
+            <Label fx:id="ctimeann1" layoutX="435.0" layoutY="10.0" text="Cadenza" />
+            <Label fx:id="wageann1" layoutX="404.0" layoutY="10.0" prefHeight="17.0" prefWidth="63.0" text="€" />
+            <Label fx:id="wgtimeann1" layoutX="515.0" layoutY="10.0" text="Info" />
+            <TextArea fx:id="annBio1" layoutX="320.0" layoutY="33.0" prefHeight="35.0" prefWidth="307.0" />
+            <Text layoutX="320.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retribuzione:" wrappingWidth="72.728515625" />
+            <Label fx:id="bonusann1" layoutX="584.0" layoutY="10.0" text="Label" />
+            <Label fx:id="expann1" layoutX="643.0" layoutY="26.0" text="Label" />
+         </children>
+      </Pane>
+      <Button fx:id="luckyOffers" layoutX="616.0" layoutY="32.0" mnemonicParsing="false" onAction="#luckyOff" style="-fx-background-color: #1f1fff;" text="Luck" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Button>
+      <Separator layoutX="-3.0" layoutY="179.0" prefHeight="6.0" prefWidth="805.0" />
+      <Separator layoutX="-3.0" layoutY="300.0" prefHeight="6.0" prefWidth="805.0" />
+      <Separator layoutX="-4.0" layoutY="415.0" prefHeight="0.0" prefWidth="805.0" />
+   </children>
+</AnchorPane>
