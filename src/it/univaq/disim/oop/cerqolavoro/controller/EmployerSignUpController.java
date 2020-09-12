@@ -56,6 +56,8 @@ public class EmployerSignUpController implements Initializable, DataInitializabl
     void employerSignUpButton(ActionEvent event2) throws IOException {
     	
       try {
+    	  
+        // Controllo campi
     
         boolean signupcheck = true;
        

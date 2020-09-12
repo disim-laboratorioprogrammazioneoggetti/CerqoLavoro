@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.AddOfferController">
    <children>
-      <Pane layoutX="141.0" layoutY="24.0" prefHeight="493.0" prefWidth="418.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="141.0" layoutY="33.0" prefHeight="493.0" prefWidth="418.0" style="-fx-background-color: #f1efef;">
          <children>
             <TextField fx:id="PositionField" layoutX="78.0" layoutY="49.0" prefHeight="25.0" prefWidth="321.0" promptText="Breve e concisa" />
             <Text layoutX="16.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Posizione">
@@ -63,7 +63,7 @@
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <TextField fx:id="TitleField" layoutX="78.0" layoutY="13.0" prefHeight="25.0" prefWidth="321.0" promptText="Es:&quot;CERCASI INFORMATICI ESPERTI IN JAVA&quot;" />
+            <TextField fx:id="TitleField" layoutX="78.0" layoutY="13.0" prefHeight="25.0" prefWidth="321.0" promptText="Inserisci titolo annuncio" />
             <TextField fx:id="StudyTitleField" layoutX="16.0" layoutY="250.0" prefHeight="25.0" prefWidth="166.0" promptText="es: Laurea in Lettere,Diploma,ecc." />
             <Text layoutX="233.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regione">
                <font>
@@ -90,6 +90,11 @@
             </Text>
          </children>
       </Pane>
-      <Label fx:id="eadEmail" layoutX="50.0" layoutY="205.0" textFill="#0d5de8" />
+      <Label fx:id="eadEmail" layoutX="50.0" layoutY="205.0" prefHeight="17.0" prefWidth="44.0" textFill="#0d5de8" />
+      <Label fx:id="addOfferStatus" layoutX="141.0" layoutY="6.0" prefHeight="17.0" prefWidth="418.0">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -65,6 +65,8 @@ public class UserSignUpController implements Initializable, DataInitializable<Ob
     	
      try {
     	 
+        // Controllo campi
+    	 
         boolean signupcheck = true;
        
       if(nameField.getText().isEmpty()) { signupcheck = false; }
