@@ -22,16 +22,18 @@ public class HomeController implements Initializable, DataInitializable<User> {
 	public void initializeData(User user) {
 		StringBuilder testo = new StringBuilder();
 		testo.append("Benvenuto ");
-		testo.append(user.getEmail());
-		testo.append(" ");
 
 		if (user instanceof Worker) {
 			Worker worker = (Worker) user;
+			testo.append(worker.getName());
+			testo.append(",");
 			testo.append(" in cerca di lavoro? ");
 		}
 		if (user instanceof Employer) {
 			Employer employer = (Employer) user;
-			testo.append(" in cerca di lavoro? ");
+			testo.append(employer.getName());
+			testo.append(",");
+			testo.append(" in cerca di dipendenti? ");
 		}
 		benvenutoLabel.setText(testo.toString());
 	}

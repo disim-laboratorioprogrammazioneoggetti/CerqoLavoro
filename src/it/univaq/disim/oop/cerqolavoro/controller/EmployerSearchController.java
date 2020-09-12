@@ -1,26 +1,17 @@
 package it.univaq.disim.oop.cerqolavoro.controller;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -31,58 +22,34 @@ import java.util.List;
 import java.util.ResourceBundle;
 import org.controlsfx.control.SearchableComboBox;
 import it.univaq.disim.oop.cerqolavoro.business.BusinessException;
-import it.univaq.disim.oop.cerqolavoro.business.CandidacyService;
 import it.univaq.disim.oop.cerqolavoro.business.CerqoLavoroBusinessFactory;
 import it.univaq.disim.oop.cerqolavoro.business.MessageService;
 import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileCerqoLavoroBusinessFactoryImpl;
-import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileMessageServiceImpl;
 import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMMessageServiceImpl;
-import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMUserServiceImpl;
-import it.univaq.disim.oop.cerqolavoro.domain.Candidacy;
 import it.univaq.disim.oop.cerqolavoro.domain.Message;
 import it.univaq.disim.oop.cerqolavoro.domain.User;
-import it.univaq.disim.oop.cerqolavoro.domain.Worker;
 import it.univaq.disim.oop.cerqolavoro.view.ViewDispatcher;
-import it.univaq.disim.oop.cerqolavoro.view.ViewException;
 
 public class EmployerSearchController implements Initializable, DataInitializable<User> {
     
-    @FXML
-    private SearchableComboBox<String> SectorSrc;
-    @FXML
-    private SearchableComboBox<String> regionSrc;
-    @FXML
-    private Button srcImp;
-    @FXML
-    private Pane annuncio1;
-    @FXML
-    private Label ImpName;
-    @FXML
-    private Button Contactbtn;
-    @FXML
-    private Label ImpSurN;
-    @FXML
-    private Label ImpExp;
-    @FXML
-    private Label ImpInstr;
-    @FXML
-    private Label ImpRegion;
-    @FXML
-    private Label ImpCity;
-    @FXML
-    private Label ImpProv;
-    @FXML
-    private Label ImpSec;
-    @FXML
-    private TextArea ImpDesc;
-    @FXML
-    private Label mailUser1;
-    @FXML
-    private TextArea mex1;
-    @FXML
-    private Pane annuncio11;
-    @FXML
-    private Label ImpName1;
+    @FXML private SearchableComboBox<String> SectorSrc;
+    @FXML private SearchableComboBox<String> regionSrc;
+    @FXML private Button srcImp;
+    @FXML private Pane annuncio1;
+    @FXML private Label ImpName;
+    @FXML private Button Contactbtn;
+    @FXML private Label ImpSurN;
+    @FXML private Label ImpExp;
+    @FXML private Label ImpInstr;
+    @FXML private Label ImpRegion;
+    @FXML private Label ImpCity;
+    @FXML private Label ImpProv;
+    @FXML private Label ImpSec;
+    @FXML private TextArea ImpDesc;
+    @FXML private Label mailUser1;
+    @FXML private TextArea mex1;
+    @FXML private Pane annuncio11;
+    @FXML private Label ImpName1;
     @FXML
     private Button Contactbtn1;
     @FXML
@@ -231,6 +198,8 @@ public class EmployerSearchController implements Initializable, DataInitializabl
 	public void initializeData(User user) {
 	      esEmail.setText(user.getEmail());
 	}
+	
+	// Bottoni per invio messaggi ai potenziali candidati
 
     @FXML
     void Contact1(ActionEvent event) throws IOException  {
@@ -238,10 +207,6 @@ public class EmployerSearchController implements Initializable, DataInitializabl
     		Message message = messageService.createMessages( mailUser1.getText().toString(), mex1.getText().toString() );
     	} catch (BusinessException e) {
 			dispatcher.renderError(e);
-            Alert errorAlert = new Alert(AlertType.ERROR);
-            errorAlert.setHeaderText("Attenzione!");
-            errorAlert.setContentText("Voccape");
-            errorAlert.showAndWait();
     	}  
     }
     	   
@@ -333,6 +298,9 @@ public class EmployerSearchController implements Initializable, DataInitializabl
     		lines++; }
     	reader.close();
     	int cont = lines / 10;
+
+    	// Ricerca potenziale candidato tramite filtri
+    	
          BufferedReader read = new BufferedReader(
         	        new InputStreamReader(
         	            new FileInputStream(FileCerqoLavoroBusinessFactoryImpl.USER_FILE_NAME), charset));
@@ -403,13 +371,13 @@ public class EmployerSearchController implements Initializable, DataInitializabl
 		ImpDesc4.setEditable(false);
 		ImpDesc5.setEditable(false);
 		
-		//combobox regione
+		// Combobox Regione
 		regionSrc.getItems().addAll("Abruzzo","Basilicata","Calabria","Campania","Emilia-Romagna",
 	              "Friuli-Venezia Giulia","Lazio","Liguria","Lombardia","Marche","Molise","Piemonte","Puglia",
 	              "Sardegna","Sicilia","Toscana","Trentino-Alto Adige","Umbria","Valle d'Aosta","Veneto");
 	          regionSrc.setValue("Abruzzo");
 				
-	    //combobox settore
+	    // Combobox Settore
 		SectorSrc.getItems().addAll("Acquisti-Logica-Trasporti","Affari legali","Amministrazione-Segreteria","Architettura-Arti grafiche-Design","Assistenza Anziani",
                 "Commerciale","Commercio-Negozi","Contabilita'-Finanza","Direzione-Consulenza","Edilizia","Editoria-Giornalismo","Estetica-Cura della Persona","Formazione-Istruzione",
                 "Informatica-Telecomunicazioni","Ingegneria","Marketing-Comunicazione","Medicina-Salute","Produzione-Operai","Project Managment","Qualita'-Ambiente","Risorse Umane",

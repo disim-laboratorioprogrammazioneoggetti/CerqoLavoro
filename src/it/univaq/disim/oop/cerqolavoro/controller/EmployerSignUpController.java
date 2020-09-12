@@ -5,22 +5,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import it.univaq.disim.oop.cerqolavoro.domain.User;
-import it.univaq.disim.oop.cerqolavoro.domain.Worker;
+import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileCerqoLavoroBusinessFactoryImpl;
 import it.univaq.disim.oop.cerqolavoro.view.ViewDispatcher;
 import it.univaq.disim.oop.cerqolavoro.view.ViewException;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -30,51 +22,41 @@ public class EmployerSignUpController implements Initializable, DataInitializabl
   
     // Campi registrazione
     
-    @FXML
-    private TextField Namefield;
-
-    @FXML
-    private TextField Surnamefield;
-
-    @FXML
-    private TextField EmailField;
-
-    @FXML
-    private TextField CMailField;
-
-    @FXML
-    private PasswordField PasswordField;
-
-    @FXML
-    private TextField CNameField;
-
-    @FXML
-    private TextField IVAFIeld;
-
-    @FXML
-    private TextField PhoneField;
-
-    @FXML
-    private TextField CPhoneField;
-    
-    @FXML
-    private TextArea DescriptionArea;
+    @FXML private TextField Namefield;
+    @FXML private TextField Surnamefield;
+    @FXML private TextField EmailField;
+    @FXML private TextField CMailField;
+    @FXML private PasswordField PasswordField;
+    @FXML private TextField CNameField;
+    @FXML private TextField IVAFIeld;
+    @FXML private TextField PhoneField;
+    @FXML private TextField CPhoneField;    
+    @FXML private TextArea DescriptionArea;
+    @FXML private Button empSUBack;
+    @FXML private Button employerSUButton;
+    @FXML private Label employerSUStatus;
     
     public Stage stage = new Stage();
     
+    // Pulsante Torna al Login
+    
     @FXML
-    void EmployerBacktoOpening(ActionEvent event) throws IOException
-    {
+    void employerGoToLoginButton(ActionEvent event) throws IOException {
         try {
     		ViewDispatcher viewDispatcher = ViewDispatcher.getInstance();
-    		viewDispatcher.openingView(stage);
+    		viewDispatcher.loginView(stage);
     	} catch (ViewException e) {
     		e.printStackTrace();
     	}
     }
+    
+    // Pulsante Registrazione Impiegato
+    
     @FXML
-    void EmployerSignUp(ActionEvent event2) throws IOException
-    {
+    void employerSignUpButton(ActionEvent event2) throws IOException {
+    	
+      try {
+    
         boolean signupcheck = true;
        
       if(Namefield.getText().isEmpty()) { signupcheck = false; }
@@ -91,17 +73,14 @@ public class EmployerSignUpController implements Initializable, DataInitializabl
       // Messaggio di errore se non tutti i campi sono completi
       
       if (signupcheck  == false) {
-    	  Alert errorAlert = new Alert(AlertType.ERROR);
-    	  errorAlert.setHeaderText("ERRORE");
-    	  errorAlert.setContentText("Devi riempire i campi di Registrazione");
-    	  errorAlert.showAndWait();
+    	  employerSUStatus.setText("Si prega di compilare tutti i campi");
       }
       
       if(signupcheck == true) {
           
-          // Crea file profilo Datore di lavoro
+            // Crea file profilo Datore di lavoro
           
-          StringBuilder sb =  new StringBuilder();
+            StringBuilder sb =  new StringBuilder();
             sb.append( PasswordField.getText().toString()+ "\n");  
             sb.append( Namefield.getText().toString()+ "\n");
             sb.append( Surnamefield.getText().toString()+ "\n");
@@ -113,38 +92,17 @@ public class EmployerSignUpController implements Initializable, DataInitializabl
             sb.append( CPhoneField.getText().toString()+ "\n");
             sb.append( DescriptionArea.getText().toString()+ "\n");
 
-            File file = new File ("C:\\Users\\user\\git\\Progetto-Lavoro\\CerqoLavoro\\src\\resources\\Data\\EmployerProfiles\\" + (EmailField.getText().toString()) + ".csv");
+            File file = new File (FileCerqoLavoroBusinessFactoryImpl.EMPLOYER_FILE_DIRECTORY + (EmailField.getText().toString()) + ".csv");
             FileWriter W = null;
-          try {
             W = new FileWriter (file);
-          } catch (IOException e) {
-            e.printStackTrace();
-          }
-            try {
             W.write(sb.toString());
-          } catch (IOException e) {
-            e.printStackTrace();
-          }
-            try {
             W.close();
-          } catch (IOException e) {
-            e.printStackTrace();
-          }
-        
-            try {
-        		ViewDispatcher viewDispatcher = ViewDispatcher.getInstance();
-        		viewDispatcher.openingView(stage);
-        	} catch (ViewException e) {
-        		e.printStackTrace();
-        	}
-        
+            
+            employerSUStatus.setText("Registrazione completata con successo");
       }
-    }
-    
-    @FXML
-    void Exit(ActionEvent event3)
-    {
-    	Platform.exit();
+     } catch (IOException e) {
+         e.printStackTrace();
+     }
     }
     
 

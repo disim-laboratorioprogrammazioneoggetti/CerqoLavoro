@@ -29,12 +29,10 @@ public class LayoutController implements Initializable, DataInitializable<User> 
 			new MenuElement("Cerca", "UserSearch"), new MenuElement("Candidature", "UserCandidacy"), 
 			new MenuElement("Messaggi", "UserMessage") };
 
-	private User user;
-	
-	@FXML
-	private VBox menuBar;
-	
+	private User user;	
 	private ViewDispatcher dispatcher;
+	
+	@FXML private VBox menuBar;
 	
 	public LayoutController() {
 		dispatcher = ViewDispatcher.getInstance();
@@ -43,6 +41,8 @@ public class LayoutController implements Initializable, DataInitializable<User> 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {		
 	}
+	
+	// Differenziazione menù in base al ruolo dell' utente
 	
 	@Override
 	public void initializeData(User user) {
@@ -63,10 +63,14 @@ public class LayoutController implements Initializable, DataInitializable<User> 
 		}
 	}
 
-	@FXML
+	// Pulsante Logout
+	
+	@FXML 
 	public void logoutAction(MouseEvent event) {
 		dispatcher.logout();
 	}
+	
+	// Crea elemento menù
 
 	private Button createButton(MenuElement viewItem) {
 		Button button = new Button(viewItem.getName());

@@ -70,8 +70,9 @@ public class FileUserServiceImpl implements UserService {
 	      read.close();
 	      if(line.equals(password)) {
 	            user = new Worker();
+	        //     RAMUserServiceImpl.authenticate(email, password);
 	            user.setEmail(email);
-	            user.setPassword(password);
+	            user.setPassword(password); 
 	        } else {       
 	                  Alert error2Alert = new Alert(AlertType.ERROR);
 	                  error2Alert.setHeaderText("ERRORE");
