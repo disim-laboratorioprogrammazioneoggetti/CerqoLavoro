@@ -1,12 +1,10 @@
 package it.univaq.disim.oop.cerqolavoro.controller;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -16,32 +14,21 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.ResourceBundle;
 import org.controlsfx.control.SearchableComboBox;
-
 import it.univaq.disim.oop.cerqolavoro.business.BusinessException;
 import it.univaq.disim.oop.cerqolavoro.business.CandidacyNotFoundException;
 import it.univaq.disim.oop.cerqolavoro.business.CandidacyService;
 import it.univaq.disim.oop.cerqolavoro.business.CerqoLavoroBusinessFactory;
 import it.univaq.disim.oop.cerqolavoro.business.OfferService;
-import it.univaq.disim.oop.cerqolavoro.business.UserNotFoundException;
 import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileCerqoLavoroBusinessFactoryImpl;
 import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMCandidacyServiceImpl;
 import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMOfferServiceImpl;
-import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMUserServiceImpl;
 import it.univaq.disim.oop.cerqolavoro.domain.Candidacy;
 import it.univaq.disim.oop.cerqolavoro.domain.Offer;
 import it.univaq.disim.oop.cerqolavoro.domain.User;
-import it.univaq.disim.oop.cerqolavoro.domain.Worker;
 import it.univaq.disim.oop.cerqolavoro.view.ViewDispatcher;
-import it.univaq.disim.oop.cerqolavoro.view.ViewException;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -129,6 +116,8 @@ public class UserSearchController implements Initializable, DataInitializable<Us
 	public void initializeData(User user) {
 	      usEmail.setText(user.getEmail());
 	}
+	
+	// Ricerca offerte attinenti
     
     @FXML
     void luckyOff(ActionEvent event) throws IOException {
@@ -158,6 +147,9 @@ public class UserSearchController implements Initializable, DataInitializable<Us
         String listBonus[] = new String[4];
         String listCadence[] = new String[4];
         String charset = "UTF-8";
+        
+        // Lettura informazioni utili ai fini della ricerca personalizzata
+        
     	File a = new File(FileCerqoLavoroBusinessFactoryImpl.WORKER_FILE_DIRECTORY + usEmail.getText() + ".csv");
     	FileReader user = new FileReader(a);
         String exp = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.WORKER_FILE_DIRECTORY + usEmail.getText() + ".csv")).get(5);
@@ -174,6 +166,9 @@ public class UserSearchController implements Initializable, DataInitializable<Us
     	}
     	reader.close();
     	int cont = lines / 13;
+    	
+    	// Ricerca nel file offerte
+    	
          BufferedReader read = new BufferedReader(
         	        new InputStreamReader(
         	            new FileInputStream(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME), charset));
@@ -225,6 +220,8 @@ public class UserSearchController implements Initializable, DataInitializable<Us
          } 
     }
     
+    // Ricerca offerta tramite filtri selezionati dall' utente
+    
     @FXML
     void searchOffer(ActionEvent event) throws IOException {
         
@@ -264,6 +261,8 @@ public class UserSearchController implements Initializable, DataInitializable<Us
         	        new InputStreamReader(
         	            new FileInputStream(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME), charset));
          List<String> line = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME), StandardCharsets.UTF_8);
+         
+         // 4 possibili combinazioni di filtri (Regione / Settore)
          
          try {
         	 i = 0; k = 0; j = 0; p = 1; q = 2; r = 4; s = 5; t = 6; u = 7; v = 8; w = 9; x = 10; y = 11; z = 12;
@@ -370,6 +369,8 @@ public class UserSearchController implements Initializable, DataInitializable<Us
         ex.printStackTrace();
         }
     } 
+    
+    // Pulsanti candidatura offerte
 
     @FXML
     void candidati1(ActionEvent event) throws IOException {
@@ -378,16 +379,8 @@ public class UserSearchController implements Initializable, DataInitializable<Us
         	annuncio1.setVisible(false);
 		} catch (CandidacyNotFoundException e) {
 			e.getCause().printStackTrace();
-            Alert errorAlert = new Alert(AlertType.ERROR);
-            errorAlert.setHeaderText("Attenzione");
-            errorAlert.setContentText("Errore");
-            errorAlert.showAndWait();
 		} catch (BusinessException e) {
 			e.getCause().printStackTrace();
-            Alert errorAlert = new Alert(AlertType.ERROR);
-            errorAlert.setHeaderText("Attenzione");
-            errorAlert.setContentText("Mammete");
-            errorAlert.showAndWait();
 			dispatcher.renderError(e);
 		}
     }
@@ -400,16 +393,8 @@ public class UserSearchController implements Initializable, DataInitializable<Us
         	annuncio2.setVisible(false);
 		} catch (CandidacyNotFoundException e) {
 			e.getCause().printStackTrace();
-            Alert errorAlert = new Alert(AlertType.ERROR);
-            errorAlert.setHeaderText("Attenzione");
-            errorAlert.setContentText("Errore");
-            errorAlert.showAndWait();
 		} catch (BusinessException e) {
 			e.getCause().printStackTrace();
-            Alert errorAlert = new Alert(AlertType.ERROR);
-            errorAlert.setHeaderText("Attenzione");
-            errorAlert.setContentText("Mammete");
-            errorAlert.showAndWait();
 			dispatcher.renderError(e);
 		}
     }
@@ -421,16 +406,8 @@ public class UserSearchController implements Initializable, DataInitializable<Us
         	annuncio3.setVisible(false);
 		} catch (CandidacyNotFoundException e) {
 			e.getCause().printStackTrace();
-            Alert errorAlert = new Alert(AlertType.ERROR);
-            errorAlert.setHeaderText("Attenzione");
-            errorAlert.setContentText("Errore");
-            errorAlert.showAndWait();
 		} catch (BusinessException e) {
 			e.getCause().printStackTrace();
-            Alert errorAlert = new Alert(AlertType.ERROR);
-            errorAlert.setHeaderText("Attenzione");
-            errorAlert.setContentText("Mammete");
-            errorAlert.showAndWait();
 			dispatcher.renderError(e);
 		}
     }
@@ -442,16 +419,8 @@ public class UserSearchController implements Initializable, DataInitializable<Us
         	annuncio4.setVisible(false);
 		} catch (CandidacyNotFoundException e) {
 			e.getCause().printStackTrace();
-            Alert errorAlert = new Alert(AlertType.ERROR);
-            errorAlert.setHeaderText("Attenzione");
-            errorAlert.setContentText("Errore");
-            errorAlert.showAndWait();
 		} catch (BusinessException e) {
 			e.getCause().printStackTrace();
-            Alert errorAlert = new Alert(AlertType.ERROR);
-            errorAlert.setHeaderText("Attenzione");
-            errorAlert.setContentText("Mammete");
-            errorAlert.showAndWait();
 			dispatcher.renderError(e);
 		}
     }
@@ -460,11 +429,14 @@ public class UserSearchController implements Initializable, DataInitializable<Us
     public void initialize(URL location, ResourceBundle resources) {   
     	
         // Pane non visibili finché non si cerca
+    	
     	annuncio1.setVisible(false);
         annuncio2.setVisible(false);
         annuncio3.setVisible(false);
         annuncio4.setVisible(false);        
-        // Descrizioni annuncio non editabili dall'utente
+        
+        // Descrizioni annuncio non editabili
+        
         annBio1.setEditable(false);
         annBio2.setEditable(false);
         annBio3.setEditable(false);
