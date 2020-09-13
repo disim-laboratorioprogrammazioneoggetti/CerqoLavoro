@@ -17,20 +17,13 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
-
-import it.univaq.disim.oop.cerqolavoro.business.CandidacyService;
 import it.univaq.disim.oop.cerqolavoro.business.CerqoLavoroBusinessFactory;
 import it.univaq.disim.oop.cerqolavoro.business.OfferService;
 import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileCerqoLavoroBusinessFactoryImpl;
-import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMCandidacyServiceImpl;
 import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMOfferServiceImpl;
-import it.univaq.disim.oop.cerqolavoro.domain.Candidacy;
 import it.univaq.disim.oop.cerqolavoro.domain.Offer;
 import it.univaq.disim.oop.cerqolavoro.domain.User;
-import it.univaq.disim.oop.cerqolavoro.domain.Worker;
 import it.univaq.disim.oop.cerqolavoro.view.ViewDispatcher;
-import it.univaq.disim.oop.cerqolavoro.view.ViewException;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,12 +43,14 @@ import javafx.stage.Stage;
 
 public class HireController implements Initializable, DataInitializable<User> {
 
-//Pane annunci
+// Pane annunci
+	
 @FXML private Pane Annuncio1;
 @FXML private Pane Annuncio2;
 @FXML private Pane Annuncio3;
 
-//bottoni
+// Bottoni
+
 @FXML private Button ShowOfferbtn;
 @FXML private Button Editbtn1;
 @FXML private Button Editbtn2;
@@ -64,59 +59,31 @@ public class HireController implements Initializable, DataInitializable<User> {
 @FXML private Button Removebtn1;
 @FXML private Button Removebtn11;
 
-//choice box 
-   
-  // choice box 3Â�â€¹ annuncio
-@FXML private ChoiceBox<String> EditSectorBOx11;
-@FXML private ChoiceBox<String> EditRetxTField11;
-@FXML private ChoiceBox<String> EditTypeContBox11;
-@FXML private ChoiceBox<String> EditTimeContBox11;
-@FXML private ChoiceBox<String> EditRegionBox11;
-@FXML private ChoiceBox<String> EditExpbox11;
-  // choice box 2Â�â€¹ annuncio
-@FXML private ChoiceBox<String> EditTypeContBox1;
-@FXML private ChoiceBox<String> EditTimeContBox1;
-@FXML private ChoiceBox<String> EditRegionBox1;
-@FXML private ChoiceBox<String> EditRetxTField1;
-@FXML private ChoiceBox<String> EditSectorBOx1;
-@FXML private ChoiceBox<String> EditExpbox1;
-  // choice box 1Â�â€¹ annuncio
+// ChoiceBox Annuncio n. 1
 @FXML private ChoiceBox<String> EditRetxTField;
 @FXML private ChoiceBox<String> EditSectorBOx;
 @FXML private ChoiceBox<String> EditTypeContBox;
 @FXML private ChoiceBox<String> EditTimeContBox;
 @FXML private ChoiceBox<String> EditRegionBox;
 @FXML private ChoiceBox<String> EditExpbox;
+// ChoiceBox Annuncio n. 2
+@FXML private ChoiceBox<String> EditTypeContBox1;
+@FXML private ChoiceBox<String> EditTimeContBox1;
+@FXML private ChoiceBox<String> EditRegionBox1;
+@FXML private ChoiceBox<String> EditRetxTField1;
+@FXML private ChoiceBox<String> EditSectorBOx1;
+@FXML private ChoiceBox<String> EditExpbox1;
+// ChoiceBox Annuncio n. 3
+@FXML private ChoiceBox<String> EditSectorBOx11;
+@FXML private ChoiceBox<String> EditRetxTField11;
+@FXML private ChoiceBox<String> EditTypeContBox11;
+@FXML private ChoiceBox<String> EditTimeContBox11;
+@FXML private ChoiceBox<String> EditRegionBox11;
+@FXML private ChoiceBox<String> EditExpbox11;
 
-//Label
-
-  //Label E-mail
 @FXML private Label eoEmail;
-  //Label 3Â�â€¹ annuncio
-@FXML private Label TitleLabel11;
-@FXML private Label PositionLabel11;
-@FXML private Label ContractTypeLabel11;
-@FXML private Label ContractTimeLabel11;
-@FXML private Label RetributionLabel11;
-@FXML private Label SectorLabel11;
-@FXML private Label RegionLabel11;
-@FXML private Label RetxTLabel11;
-@FXML private Label DegreeLabel11;
-@FXML private Label BonusLabel11;
-@FXML private Label ExpLabel11;
-  //Label 2Â�â€¹ annuncio
-@FXML private Label TitleLabel1;
-@FXML private Label PositionLabel1;
-@FXML private Label ContractTypeLabel1;
-@FXML private Label ContractTimeLabel1;
-@FXML private Label RetributionLabel1;
-@FXML private Label SectorLabel1;
-@FXML private Label RegionLabel1;
-@FXML private Label RetxTLabel1;
-@FXML private Label DegreeLabel1;
-@FXML private Label BonusLabel1;
-@FXML private Label ExpLabel1;
-  //Label 1Â�â€¹ annuncio
+
+// Label Annuncio n. 1
 @FXML private Label TitleLabel;
 @FXML private Label PositionLabel;
 @FXML private Label ContractTypeLabel;
@@ -128,43 +95,64 @@ public class HireController implements Initializable, DataInitializable<User> {
 @FXML private Label DegreeLabel;
 @FXML private Label BonusLabel;
 @FXML private Label ExpLabel;
+// Label Annuncio n. 2
+@FXML private Label TitleLabel1;
+@FXML private Label PositionLabel1;
+@FXML private Label ContractTypeLabel1;
+@FXML private Label ContractTimeLabel1;
+@FXML private Label RetributionLabel1;
+@FXML private Label SectorLabel1;
+@FXML private Label RegionLabel1;
+@FXML private Label RetxTLabel1;
+@FXML private Label DegreeLabel1;
+@FXML private Label BonusLabel1;
+@FXML private Label ExpLabel1;
+// Label Annuncio n. 3
+@FXML private Label TitleLabel11;
+@FXML private Label PositionLabel11;
+@FXML private Label ContractTypeLabel11;
+@FXML private Label ContractTimeLabel11;
+@FXML private Label RetributionLabel11;
+@FXML private Label SectorLabel11;
+@FXML private Label RegionLabel11;
+@FXML private Label RetxTLabel11;
+@FXML private Label DegreeLabel11;
+@FXML private Label BonusLabel11;
+@FXML private Label ExpLabel11;
 
-//TextArea
+// TextArea annunci
 @FXML private TextArea EditWorkInfoArea;
 @FXML private TextArea EditWorkInfoArea1;
 @FXML private TextArea EditWorkInfoArea11;
 
-//Textfield
-
-  //Textfield 3Â�â€¹ annuncio
-@FXML private TextField EditTitleField11;
-@FXML private TextField EditPositionField11;
-@FXML private TextField EditRetribution11;
-@FXML private TextField EditDegreeField11;
-@FXML private TextField EditBonusField11;
-  //Textfield 2Â�â€¹ annuncio
-@FXML private TextField EditTitleField1;
-@FXML private TextField EditPositionField1;
-@FXML private TextField EditRetribution1;
-@FXML private TextField EditDegreeField1;
-@FXML private TextField EditBonusField1;
-  //Textfield 1Â�â€¹ annuncio
+// TextArea Annuncio n. 1
 @FXML private TextField EditTitleField;
 @FXML private TextField EditPositionField;
 @FXML private TextField EditRetribution;
 @FXML private TextField EditDegreeField;
 @FXML private TextField EditBonusField;
+// TextArea Annuncio n. 2
+@FXML private TextField EditTitleField1;
+@FXML private TextField EditPositionField1;
+@FXML private TextField EditRetribution1;
+@FXML private TextField EditDegreeField1;
+@FXML private TextField EditBonusField1;
+// TextArea Annuncio n. 3
+@FXML private TextField EditTitleField11;
+@FXML private TextField EditPositionField11;
+@FXML private TextField EditRetribution11;
+@FXML private TextField EditDegreeField11;
+@FXML private TextField EditBonusField11;
 
-//candidature 1Â�â€¹ annuncio
+// Candidature Annuncio n. 1
 @FXML private Label candTitle1;
-@FXML private Label c1p1; //candidatura 1 pane 1
+@FXML private Label c1p1;
 @FXML private Label mailc1p1;
-@FXML private Label c2p1; //candidatura 2 pane 1
+@FXML private Label c2p1;
 @FXML private Label mailc2p1;
 @FXML private Label c3p1;
 @FXML private Label mailc3p1;
-
-//candidature 2Â�â€¹ annuncio
+// Candidature Annuncio n. 2
 @FXML private Label candTitle2;
 @FXML private Label c1p2;
 @FXML private Label mailc1p2;
@@ -172,14 +160,12 @@ public class HireController implements Initializable, DataInitializable<User> {
 @FXML private Label mailc2p2;
 @FXML private Label c3p2;
 @FXML private Label mailc3p2;
-
-//candidature 3Â�â€¹ annuncio
+// Candidature Annuncio n. 3
 @FXML private Label candTitle3;
 @FXML private Label c1p3;
 @FXML private Label mailc1p3;
 @FXML private Label c2p3;
 @FXML private Label mailc2p3;
-//@FXML private Label c3p3; errore per qualche motivo
 @FXML private Label mailc3p3;
 @FXML private Label c3p3;
 
@@ -201,7 +187,7 @@ public void initializeData(User user) {
       eoEmail.setText(user.getEmail());
 }
 
-//bottone per mostrare offerte
+// Bottone mostra offerte pubblicate
 
 @FXML void ShowOffer(ActionEvent event4) throws IOException {
 
@@ -306,9 +292,9 @@ public void initializeData(User user) {
 		   ex.printStackTrace(); }
 		    }
 		}
-/*
-/* Bottoni per modificare le offerte
-*/
+
+// Bottoni per modifica offerte
+
 @FXML void editbtnpushed(ActionEvent event5) {	
 	Label Orig[] = { TitleLabel, PositionLabel, RetributionLabel, DegreeLabel, BonusLabel, ContractTypeLabel, ContractTimeLabel, SectorLabel, RegionLabel, RetxTLabel, ExpLabel };
 	int i = 0, k = -1;
@@ -633,6 +619,8 @@ public void initializeData(User user) {
 	}
 }
 
+// Bottoni per eliminare offerte
+
 @FXML void Removebtnpushed1(ActionEvent event8) throws FileNotFoundException, IOException {
 	  try {
 	      Pane annunci[] = { Annuncio1, Annuncio2, Annuncio3};
@@ -660,8 +648,7 @@ public void initializeData(User user) {
 	    e.printStackTrace(); }
 	}
 
-//eventi candidature
-//pane 1
+// Pulsanti mostra lista candidati
 
 @FXML void showclist1(MouseEvent event) throws IOException {
 int i = 0, n = 0, k = 0;
@@ -715,6 +702,8 @@ try {
 		e.printStackTrace();
 	}
 }
+
+// Pulsanti mostra candidato selezionato
 
 @FXML void expandc1p1(MouseEvent event) {
 	try {
@@ -773,7 +762,8 @@ try {
 		e.printStackTrace(); }	
 }
 
-//pane 2
+// Pulsanti mostra lista candidati
+
 @FXML void showclist2(MouseEvent event) throws IOException {	
     int i = 0, n = 0, k = 0;
 String candidature2[] = new String[3];
@@ -826,6 +816,8 @@ try {
 		e.printStackTrace();
 	}
 }
+
+// Pulsanti mostra candidato selezionato
    
 @FXML void expandc1p2(MouseEvent event) {       
 	try {
@@ -881,7 +873,8 @@ try {
 		e.printStackTrace(); }
 }
 
-//pane 3
+// Pulsanti mostra lista candidati
+
 @FXML void showclist3(MouseEvent event) throws IOException {		
 int i = 0, n = 0, k = 0;
 String candidature3[] = new String[3];
@@ -934,6 +927,8 @@ try {
 		e.printStackTrace();
 	}
 }
+
+// Pulsanti mostra candidato selezionato
 
 @FXML void expandc1p3(MouseEvent event) {
 	try {
@@ -992,21 +987,18 @@ try {
 @Override 
 public void initialize(URL url, ResourceBundle resources) {
 	
-//Vedere annunci (falso)
+    // Annunci non visibili finch� non richiesti
 	Annuncio1.setVisible(false);
     Annuncio2.setVisible(false);
     Annuncio3.setVisible(false);
     
-//vedere candidature
-    
+    // Candidature non visibili finch� non richieste
     c1p1.setVisible(false);
     c2p1.setVisible(false);
-    c3p1.setVisible(false);
-    
+    c3p1.setVisible(false);  
     c1p2.setVisible(false);
     c2p2.setVisible(false);
-    c3p2.setVisible(false);
-    
+    c3p2.setVisible(false);    
     c1p3.setVisible(false);
     c2p3.setVisible(false);
     c3p3.setVisible(false);
@@ -1014,17 +1006,15 @@ public void initialize(URL url, ResourceBundle resources) {
     mailc3p3.setVisible(false);
     mailc2p3.setVisible(false);
     mailc1p3.setVisible(false);
-
     mailc3p2.setVisible(false);
     mailc2p2.setVisible(false);
-    mailc1p2.setVisible(false);
-    
+    mailc1p2.setVisible(false);    
     mailc3p1.setVisible(false);
     mailc2p1.setVisible(false);
     mailc1p1.setVisible(false);
     
-//Combobox
-    //annuncio1
+// Combobox
+    // Annuncio n. 1
     EditTypeContBox.getItems().addAll("Modifica Tipo Contratto","Tempo indeterminato","Tempo determinato","In somministrazione","Lavoro a Chiamata",
             "Lavoro a progetto","Lavoro accessorio","Lavoro in apprendistato","Tirocinio Formativo");
     EditTypeContBox.setValue("Modifica Tipo Contratto");
@@ -1049,7 +1039,7 @@ public void initialize(URL url, ResourceBundle resources) {
     EditExpbox.getItems().addAll("Modifica Esperienza","Meno di un Anno","Un anno","Due anni","Tre anni","Quattro anni","Cinque anni","Sei anni","Sette anni","Otto anni","Nove anni","Dieci anni","Piu' di Dieci Anni");
     EditExpbox.setValue("Modifica Esperienza");
     
-    //annuncio2
+    // Annuncio n. 2
     EditTypeContBox1.getItems().addAll("Modifica Tipo Contratto","Tempo indeterminato","Tempo determinato","In somministrazione","Lavoro a Chiamata",
             "Lavoro a progetto","Lavoro accessorio","Lavoro in apprendistato","Tirocinio Formativo");
     EditTypeContBox1.setValue("Modifica Tipo Contratto");
@@ -1074,7 +1064,7 @@ public void initialize(URL url, ResourceBundle resources) {
     EditExpbox1.getItems().addAll("Modifica Esperienza","Meno di un Anno","Un anno","Due anni","Tre anni","Quattro anni","Cinque anni","Sei anni","Sette anni","Otto anni","Nove anni","Dieci anni","Piu' di Dieci Anni");
     EditExpbox1.setValue("Modifica Esperienza");
     
-    //annuncio3
+    // Annuncio n. 3
     EditTypeContBox11.getItems().addAll("Modifica Tipo Contratto","Tempo indeterminato","Tempo determinato","In somministrazione","Lavoro a Chiamata",
             "Lavoro a progetto","Lavoro accessorio","Lavoro in apprendistato","Tirocinio Formativo");
     EditTypeContBox11.setValue("Modifica Tipo Contratto");
@@ -1098,6 +1088,6 @@ public void initialize(URL url, ResourceBundle resources) {
     
     EditExpbox11.getItems().addAll("Modifica Esperienza","Meno di un Anno","Un anno","Due anni","Tre anni","Quattro anni","Cinque anni","Sei anni","Sette anni","Otto anni","Nove anni","Dieci anni","Piu' di Dieci Anni");
     EditExpbox11.setValue("Modifica Esperienza");
-}
+    }
 
 }

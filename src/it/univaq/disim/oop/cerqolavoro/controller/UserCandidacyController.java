@@ -1,45 +1,19 @@
 package it.univaq.disim.oop.cerqolavoro.controller;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Scanner;
-
 import it.univaq.disim.oop.cerqolavoro.business.BusinessException;
 import it.univaq.disim.oop.cerqolavoro.business.CandidacyNotFoundException;
 import it.univaq.disim.oop.cerqolavoro.business.CandidacyService;
 import it.univaq.disim.oop.cerqolavoro.business.CerqoLavoroBusinessFactory;
-import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileCandidacyServiceImpl;
-import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileCerqoLavoroBusinessFactoryImpl;
 import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMCandidacyServiceImpl;
 import it.univaq.disim.oop.cerqolavoro.domain.Candidacy;
 import it.univaq.disim.oop.cerqolavoro.domain.User;
-import it.univaq.disim.oop.cerqolavoro.domain.Worker;
 import it.univaq.disim.oop.cerqolavoro.view.ViewDispatcher;
-import it.univaq.disim.oop.cerqolavoro.view.ViewException;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
@@ -88,6 +62,8 @@ public class UserCandidacyController implements Initializable, DataInitializable
 	public void initializeData(User user) {
 	ucEmail.setText(user.getEmail());
 	}
+	
+	// Ricerca candidature nel file
     
     @FXML
     void usrcCandidatesBtn(ActionEvent event) throws CandidacyNotFoundException, BusinessException {
@@ -124,6 +100,8 @@ public class UserCandidacyController implements Initializable, DataInitializable
                           }
                         }
     
+    // Pulsanti ritira candidatura
+    
     @FXML
     void rc1Button(ActionEvent event) throws CandidacyNotFoundException, IOException {
     	try {
@@ -133,10 +111,6 @@ public class UserCandidacyController implements Initializable, DataInitializable
     	}
      catch (Exception e) {
         e.printStackTrace();
-        Alert error2Alert = new Alert(AlertType.ERROR);
-        error2Alert.setHeaderText("ERRORE");
-        error2Alert.setContentText("Operazione non completata");
-        error2Alert.showAndWait();
      }
     }
 
@@ -149,10 +123,6 @@ public class UserCandidacyController implements Initializable, DataInitializable
     	}
      catch (Exception e) {
         e.printStackTrace();
-        Alert error2Alert = new Alert(AlertType.ERROR);
-        error2Alert.setHeaderText("ERRORE");
-        error2Alert.setContentText("Operazione non completata");
-        error2Alert.showAndWait();
      }
     }
 
@@ -165,10 +135,6 @@ public class UserCandidacyController implements Initializable, DataInitializable
     	}
      catch (Exception e) {
         e.printStackTrace();
-        Alert error2Alert = new Alert(AlertType.ERROR);
-        error2Alert.setHeaderText("ERRORE");
-        error2Alert.setContentText("Operazione non completata");
-        error2Alert.showAndWait();
      }
     }
 
@@ -181,10 +147,6 @@ public class UserCandidacyController implements Initializable, DataInitializable
     	}
      catch (Exception e) {
         e.printStackTrace();
-        Alert error2Alert = new Alert(AlertType.ERROR);
-        error2Alert.setHeaderText("ERRORE");
-        error2Alert.setContentText("Operazione non completata");
-        error2Alert.showAndWait();
      }
     }
     
@@ -197,10 +159,6 @@ public class UserCandidacyController implements Initializable, DataInitializable
         	}
          catch (Exception e) {
             e.printStackTrace();
-            Alert error2Alert = new Alert(AlertType.ERROR);
-            error2Alert.setHeaderText("ERRORE");
-            error2Alert.setContentText("Operazione non completata");
-            error2Alert.showAndWait();
          }
     }
     
@@ -213,16 +171,14 @@ public class UserCandidacyController implements Initializable, DataInitializable
         	}
          catch (Exception e) {
             e.printStackTrace();
-            Alert error2Alert = new Alert(AlertType.ERROR);
-            error2Alert.setHeaderText("ERRORE");
-            error2Alert.setContentText("Operazione non completata");
-            error2Alert.showAndWait();
          }
     }
 	
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    	
       // Pane non visibili finché non si cerca
+    	
       candann1.setVisible(false);
       candann2.setVisible(false);
       candann3.setVisible(false);
@@ -230,9 +186,11 @@ public class UserCandidacyController implements Initializable, DataInitializable
       candann5.setVisible(false);
       candann6.setVisible(false);      
       ucEmail.setVisible(false); 
+      
   	  assert uchBtn != null;
       assert ucaBtn != null;
       assert ucsBtn != null;
+      
     }; 
 
 }

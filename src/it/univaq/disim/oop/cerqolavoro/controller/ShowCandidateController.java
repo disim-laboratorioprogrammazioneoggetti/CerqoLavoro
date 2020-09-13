@@ -54,98 +54,38 @@ public class ShowCandidateController implements Initializable, DataInitializable
 	public void RegionFunction (String regiontext) {CompareRegionAnn.setText(regiontext);
 	  if(regiontext.equals(CompareRegionCan.getText().toString())){ResultLabel2.setText("Idoneo");ResultLabel2.setVisible(true);}};
     
-	@FXML
-    private Label namelabel;
-	
-    @FXML
-    private Label ResultLabel1;
-    
-    @FXML
-    private Label ResultLabel2;
-
-    @FXML
-    private Label explabel;
-
-    @FXML
-    private Label surnamelabel;
-
-    @FXML
-    private Label sectorlabel;
-
-    @FXML
-    private Label regionlabel;
-
-    @FXML
-    private Label citylabel;
-
-    @FXML
-    private Label provlabel;
-
-    @FXML
-    private Label instrctnlabel;
-
-    @FXML
-    private Label CompareRegionAnn;
-
-    @FXML
-    private Label CompareSectornAnn;
-
-    @FXML
-    private Label CompareExpAnn;
-
-    @FXML
-    private Label CompareRegionCan;
-    
-    @FXML
-    private Label maillabel;
-
-    @FXML
-    private Label CompareSectorCan;
-
-    @FXML
-    private Label CompareExpCan;
-
-    @FXML
-    private Label ResultLabel;
-    
-    @FXML
-    private TextArea DescriptionArea;
-
-    @FXML
-    private Label AnntitleLabel;
-
-    @FXML
-    private Label TitleCLabel;
-    
-    @FXML
-    private Label TitleNlabel;
-    
-    @FXML
-    private Pane mexPane;
-    
-    @FXML
-    private Label mexName;
-    
-    @FXML
-    private Label MexSurname;
-    
-    @FXML
-    private TextArea MexArea;
-    
-    @FXML
-    private Button SendMexBtn;
-
-    @FXML
-    private Button Contactbutton;
-
-    @FXML
-    private Button Rejectbutton;
-    
-    @FXML
-    private Button scExitButton;
-    
-    @FXML
-    private Label emplEmail;
+	@FXML private Label namelabel;	
+    @FXML private Label ResultLabel1;    
+    @FXML private Label ResultLabel2;
+    @FXML private Label explabel;
+    @FXML private Label surnamelabel;
+    @FXML private Label sectorlabel;
+    @FXML private Label regionlabel;
+    @FXML private Label citylabel;
+    @FXML private Label provlabel;
+    @FXML private Label instrctnlabel;
+    @FXML private Label CompareRegionAnn;
+    @FXML private Label CompareSectornAnn;
+    @FXML private Label CompareExpAnn;
+    @FXML private Label CompareRegionCan;    
+    @FXML private Label maillabel;
+    @FXML private Label CompareSectorCan;
+    @FXML private Label CompareExpCan;
+    @FXML private Label ResultLabel;    
+    @FXML private TextArea DescriptionArea;
+    @FXML private Label AnntitleLabel;
+    @FXML private Label TitleCLabel;   
+    @FXML private Label TitleNlabel;   
+    @FXML private Pane mexPane;    
+    @FXML private Label mexName;   
+    @FXML private Label MexSurname;   
+    @FXML private TextArea MexArea;   
+    @FXML private Button SendMexBtn;
+    @FXML private Button Contactbutton;
+    @FXML private Button Rejectbutton;    
+    @FXML private Button scExitButton;    
+    @FXML private Label emplEmail;
+    @FXML private Label showCandidateStatus;
     
     public Stage stage = new Stage();   
     private ViewDispatcher dispatcher;    
@@ -164,6 +104,8 @@ public class ShowCandidateController implements Initializable, DataInitializable
 		messageService = factory.getMessageService();
 	}
 	
+	// Passaggio email candidato dall'Hire alla scena attuale
+	
 	public void emplEmailFunction(String email) {
 		emplEmail.setText(email);
 	}
@@ -174,6 +116,8 @@ public class ShowCandidateController implements Initializable, DataInitializable
         stage.close();
     }
     
+    // Contatta candidato
+    
     @FXML
     void Contactbtnpushed(ActionEvent event1) {
     	mexPane.setVisible(true);
@@ -182,8 +126,15 @@ public class ShowCandidateController implements Initializable, DataInitializable
 
     @FXML
     void SendMex(ActionEvent event2) throws IOException, BusinessException {
+    	try {
     	messageService.createMessages(maillabel.getText().toString(), MexArea.getText().toString() );
+    	} catch (Exception e) {
+            e.printStackTrace();
+            showCandidateStatus.setText("Errore durante l'invio del messaggio");
+    	}
     }
+    
+    // Rifiuta candidatura
     
     @FXML
     void rejectBtn(ActionEvent event) throws FileNotFoundException, IOException {
@@ -192,38 +143,35 @@ public class ShowCandidateController implements Initializable, DataInitializable
       }
      catch (Exception e) {
         e.printStackTrace();
-        Alert warningAlert = new Alert(AlertType.WARNING);
-        warningAlert.setHeaderText("Attenzione");
-        warningAlert.setContentText("Questa candidatura non è più attiva");
-        warningAlert.showAndWait();
+        showCandidateStatus.setText("Candidatura non trovata");
      }
     }
     
     public void mailFunction (String mailtext) {   	
-    	maillabel.setText(mailtext);  	
+    maillabel.setText(mailtext);  	
     int a=1,b=2,c=5,d=6,e=8,f=9,g=10,h=13,i=14;	
 	List<String> line;
 	try {		
 		line = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.WORKER_FILE_DIRECTORY + maillabel.getText().toString()+".csv"), StandardCharsets.UTF_8);
-	namelabel.setText(line.get(a));
-	mexName.setText(line.get(a));
-	TitleNlabel.setText(line.get(a));
-	surnamelabel.setText(line.get(b));
-	MexSurname.setText(line.get(b));
-	TitleCLabel.setText(line.get(b));
-	explabel.setText(line.get(c));
-	CompareExpCan.setText(line.get(c));
-	instrctnlabel.setText(line.get(d));
-	regionlabel.setText(line.get(e));
-	CompareRegionCan.setText(line.get(e));
-	provlabel.setText(line.get(f));
-	citylabel.setText(line.get(g));
-	sectorlabel.setText(line.get(h));
-	CompareSectorCan.setText(line.get(h));
-	DescriptionArea.setText(line.get(i));	
-	} catch (IOException e1) {
-		e1.printStackTrace();
-	}
+	    namelabel.setText(line.get(a));
+	    mexName.setText(line.get(a));
+    	TitleNlabel.setText(line.get(a));
+    	surnamelabel.setText(line.get(b));
+    	MexSurname.setText(line.get(b));
+    	TitleCLabel.setText(line.get(b));
+    	explabel.setText(line.get(c));
+    	CompareExpCan.setText(line.get(c));
+    	instrctnlabel.setText(line.get(d));
+    	regionlabel.setText(line.get(e));
+    	CompareRegionCan.setText(line.get(e));
+    	provlabel.setText(line.get(f));
+	    citylabel.setText(line.get(g));
+	    sectorlabel.setText(line.get(h));
+	    CompareSectorCan.setText(line.get(h));
+	    DescriptionArea.setText(line.get(i));	
+	    } catch (IOException er) {
+		er.printStackTrace();
+	    }
     };
     
 	@Override

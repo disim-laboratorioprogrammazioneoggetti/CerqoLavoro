@@ -30,15 +30,6 @@ public class ViewDispatcher implements DataInitializable<Object> {
 
   private ViewDispatcher() {
   }
-
-  public void openingView(Stage stage) throws ViewException {
-    this.stage = stage;
-    Parent openingView = loadView("Opening").getView();
-    Scene scene = new Scene(openingView);
-    stage.setScene(scene);
-    stage.setResizable(false);
-    stage.show();
-  }
   
   public void loginView(Stage stage) throws ViewException {
 	  this.stage = stage;
@@ -93,80 +84,8 @@ public class ViewDispatcher implements DataInitializable<Object> {
 	    stage.setResizable(false);
 	    stage.show();
 	  }
-  
-  public void employerdashView(User user) throws ViewException {
-	    Parent employerdashView = loadView("EmployerDashboard").getView();
-	    Scene scene = new Scene(employerdashView);
-	    stage.setScene(scene);
-	    stage.setResizable(false);
-	    stage.show();
-	  }
-  
-  public void userdashView(User user) throws ViewException {
-	    Parent userdashView = loadView("UserDashboard").getView();
-	    Scene scene = new Scene(userdashView);
-	    stage.setScene(scene);
-	    stage.setResizable(false);
-	    stage.show();
-	  }
-  
-  public void hireView(User user) throws ViewException {
-	    Parent hireView = loadView("Hire").getView();
-	    Scene scene = new Scene(hireView);
-	    stage.setScene(scene);
-	    stage.setResizable(false);
-	    stage.show();
-	  }
-  
-  public void addofferView(User user) throws ViewException {
-	    Parent addofferView = loadView("AddOffer").getView();
-	    Scene scene = new Scene(addofferView);
-	    stage.setScene(scene);
-	    stage.setResizable(false);
-	    stage.show();
-	  }
-  
-  public void useraccountView(User user) throws ViewException {
-	    Parent useraccountView = loadView("UserAccount").getView();
-	    Scene scene = new Scene(useraccountView);
-	    stage.setScene(scene);
-	    stage.setResizable(false);
-	    stage.show();
-	  }
-  
-  public void employersearchView(User user) throws ViewException {
-	    Parent employersearchView = loadView("EmployerSearch").getView();
-	    Scene scene = new Scene(employersearchView);
-	    stage.setScene(scene);
-	    stage.setResizable(false);
-	    stage.show();
-	  }
 
-  public void showcandidateView(User user) throws ViewException {
-	    Parent showcandidateView = loadView("ShowCandidate").getView();
-	    Scene scene = new Scene(showcandidateView);
-	    stage.setScene(scene);
-	    stage.setResizable(false);
-	    stage.show();
-	  }
-  
-  public void candidacyView(User user) throws ViewException {
-	    Parent candidacyView = loadView("UserCandidacy").getView();
-	    Scene scene = new Scene(candidacyView);
-	    stage.setScene(scene);
-	    stage.setResizable(false);
-	    stage.show();
-	  }
-  
-  public void usersearchView(User user) throws ViewException {
-	    Parent usersearchView = loadView("UserSearch").getView();
-	    Scene scene = new Scene(usersearchView);
-	    stage.setScene(scene);
-	    stage.setResizable(false);
-	    stage.show();
-	  }
-
-	public void renderError(Exception e) {
+  public void renderError(Exception e) {
 		e.printStackTrace();
 		System.exit(1);
 	}

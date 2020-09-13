@@ -13,15 +13,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.ResourceBundle;
-
 import it.univaq.disim.oop.cerqolavoro.business.BusinessException;
-import it.univaq.disim.oop.cerqolavoro.business.CandidacyService;
 import it.univaq.disim.oop.cerqolavoro.business.CerqoLavoroBusinessFactory;
 import it.univaq.disim.oop.cerqolavoro.business.MessageService;
 import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileCerqoLavoroBusinessFactoryImpl;
-import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMCandidacyServiceImpl;
 import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMMessageServiceImpl;
-import it.univaq.disim.oop.cerqolavoro.domain.Candidacy;
 import it.univaq.disim.oop.cerqolavoro.domain.Message;
 import it.univaq.disim.oop.cerqolavoro.domain.User;
 import it.univaq.disim.oop.cerqolavoro.view.ViewDispatcher;
@@ -59,19 +55,16 @@ public class UserMessagesController implements Initializable, DataInitializable<
 	umEmail.setText(user.getEmail());
 	}
           
-	//vedere i messaggi per le candidature
+	// Mostra messaggi ricevuti dalle aziende
 	
     @FXML
     void ShowMex(ActionEvent event) throws BusinessException, IOException {	
-	//check per vedere se il file esiste
-	boolean MexFileExistCheck = false;
+	try {
 	File mexCheck = new File(FileCerqoLavoroBusinessFactoryImpl.MESSAGES_FILE_DIRECTORY + umEmail.getText().toString() + "_mex.txt");
-	MexFileExistCheck = mexCheck.exists();	
-	//vedere i mex se il file esiste
-	if(MexFileExistCheck == true) {		
+	if(mexCheck.exists()) {		
 		TextArea mex[] = { MexArea1, MexArea2, MexArea3 };
-		String PREmex[] = new String [3];
-		String listamex[] = new String [3];	
+		String preMex[] = new String [3];
+		String listaMex[] = new String [3];	
 		int i = 0, k = 0, a = 0,b = 1;		
 		BufferedReader reader = new BufferedReader(new FileReader(FileCerqoLavoroBusinessFactoryImpl.MESSAGES_FILE_DIRECTORY + umEmail.getText().toString() + "_mex.txt"));
 		int lines = 0;
@@ -82,11 +75,10 @@ public class UserMessagesController implements Initializable, DataInitializable<
 		BufferedReader read = new BufferedReader(
 		          new InputStreamReader(
 		              new FileInputStream(FileCerqoLavoroBusinessFactoryImpl.MESSAGES_FILE_DIRECTORY + umEmail.getText().toString() + "_mex.txt"), StandardCharsets.UTF_8));
-		 List<String> line = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.MESSAGES_FILE_DIRECTORY + umEmail.getText().toString() + "_mex.txt"), StandardCharsets.UTF_8);
-		 try {   
+		 List<String> line = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.MESSAGES_FILE_DIRECTORY + umEmail.getText().toString() + "_mex.txt"), StandardCharsets.UTF_8);  
 			  while ( ( line != null ) && ( i < cont )) {		  
-				  PREmex[i] = line.get(a);
-				  listamex[i] = line.get(b);			  
+				  preMex[i] = line.get(a);
+				  listaMex[i] = line.get(b);			  
 			    k++; i++; a += 2; b += 2;  			    
 			  if ( k < 3 ) {
 			  for ( i = k; i < 3; i++ ) {
@@ -94,18 +86,20 @@ public class UserMessagesController implements Initializable, DataInitializable<
 			  }			  
 			  for ( i = 0; i < k ; i++ ) {   
 				  mex[i].setVisible(true);
-				  mex[i].setText(PREmex[i] + "\n" + listamex[i]); }
+				  mex[i].setText(preMex[i] + "\n" + listaMex[i]); }
 			  read.close(); }
-			  } catch (FileNotFoundException ex) {
-			   ex.printStackTrace();
-			   } catch (IOException ex) {
-			   ex.printStackTrace();
-			   }
-	     }
+			  }
+	 } catch (FileNotFoundException ex) {
+		ex.printStackTrace();
+	 } catch (IOException ex) {
+		ex.printStackTrace();
+	 }
 	}
+
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
     	MexArea1.setVisible(false);
     	MexArea1.setEditable(false);
     	MexArea2.setVisible(false);
