@@ -43,7 +43,7 @@
                </font>
             </Label>
             <TextArea fx:id="MexArea" layoutX="28.0" layoutY="75.0" prefHeight="339.0" prefWidth="290.0" promptText="Lascia un messaggio al candidato selezionato." />
-            <Button fx:id="SendMexBtn" layoutX="242.0" layoutY="440.0" mnemonicParsing="false" onAction="#SendMex" prefHeight="25.0" prefWidth="67.0" text="Invia" />
+            <Button fx:id="SendMexBtn" layoutX="251.0" layoutY="424.0" mnemonicParsing="false" onAction="#SendMex" prefHeight="25.0" prefWidth="67.0" text="Invia" />
             <Label layoutX="137.0" layoutY="14.0" prefHeight="19.0" prefWidth="73.0" text="Contatta :">
                <font>
                   <Font name="Segoe UI" size="16.0" />
@@ -78,7 +78,7 @@
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="citylabel" layoutX="84.0" layoutY="138.0" prefHeight="19.0" prefWidth="105.0" text="CITTA'">
+            <Label fx:id="citylabel" layoutX="85.0" layoutY="138.0" prefHeight="19.0" prefWidth="105.0" text="CITTA'">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
@@ -154,12 +154,12 @@
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="maillabel" layoutX="88.0" layoutY="37.0" prefHeight="19.0" prefWidth="23.0">
+            <Text layoutX="29.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+            <Label fx:id="maillabel" layoutX="84.0" layoutY="37.0" prefHeight="19.0" prefWidth="105.0">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Text layoutX="29.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
          </children>
       </Pane>
       <Pane layoutX="388.0" layoutY="406.0" prefHeight="180.0" prefWidth="402.0" style="-fx-background-color: #f1efef;">
@@ -234,36 +234,20 @@
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="Contactbutton" layoutX="48.0" layoutY="146.0" mnemonicParsing="false" onAction="#Contactbtnpushed" prefHeight="25.0" prefWidth="67.0" text="Contatta" />
-            <Button fx:id="Rejectbutton" layoutX="223.0" layoutY="146.0" mnemonicParsing="false" onAction="#rejectBtn" prefHeight="25.0" prefWidth="129.0" text="Rifiuta Candidatura" />
-            <Label fx:id="ResultLabel" layoutX="351.0" layoutY="40.0" prefHeight="19.0" prefWidth="49.0">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="ResultLabel1" layoutX="351.0" layoutY="59.0" prefHeight="19.0" prefWidth="49.0">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="ResultLabel2" layoutX="351.0" layoutY="78.0" prefHeight="19.0" prefWidth="49.0">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </Label>
+            <Button fx:id="Contactbutton" layoutX="48.0" layoutY="141.0" mnemonicParsing="false" onAction="#Contactbtnpushed" prefHeight="25.0" prefWidth="67.0" text="Contatta" />
+            <Button fx:id="Rejectbutton" layoutX="224.0" layoutY="141.0" mnemonicParsing="false" onAction="#rejectBtn" prefHeight="25.0" prefWidth="129.0" text="Rifiuta Candidatura" />
             <Separator layoutX="165.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="180.0" prefWidth="7.0" />
          </children>
       </Pane>
       <Separator layoutX="371.0" layoutY="122.0" orientation="VERTICAL" prefHeight="473.0" prefWidth="7.0" />
       <Separator layoutX="374.0" layoutY="394.0" prefHeight="2.0" prefWidth="426.0" />
       <Button fx:id="scExitButton" layoutX="690.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitButtonAction" stylesheets="@../Stylesheet/fullpackstyling.css" text="Torna indietro" />
-      <Label fx:id="emplEmail" layoutX="31.0" layoutY="578.0" prefHeight="17.0" prefWidth="31.0" textFill="WHITE" />
       <ImageView fitHeight="79.0" fitWidth="93.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/logoCQcrop.png" />
          </image>
       </ImageView>
-      <Label fx:id="showCandidateStatus" layoutX="192.0" layoutY="105.0" prefHeight="17.0" prefWidth="366.0">
+      <Label fx:id="showCandidateStatus" layoutX="195.0" layoutY="96.0" prefHeight="17.0" prefWidth="366.0">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>

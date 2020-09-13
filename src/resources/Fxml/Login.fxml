@@ -68,7 +68,7 @@
          </children>
       </Pane>
       <Button fx:id="employerSignUpButton" layoutX="681.0" layoutY="127.0" mnemonicParsing="false" onAction="#employerSignUp" stylesheets="@../Stylesheet/fullpackstyling.css" text="Azienda" />
-      <Button fx:id="workerSignUpButton" layoutX="110.0" layoutY="127.0" mnemonicParsing="false" onAction="#workerSignUp" stylesheets="@../Stylesheet/fullpackstyling.css" text="Utente" />
+      <Button fx:id="workerSignUpButton" layoutX="110.0" layoutY="127.0" mnemonicParsing="false" onAction="#workerSignUp" stylesheets="@../Stylesheet/fullpackstyling.css" text="Impiegato" />
       <Text layoutX="321.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Non sei ancora registrato?">
          <font>
             <Font name="Segoe UI" size="18.0" />

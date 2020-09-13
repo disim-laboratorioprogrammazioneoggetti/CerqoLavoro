@@ -13,8 +13,6 @@ public abstract class CerqoLavoroBusinessFactory {
 	}
 	
 	public abstract UserService getUserService();
-	public abstract WorkerService getWorkerService();
-	public abstract EmployerService getEmployerService();
 	public abstract OfferService getOfferService();
 	public abstract CandidacyService getCandidacyService();
 	public abstract MessageService getMessageService();

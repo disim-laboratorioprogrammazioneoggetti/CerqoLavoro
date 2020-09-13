@@ -1,47 +1,27 @@
 package it.univaq.disim.oop.cerqolavoro.business.impl.file;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileCerqoLavoroBusinessFactoryImpl;
 import it.univaq.disim.oop.cerqolavoro.business.BusinessException;
-import it.univaq.disim.oop.cerqolavoro.business.EmployerService;
 import it.univaq.disim.oop.cerqolavoro.business.UserNotFoundException;
 import it.univaq.disim.oop.cerqolavoro.business.UserService;
-import it.univaq.disim.oop.cerqolavoro.business.WorkerService;
 import it.univaq.disim.oop.cerqolavoro.domain.Employer;
 import it.univaq.disim.oop.cerqolavoro.domain.User;
 import it.univaq.disim.oop.cerqolavoro.domain.Worker;
-import it.univaq.disim.oop.cerqolavoro.view.ViewDispatcher;
-import it.univaq.disim.oop.cerqolavoro.view.ViewException;
-import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileData;
-import it.univaq.disim.oop.cerqolavoro.business.impl.file.Utility;
-import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMUserServiceImpl;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.stage.Stage;
 
 public class FileUserServiceImpl implements UserService {
 	private String userFilename;
-//	private String workerFilename;
-//	private String employerFilename;
 	private UserService userService;
 
 	public FileUserServiceImpl(String userFilename, UserService userService) {
 		this.userFilename = userFilename;
-	//	this.workerFilename = workerFilename;
-	//	this.employerFilename = employerFilename;
 		this.userService = userService;
-	//	this.workerService = workerService;
-	//	this.employerService = employerService;
 	}
-	
-//	public Stage stage = new Stage();
 	
 	@Override
 	public User authenticate(String email, String password) throws UserNotFoundException, BusinessException {
@@ -70,7 +50,6 @@ public class FileUserServiceImpl implements UserService {
 	      read.close();
 	      if(line.equals(password)) {
 	            user = new Worker();
-	        //     RAMUserServiceImpl.authenticate(email, password);
 	            user.setEmail(email);
 	            user.setPassword(password); 
 	        } else {       

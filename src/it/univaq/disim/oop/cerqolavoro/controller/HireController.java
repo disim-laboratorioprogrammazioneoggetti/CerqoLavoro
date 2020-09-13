@@ -710,8 +710,7 @@ try {
 		FXMLLoader loader = new FXMLLoader (getClass().getResource("/resources/Fxml/ShowCandidate.fxml"));
         Parent root = (Parent) loader.load();
         ShowCandidateController SCController=loader.getController();
-        SCController.emplEmailFunction(eoEmail.getText());
-        SCController.mailFunction(mailc2p1.getText());
+        SCController.mailFunction(mailc1p1.getText());
         SCController.TitleFunction(TitleLabel.getText());
         SCController.ExpFunction(ExpLabel.getText());
         SCController.SectorFunction(SectorLabel.getText());
@@ -719,7 +718,7 @@ try {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setResizable(false);
-        stage.show();   
+        stage.show();    
 	} catch (IOException e) {
 		e.printStackTrace(); }	
 }
@@ -729,7 +728,6 @@ try {
 		FXMLLoader loader = new FXMLLoader (getClass().getResource("/resources/Fxml/ShowCandidate.fxml"));
         Parent root = (Parent) loader.load();     
         ShowCandidateController SCController=loader.getController();
-        SCController.emplEmailFunction(eoEmail.getText());
         SCController.mailFunction(mailc2p1.getText());
         SCController.TitleFunction(TitleLabel.getText());
         SCController.ExpFunction(ExpLabel.getText());
@@ -748,7 +746,6 @@ try {
 		FXMLLoader loader = new FXMLLoader (getClass().getResource("/resources/Fxml/ShowCandidate.fxml"));
         Parent root = (Parent) loader.load();
         ShowCandidateController SCController=loader.getController();
-        SCController.emplEmailFunction(eoEmail.getText());
         SCController.mailFunction(mailc3p1.getText());
         SCController.TitleFunction(TitleLabel.getText());
         SCController.ExpFunction(ExpLabel.getText());
