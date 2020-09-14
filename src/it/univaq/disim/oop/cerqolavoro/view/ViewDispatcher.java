@@ -42,13 +42,10 @@ public class ViewDispatcher implements DataInitializable<Object> {
   public void loggedIn(User user) {
 	  try {
 	  View<User> layoutView = loadView("Layout");
-	  //Deve essere invocato il metodo initializeData per fornire al controllore di
-	  //layout l'utente
+	  // Metodo initializeData per Layout Controller
 	  DataInitializable<User> layoutController = layoutView.getController();
 	  layoutController.initializeData(user);
 	  layout = (BorderPane) layoutView.getView();
-	  //Anche in questo caso viene passato l'utente perche' nella vista di
-	  //benvenuto il testo varia a seconda se e' docente od utente
 	  renderView("Home", user);
 	  Scene scene = new Scene(layout);
 	  stage.setScene(scene);
@@ -66,7 +63,7 @@ public class ViewDispatcher implements DataInitializable<Object> {
 	  renderError(e);
 	  }
   }
-
+  // Vista Registrazione Worker
   public void usersignupView(Stage stage) throws ViewException {
 	    this.stage = stage;
 	    Parent usersignup = loadView("UserSignUp").getView();
@@ -75,7 +72,7 @@ public class ViewDispatcher implements DataInitializable<Object> {
 	    stage.setResizable(false);
 	    stage.show();
 	  }
-  
+  // Vista Registrazione Employer
   public void employersignupView(Stage stage) throws ViewException {
 	    this.stage = stage;
 	    Parent employersignupView = loadView("EmployerSignUp").getView();

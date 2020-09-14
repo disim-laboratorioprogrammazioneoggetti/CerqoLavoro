@@ -1,32 +1,27 @@
 package it.univaq.disim.oop.cerqolavoro.business.impl.file;
 
-import java.io.File;
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
-
-import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileData;
-import it.univaq.disim.oop.cerqolavoro.domain.Worker;
 
 public class Utility {
-	
-	public static String readPass(String profile, String password) throws IOException {
-	//	FileData result = new FileData();
-		String result = null;
+	/*
+	public static int readLine(String filename, int number) throws IOException {
 		try {
-			FileReader read = new FileReader(profile);
-			String line = Files.readAllLines(Paths.get(profile)).get(0);	
-			read.close();
-			if (line.equals(password)) {
-				result = "ok";
-		    }
+	    BufferedReader reader = new BufferedReader(new FileReader(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME));
+	      int lines = 0;
+	      while (reader.readLine() != null) {
+	        lines++;
+	      }
+	      reader.close();
+	      int cont = lines / 13;
+		  return cont;
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-		return result;
-	}
+	} */
 		
 }
