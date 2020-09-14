@@ -21,7 +21,6 @@ public class RAMUserServiceImpl implements UserService {
 			Worker worker = new Worker();
 			worker.setEmail(email);
 			worker.setPassword(password);
-			worker.setName("Armando");
 			return worker;
 		} 
 		if ("employer".equalsIgnoreCase(email)) {

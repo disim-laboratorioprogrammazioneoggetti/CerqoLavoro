@@ -30,20 +30,15 @@ public class FileUserServiceImpl implements UserService {
 	      User user = null;
 	      File u = new File(FileCerqoLavoroBusinessFactoryImpl.WORKER_FILE_DIRECTORY + email + ".csv");
 	      File e = new File(FileCerqoLavoroBusinessFactoryImpl.EMPLOYER_FILE_DIRECTORY + email + ".csv");
-	      
+	      // Ricerca utente
 	      if (u.exists()) {
-	    	  workerCheck = true;
-	      } 
+	    	  workerCheck = true; } 
           if (e.exists()) {
-	    	  employerCheck = true;
-	      }
+	    	  employerCheck = true; }
 	      if (!u.exists() && !e.exists()) {
-				Alert error1Alert = new Alert(AlertType.ERROR);
-	            error1Alert.setHeaderText("ERRORE");
-	            error1Alert.setContentText("Utente non trovato");
-	            error1Alert.showAndWait();
-	      }
-	      
+      	    throw new UserNotFoundException();
+	      }	      
+	      // Verifica password
 	      if ( workerCheck == true ) {
 	      FileReader read = new FileReader(u);
 	      String line = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.WORKER_FILE_DIRECTORY + email + ".csv")).get(0);  
@@ -53,13 +48,8 @@ public class FileUserServiceImpl implements UserService {
 	            user.setEmail(email);
 	            user.setPassword(password); 
 	        } else {       
-	                  Alert error2Alert = new Alert(AlertType.ERROR);
-	                  error2Alert.setHeaderText("ERRORE");
-	                  error2Alert.setContentText("RIP");
-	                  error2Alert.showAndWait();
-	          }		
-	      }
-	      
+	        	 throw new UserNotFoundException(); }		
+	      }	      
 	      if ( employerCheck == true ) {
 	      FileReader read = new FileReader(e);
 	      String line = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.EMPLOYER_FILE_DIRECTORY + email + ".csv")).get(0);  
@@ -69,22 +59,13 @@ public class FileUserServiceImpl implements UserService {
 	            user.setEmail(email);
 	            user.setPassword(password);
 	        } else {       
-	                  Alert error2Alert = new Alert(AlertType.ERROR);
-	                  error2Alert.setHeaderText("ERRORE");
-	                  error2Alert.setContentText("RIP");
-	                  error2Alert.showAndWait();
-	          }		
+	        	 throw new UserNotFoundException(); }		
 	      }
 			return user;	
 		}   catch (IOException e) {
 			e.printStackTrace();
-			Alert error1Alert = new Alert(AlertType.ERROR);
-            error1Alert.setHeaderText("ERRORE");
-            error1Alert.setContentText("1");
-            error1Alert.showAndWait();
 			throw new BusinessException(e);
 		} 
-
 	}
 	
 }

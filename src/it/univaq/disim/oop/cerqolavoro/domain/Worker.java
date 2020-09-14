@@ -30,7 +30,7 @@ public void setName(String name) {
 this.name = name;
 }
 	  
-public String getSurame() {
+public String getSurname() {
 	return surname;
 }
 
