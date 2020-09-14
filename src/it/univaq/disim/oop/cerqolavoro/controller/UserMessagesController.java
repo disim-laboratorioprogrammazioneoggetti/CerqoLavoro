@@ -79,7 +79,9 @@ public class UserMessagesController implements Initializable, DataInitializable<
 			  while ( ( line != null ) && ( i < cont )) {		  
 				  preMex[i] = line.get(a);
 				  listaMex[i] = line.get(b);			  
-			    k++; i++; a += 2; b += 2;  			    
+			    k++; i++; a += 2; b += 2;  	
+			  }
+			  read.close(); 
 			  if ( k < 3 ) {
 			  for ( i = k; i < 3; i++ ) {
 				  mex[i].setVisible(false); }
@@ -87,7 +89,6 @@ public class UserMessagesController implements Initializable, DataInitializable<
 			  for ( i = 0; i < k ; i++ ) {   
 				  mex[i].setVisible(true);
 				  mex[i].setText(preMex[i] + "\n" + listaMex[i]); }
-			  read.close(); }
 			  }
 	 } catch (FileNotFoundException ex) {
 		ex.printStackTrace();

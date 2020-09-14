@@ -17,17 +17,10 @@ public class RAMMessageServiceImpl implements MessageService {
 	}
 
 	@Override
-	public List<Message> findAllMessages(Message message) throws BusinessException {
-		return null;
-	}
-
-	@Override
 	public Message createMessages(String workerEmail, String textMessage) throws BusinessException, IOException {
 		Message message = new Message();
 		message.setText(textMessage);
 		return message;
-		// TODO Auto-generated method stub
-		
 	}
 
 }
