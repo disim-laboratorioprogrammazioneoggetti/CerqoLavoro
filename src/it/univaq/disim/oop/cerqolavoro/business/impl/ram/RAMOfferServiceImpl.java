@@ -17,21 +17,6 @@ public class RAMOfferServiceImpl implements OfferService {
 	public RAMOfferServiceImpl(OfferService offerService) {
 		this.offerService = offerService;
 	}
-
-	@Override
-	public List<Offer> findAllOffers(Offer offer) throws BusinessException {
-		return null;
-	}
-
-	@Override
-	public void createOffer(Offer offer) throws BusinessException {
-		
-	}
-
-	@Override
-	public void updateOffer(Offer offer) throws BusinessException {
-		
-	}
 	
 	@Override
 	public void deleteOffer(String titleOffer, String email) throws BusinessException {

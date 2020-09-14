@@ -33,21 +33,6 @@ public class FileOfferServiceImpl implements OfferService {
 	}
 	
 	@Override
-	public List<Offer> findAllOffers(Offer offer) throws BusinessException {
-		return null;
-	}
-
-	@Override
-	public void createOffer(Offer offer) throws BusinessException {
-		// da eliminare
-	}
-
-	@Override
-	public void updateOffer(Offer offer) throws BusinessException {
-		
-	}
-	
-	@Override
 	public void deleteOffer(String titleOffer, String email) throws BusinessException {
 		  try {
 		      int a1 = -1, a2 = -1, a3 = -1, a4 = -1, a5 = -1, a6 = -1, a7 = -1, a8 = -1, a9 = -1, a10 = -1, a11 = -1, a12 = -1, i = 0, j = 0, p = 1, q = 2, em = 3, r = 4, s = 5, t = 6, u = 7, w = 8, v = 9, x = 10, y = 11, z = 12, am = -1;
@@ -95,10 +80,6 @@ public class FileOfferServiceImpl implements OfferService {
 		      writer.close();
 	          } catch (IOException e) {
 	      		e.printStackTrace();
-	    		Alert error1Alert = new Alert(AlertType.ERROR);
-	            error1Alert.setHeaderText("ERRORE");
-	            error1Alert.setContentText("File non trovato");
-	            error1Alert.showAndWait();
 	    		throw new BusinessException(e);
 	    	}
    }
