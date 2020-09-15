@@ -11,27 +11,27 @@
 <?import javafx.scene.text.Text?>
 <?import org.controlsfx.control.SearchableComboBox?>
 
-<AnchorPane prefHeight="610.0" prefWidth="1000.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.EmployerSearchController">
+<AnchorPane prefHeight="600.0" prefWidth="1024.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.EmployerSearchController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="90.0" stroke="BLACK" strokeType="INSIDE" width="1001.0" />
-      <SearchableComboBox fx:id="SectorSrc" layoutX="265.0" layoutY="59.0" />
-      <Text fill="WHITE" layoutX="25.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regione">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#56ec50" height="60.0" stroke="BLACK" strokeType="INSIDE" width="1024.0" />
+      <SearchableComboBox fx:id="SectorSrc" layoutX="406.0" layoutY="28.0" />
+      <Text fill="WHITE" layoutX="65.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regione">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="265.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settore" wrappingWidth="50.17968749999994">
+      <Text fill="WHITE" layoutX="406.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settore" wrappingWidth="50.17968749999994">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Text>
-      <SearchableComboBox fx:id="regionSrc" layoutX="14.0" layoutY="60.0" />
-      <Button fx:id="srcImp" layoutX="535.0" layoutY="58.0" mnemonicParsing="false" onAction="#searchImp" style="-fx-background-color: #1f1fff;" text="Cerca" textFill="WHITE">
+      <SearchableComboBox fx:id="regionSrc" layoutX="65.0" layoutY="28.0" />
+      <Button fx:id="srcImp" layoutX="773.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchImp" style="-fx-background-color: #70c456;" text="Cerca" textFill="WHITE">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Button>
-      <Pane fx:id="annuncio1" layoutY="90.0" prefHeight="84.0" prefWidth="1000.0" style="-fx-background-color: #f1efef;">
+      <Pane fx:id="annuncio1" layoutY="60.0" prefHeight="93.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
          <children>
             <Label fx:id="ImpName" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="112.0" text="NOME" textFill="#1b2ce1" underline="true">
                <font>
@@ -84,7 +84,7 @@
             <TextArea fx:id="mex1" layoutX="717.0" layoutY="11.0" prefHeight="68.0" prefWidth="200.0" promptText="Invia un messaggio" />
          </children>
       </Pane>
-      <Pane fx:id="annuncio11" layoutY="175.0" prefHeight="84.0" prefWidth="1000.0" style="-fx-background-color: #f1efef;">
+      <Pane fx:id="annuncio11" layoutY="153.0" prefHeight="93.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
          <children>
             <Label fx:id="ImpName1" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="112.0" text="NOME" textFill="#1b2ce1" underline="true">
                <font>
@@ -137,7 +137,7 @@
             <TextArea fx:id="mex2" layoutX="717.0" layoutY="8.0" prefHeight="68.0" prefWidth="200.0" promptText="Invia un messaggio" />
          </children>
       </Pane>
-      <Pane fx:id="annuncio12" layoutY="260.0" prefHeight="84.0" prefWidth="1000.0" style="-fx-background-color: #f1efef;">
+      <Pane fx:id="annuncio12" layoutY="246.0" prefHeight="93.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
          <children>
             <Label fx:id="ImpName2" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="112.0" text="NOME" textFill="#1b2ce1" underline="true">
                <font>
@@ -190,7 +190,7 @@
             <TextArea fx:id="mex3" layoutX="717.0" layoutY="11.0" prefHeight="68.0" prefWidth="200.0" promptText="Invia un messaggio" />
          </children>
       </Pane>
-      <Pane fx:id="annuncio13" layoutY="345.0" prefHeight="84.0" prefWidth="1000.0" style="-fx-background-color: #f1efef;">
+      <Pane fx:id="annuncio13" layoutY="339.0" prefHeight="84.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
          <children>
             <Label fx:id="ImpName3" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="112.0" text="NOME" textFill="#1b2ce1" underline="true">
                <font>
@@ -243,7 +243,7 @@
             <TextArea fx:id="mex4" layoutX="717.0" layoutY="10.0" prefHeight="68.0" prefWidth="200.0" promptText="Invia un messaggio" />
          </children>
       </Pane>
-      <Pane fx:id="annuncio14" layoutY="430.0" prefHeight="84.0" prefWidth="1000.0" style="-fx-background-color: #f1efef;">
+      <Pane fx:id="annuncio14" layoutY="423.0" prefHeight="84.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
          <children>
             <Label fx:id="ImpName4" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="112.0" text="NOME" textFill="#1b2ce1" underline="true">
                <font>
@@ -296,7 +296,7 @@
             <TextArea fx:id="mex5" layoutX="717.0" layoutY="10.0" prefHeight="68.0" prefWidth="200.0" promptText="Invia un messaggio" />
          </children>
       </Pane>
-      <Pane fx:id="annuncio15" layoutY="516.0" prefHeight="84.0" prefWidth="1000.0" style="-fx-background-color: #f1efef;">
+      <Pane fx:id="annuncio15" layoutY="507.0" prefHeight="93.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
          <children>
             <Label fx:id="ImpName5" layoutX="8.0" layoutY="7.0" prefHeight="23.0" prefWidth="112.0" text="NOME" textFill="#1b2ce1" underline="true">
                <font>
@@ -349,6 +349,6 @@
             <TextArea fx:id="mex6" layoutX="717.0" layoutY="10.0" prefHeight="68.0" prefWidth="200.0" promptText="Invia un messaggio" />
          </children>
       </Pane>
-      <Label fx:id="esEmail" layoutX="174.0" layoutY="42.0" text="Label" />
+      <Label fx:id="esEmail" layoutX="862.0" layoutY="31.0" prefHeight="17.0" prefWidth="55.0" />
    </children>
 </AnchorPane>

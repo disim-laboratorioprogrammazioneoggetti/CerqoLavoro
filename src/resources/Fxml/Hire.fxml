@@ -14,9 +14,12 @@
    <children>
       <Pane prefHeight="600.0" prefWidth="1024.0">
          <children>
-            <ToolBar prefHeight="40.0" prefWidth="1024.0" style="-fx-background-color: DODGERBLUE;">
+            <ToolBar prefHeight="40.0" prefWidth="1024.0" style="-fx-background-color: #56ec50;">
               <items>
-                  <Button fx:id="ShowOfferbtn" mnemonicParsing="false" onAction="#ShowOffer" style="-fx-background-color: #7bb6ee;" stylesheets="@../Stylesheet/fullpackstyling.css" text="Mostra Lista Annunci" />
+                  <Button fx:id="ShowOfferbtn" mnemonicParsing="false" onAction="#ShowOffer" style="-fx-background-color: #70c456;" text="Mostra Lista Annunci">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font></Button>
                   <Label fx:id="eoEmail" prefHeight="15.0" prefWidth="144.0" textFill="DODGERBLUE">
                      <font>
                         <Font size="14.0" />

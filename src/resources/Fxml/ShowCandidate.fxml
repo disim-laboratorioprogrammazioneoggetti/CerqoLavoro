@@ -19,7 +19,7 @@
             <Font name="Aharoni Bold" size="44.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#56ec50" height="100.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
       <Label layoutX="392.0" layoutY="51.0" prefHeight="23.0" prefWidth="105.0" text="ANNUNCIO:">
          <font>
             <Font name="Segoe UI Bold" size="18.0" />
@@ -43,8 +43,11 @@
                </font>
             </Label>
             <TextArea fx:id="MexArea" layoutX="28.0" layoutY="75.0" prefHeight="339.0" prefWidth="290.0" promptText="Lascia un messaggio al candidato selezionato." />
-            <Button fx:id="SendMexBtn" layoutX="251.0" layoutY="424.0" mnemonicParsing="false" onAction="#SendMex" prefHeight="25.0" prefWidth="67.0" text="Invia" />
-            <Label layoutX="137.0" layoutY="14.0" prefHeight="19.0" prefWidth="73.0" text="Contatta :">
+            <Button fx:id="SendMexBtn" layoutX="251.0" layoutY="424.0" mnemonicParsing="false" onAction="#SendMex" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #70c456;" text="Invia">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font></Button>
+            <Label layoutX="137.0" layoutY="14.0" prefHeight="19.0" prefWidth="73.0" text="Contatta:">
                <font>
                   <Font name="Segoe UI" size="16.0" />
                </font>
@@ -169,7 +172,7 @@
                   <Font name="Segoe UI Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="177.0" layoutY="16.0" prefHeight="23.0" prefWidth="129.0" text="IL CANDIDATO">
+            <Label layoutX="200.0" layoutY="17.0" prefHeight="23.0" prefWidth="129.0" text="IL CANDIDATO">
                <font>
                   <Font name="Segoe UI Bold" size="18.0" />
                </font>
@@ -189,32 +192,32 @@
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="177.0" layoutY="41.0" prefHeight="19.0" prefWidth="49.0" text="Regione:">
+            <Label layoutX="200.0" layoutY="41.0" prefHeight="19.0" prefWidth="49.0" text="Regione:">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="177.0" layoutY="60.0" prefHeight="19.0" prefWidth="49.0" text="Settore:">
+            <Label layoutX="200.0" layoutY="61.0" prefHeight="19.0" prefWidth="49.0" text="Settore:">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="178.0" layoutY="79.0" prefHeight="19.0" prefWidth="67.0" text="Esperienza:">
+            <Label layoutX="201.0" layoutY="79.0" prefHeight="19.0" prefWidth="67.0" text="Esperienza:">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="CompareRegionCan" layoutX="240.0" layoutY="41.0" prefHeight="19.0" prefWidth="96.0" text="REGIONE">
+            <Label fx:id="CompareRegionCan" layoutX="273.0" layoutY="41.0" prefHeight="19.0" prefWidth="96.0" text="REGIONE">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="CompareSectorCan" layoutX="241.0" layoutY="59.0" prefHeight="19.0" prefWidth="96.0" text="SETTORE">
+            <Label fx:id="CompareSectorCan" layoutX="273.0" layoutY="61.0" prefHeight="19.0" prefWidth="96.0" text="SETTORE">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="CompareExpCan" layoutX="241.0" layoutY="79.0" prefHeight="19.0" prefWidth="96.0" text="ESPERIENZA">
+            <Label fx:id="CompareExpCan" layoutX="273.0" layoutY="79.0" prefHeight="19.0" prefWidth="96.0" text="ESPERIENZA">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
@@ -234,9 +237,15 @@
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="Contactbutton" layoutX="48.0" layoutY="141.0" mnemonicParsing="false" onAction="#Contactbtnpushed" prefHeight="25.0" prefWidth="67.0" text="Contatta" />
-            <Button fx:id="Rejectbutton" layoutX="224.0" layoutY="141.0" mnemonicParsing="false" onAction="#rejectBtn" prefHeight="25.0" prefWidth="129.0" text="Rifiuta Candidatura" />
-            <Separator layoutX="165.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="180.0" prefWidth="7.0" />
+            <Button fx:id="Contactbutton" layoutX="53.0" layoutY="141.0" mnemonicParsing="false" onAction="#Contactbtnpushed" prefHeight="28.0" prefWidth="85.0" style="-fx-background-color: #70c456;" text="Contatta">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font></Button>
+            <Button fx:id="Rejectbutton" layoutX="224.0" layoutY="141.0" mnemonicParsing="false" onAction="#rejectBtn" prefHeight="28.0" prefWidth="145.0" style="-fx-background-color: #70c456;" text="Rifiuta Candidatura">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font></Button>
+            <Separator layoutX="178.0" orientation="VERTICAL" prefHeight="180.0" prefWidth="7.0" />
          </children>
       </Pane>
       <Separator layoutX="371.0" layoutY="122.0" orientation="VERTICAL" prefHeight="473.0" prefWidth="7.0" />
