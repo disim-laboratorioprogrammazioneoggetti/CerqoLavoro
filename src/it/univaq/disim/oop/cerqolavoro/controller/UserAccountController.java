@@ -55,7 +55,7 @@ public class UserAccountController implements Initializable, DataInitializable<U
 		  upBirth.setText(workerBirthdate);
 		  upExp.setText(((Worker) user).getExperience());                 
 		  upEducation.setText(((Worker) user).getEducation());
-		  upCell.setText(String.valueOf(((Worker) user).getCap()));
+		  upCell.setText(String.valueOf(((Worker) user).getPhone()));
 		  upRegion.setText(((Worker) user).getRegion());
 		  upProvince.setText(((Worker) user).getProvince());
 		  upCity.setText(((Worker) user).getCity());

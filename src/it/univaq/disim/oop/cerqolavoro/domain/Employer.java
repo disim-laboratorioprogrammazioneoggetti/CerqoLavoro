@@ -10,10 +10,10 @@ public class Employer extends User {
 	
 	  private String name;
 	  private String surname;
-	  private Integer phone;
+	  private Long phone;
 	  private String companyName;
-	  private Integer companyPhone;
-	  private Integer IVA;
+	  private Long companyPhone;
+	  private Long IVA;
 	  private String companyEmail;
 	  private String companyBio;
 	  private ArrayList<Offer> myOffers = new ArrayList<>();
@@ -35,11 +35,11 @@ public class Employer extends User {
 		    this.surname = surname;
 		  }
     
-      public Integer getPhone() {
+      public Long getPhone() {
 	    return phone;
 	  }
 
-	  public void setPhone(Integer phone) {
+	  public void setPhone(Long phone) {
 	    this.phone = phone;
 	  }
 	  
@@ -59,19 +59,19 @@ public class Employer extends User {
 		    this.companyEmail = companyEmail;
 		  }
 
-	  public Integer getCompanyPhone() {
+	  public Long getCompanyPhone() {
 	    return companyPhone;
 	  }
 
-	  public void setCompanyPhone(Integer companyPhone) {
+	  public void setCompanyPhone(Long companyPhone) {
 	    this.companyPhone = companyPhone;
 	  }
 	  
-	  public Integer getIVA() {
+	  public Long getIVA() {
 	    return IVA;
 	  }
 
-	  public void setIVA(Integer IVA) {
+	  public void setIVA(Long IVA) {
 	    this.IVA = IVA;
 	  }
 	  

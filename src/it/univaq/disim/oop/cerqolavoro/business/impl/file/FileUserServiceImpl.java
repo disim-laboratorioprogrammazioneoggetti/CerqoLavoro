@@ -58,7 +58,7 @@ public class FileUserServiceImpl implements UserService {
 	            ((Worker) user).setBirthdate(LocalDate.parse(workerDetails.get(d)));
 	            ((Worker) user).setExperience(workerDetails.get(f));                 
 	            ((Worker) user).setEducation(workerDetails.get(g));
-	      //      ((Worker) user).setPhone(Integer.parseInt(workerDetails.get(h)));
+	            ((Worker) user).setPhone(Long.parseLong(workerDetails.get(h)));
 	            ((Worker) user).setRegion(workerDetails.get(i));
 	            ((Worker) user).setProvince(workerDetails.get(j));
 	            ((Worker) user).setCity(workerDetails.get(k));
@@ -84,9 +84,9 @@ public class FileUserServiceImpl implements UserService {
 	            ((Employer) user).setSurname(employerDetails.get(b));
 	            ((Employer) user).setCompanyEmail(employerDetails.get(c));
 	            ((Employer) user).setCompanyName(employerDetails.get(d));                 
-	       //     ((Employer) user).setIVA(Long.parseLong(employerDetails.get(f)));
-	       //     ((Employer) user).setPhone(Integer.parseInt(employerDetails.get(g)));
-	       //     ((Employer) user).setCompanyPhone(Integer.parseInt(employerDetails.get(h)));
+	            ((Employer) user).setIVA(Long.parseLong(employerDetails.get(f)));
+	            ((Employer) user).setPhone(Long.parseLong(employerDetails.get(g)));
+	            ((Employer) user).setCompanyPhone(Long.parseLong(employerDetails.get(h)));
 	            ((Employer) user).setCompanyBio(employerDetails.get(i));
 	        } else {       
 	        	 throw new UserNotFoundException(); }		

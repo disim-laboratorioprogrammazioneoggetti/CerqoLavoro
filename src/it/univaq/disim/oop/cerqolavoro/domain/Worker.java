@@ -10,7 +10,7 @@ public class Worker extends User {
 	private String name;
 	private String surname;
 	private String sector;
-	private Integer phone;
+	private Long phone;
 	private String region;
 	private String province;
 	private String city;
@@ -47,11 +47,11 @@ public void setSector(String sector) {
 this.sector = sector;
 }
 
-public Integer getPhone() {
+public Long getPhone() {
 	return phone;
 }
 
-public void setPhone(Integer phone) {
+public void setPhone(Long phone) {
 this.phone = phone;
 }
 
