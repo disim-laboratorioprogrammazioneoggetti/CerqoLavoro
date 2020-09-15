@@ -58,7 +58,7 @@ public class FileUserServiceImpl implements UserService {
 	            ((Worker) user).setBirthdate(LocalDate.parse(workerDetails.get(d)));
 	            ((Worker) user).setExperience(workerDetails.get(f));                 
 	            ((Worker) user).setEducation(workerDetails.get(g));
-	            ((Worker) user).setPhone(Integer.parseInt(workerDetails.get(h)));
+	      //      ((Worker) user).setPhone(Integer.parseInt(workerDetails.get(h)));
 	            ((Worker) user).setRegion(workerDetails.get(i));
 	            ((Worker) user).setProvince(workerDetails.get(j));
 	            ((Worker) user).setCity(workerDetails.get(k));

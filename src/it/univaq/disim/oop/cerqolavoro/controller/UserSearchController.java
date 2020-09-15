@@ -127,7 +127,7 @@ public class UserSearchController implements Initializable, DataInitializable<Us
 	// Ricerca offerte attinenti
     
     @FXML
-    void luckyOff(ActionEvent event) throws IOException {
+    void luckyOff(ActionEvent event) throws IOException, BusinessException {
     	
     	Pane risultato[] = { annuncio1, annuncio2, annuncio3, annuncio4 };
         Label adtitle[] = { ann1, ann2, ann3, ann4 };
@@ -141,85 +141,42 @@ public class UserSearchController implements Initializable, DataInitializable<Us
         Label adcadence[] = { wgtimeann1, wgtimeann2, wgtimeann3, wgtimeann4 };
         Label adexperience[] = { expann1, expann2, expann3, expann4 };
         Label adbonus[] = { bonusann1, bonusann2, bonusann3, bonusann4 };
-        String listExperience[] = new String[4];
-        String listRegion[] = new String[4];
-        String listCategory[] = new String[4];
-        String listTitle[] = new String[4];
-        String listBio[] = new String[4];
-        String listLocation[] = new String[4];
-        String listStudy[] = new String[4];
-        String listWage[] = new String[4];
-        String listTypeContract[] = new String[4];
-        String listPeriodContract[] = new String[4];
-        String listBonus[] = new String[4];
-        String listCadence[] = new String[4];
-        String charset = "UTF-8";
         
-        // Lettura informazioni utili ai fini della ricerca personalizzata        
-    	BufferedReader reader = new BufferedReader(new FileReader(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME));
-    	int lines = 0;
-    	while (reader.readLine() != null) {
-    		lines++;
-    	}
-    	reader.close();
-    	int cont = lines / 13;
-    	
-    	// Ricerca nel file offerte    	
-         BufferedReader read = new BufferedReader(
-        	        new InputStreamReader(
-        	            new FileInputStream(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME), charset));
-         List<String> line = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME), StandardCharsets.UTF_8);
-         try {
-        	 int i = 0, k = 0, j = 0, p = 1, q = 2, r = 4, s = 5, t = 6, u = 7, v = 8, w = 9, x = 10, y = 11, z = 12;
-            	 while ( ( line != null ) && ( i < cont ) && ( k < 4 ) ) {
-            		 if ( line.get(v).equals(esperienza) && line.get(p).equals(categoria) && line.get(y).equals(istruzione) ) {
-            			 listRegion[i] = line.get(j);
-                         listCategory[i] = line.get(p);
-                         listTitle[i] = line.get(q);
-                         listLocation[i] = line.get(r);
-                         listTypeContract[i] = line.get(s);
-                         listPeriodContract[i] = line.get(t);
-                         listWage[i] = line.get(u);
-                         listExperience[i] = line.get(v);
-                         listCadence[i] = line.get(w);
-                         listBonus[i] = line.get(x);
-                         listStudy[i] = line.get(y);
-                         listBio[i] = line.get(z);
-                         k++;
-                    	 }
-            		 i++; j += 13; p += 13; q += 13; r += 13; s += 13; t += 13; u += 13; v += 13; w += 13; x += 13; y += 13; z += 13;
-            		 }
-            	      if ( k < 4 ) {
-              		     for ( i = k; i < 4; i++ ) {
+        // Lettura informazioni utili ai fini della ricerca personalizzata 
+        try {
+        	int i = 0;
+        	List<Offer> luckyOfferList = offerService.findLuckyOffers(esperienza, categoria, istruzione);
+            	      if ( luckyOfferList.size() < 4 ) {
+              		     for ( i = luckyOfferList.size(); i < 4; i++ ) {
               		         risultato[i].setVisible(false);
               		     }
               		  }
-                	 for ( i = 0; i < k ; i++ ) {
-                		 risultato[i].setVisible(true);
-                         adtitle[i].setText(listTitle[i]);
-                         adregion[i].setText(listRegion[i]);
-                         adlocation[i].setText(listLocation[i]); 
-                         adcontract[i].setText(listTypeContract[i]); 
-                         adperiod[i].setText(listPeriodContract[i]);
-                         adwage[i].setText(listWage[i]);
-                         adexperience[i].setText(listExperience[i]); 
-                         adcadence[i].setText(listCadence[i]);
-                         adbonus[i].setText(listBonus[i]); 
-                         adstudy[i].setText(listStudy[i]); 
-                         adbio[i].setText(listBio[i]); 
+            	      i = 0;
+            	      for (Offer lo: luckyOfferList) {
+                		 risultato[i].setVisible(true);              		 
+                		 adtitle[i].setText(lo.getTitle());
+                		 adlocation[i].setText(lo.getPosition());
+            		     adregion[i].setText(lo.getRegion());
+            		     adcontract[i].setText(lo.getContractType()); 
+            		     adperiod[i].setText(lo.getContractTime());
+            		     adwage[i].setText(lo.getWage());
+            		     adcadence[i].setText(lo.getWageTime());
+            		     adstudy[i].setText(lo.getEducation());
+            		     adbonus[i].setText(lo.getBonus());
+            		     adbio[i].setText(lo.getInfo());
+            		     adexperience[i].setText(lo.getExperience());  
+            		     i++;
              	 }
-             read.close();
-     	} catch (FileNotFoundException ex) {
-         ex.printStackTrace();
-         } catch (IOException ex) {
-         ex.printStackTrace();
-         } 
+     	} catch (BusinessException e) {
+            e.printStackTrace();
+            throw new BusinessException(e);
+        } 
     }
     
     // Ricerca offerta tramite filtri selezionati dall' utente
     
     @FXML
-    void searchOffer(ActionEvent event) throws IOException {
+    void searchOffer(ActionEvent event) throws IOException, BusinessException {
         
     	Pane risultato[] = { annuncio1, annuncio2, annuncio3, annuncio4 };
         Label adtitle[] = { ann1, ann2, ann3, ann4 };
@@ -233,137 +190,35 @@ public class UserSearchController implements Initializable, DataInitializable<Us
         Label adcadence[] = { wgtimeann1, wgtimeann2, wgtimeann3, wgtimeann4 };
         Label adexperience[] = { expann1, expann2, expann3, expann4 };
         Label adbonus[] = { bonusann1, bonusann2, bonusann3, bonusann4 };
-        String listExperience[] = new String[4];
-        String listRegion[] = new String[4];
-        String listCategory[] = new String[4];
-        String listTitle[] = new String[4];
-        String listBio[] = new String[4];
-        String listLocation[] = new String[4];
-        String listStudy[] = new String[4];
-        String listWage[] = new String[4];
-        String listTypeContract[] = new String[4];
-        String listPeriodContract[] = new String[4];
-        String listBonus[] = new String[4];
-        String listCadence[] = new String[4];
-        int i = 0, k = 0, j = 0, p = 1, q = 2, r = 4, s = 5, t = 6, u = 7, v = 8, w = 9, x = 10, y = 11, z = 12; String charset = "UTF-8";
-    	BufferedReader reader = new BufferedReader(new FileReader(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME));
-    	int lines = 0;
-    	while (reader.readLine() != null) {
-    		lines++;
-    	}
-    	reader.close();
-    	int cont = lines / 13;
-         BufferedReader read = new BufferedReader(
-        	        new InputStreamReader(
-        	            new FileInputStream(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME), charset));
-         List<String> line = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME), StandardCharsets.UTF_8);
-         
-         // 4 possibili combinazioni di filtri (Regione / Settore)
-         
-         try {
-        	 i = 0; k = 0; j = 0; p = 1; q = 2; r = 4; s = 5; t = 6; u = 7; v = 8; w = 9; x = 10; y = 11; z = 12;
-             if( regionSrc.getValue().toString().equals("Tutte") && categorySrc.getValue().toString() != "Tutte" ) {
-            	 while (( line != null ) && ( i < cont ) && (k < 4)) {
-                	 if ( categorySrc.getValue().toString().equals(line.get(p)) ) {
-                         listRegion[k] = line.get(j);
-                         listCategory[k] = line.get(p);
-                         listTitle[k] = line.get(q);
-                         listLocation[k] = line.get(r);
-                         listTypeContract[k] = line.get(s);
-                         listPeriodContract[k] = line.get(t);
-                         listWage[k] = line.get(u);
-                         listExperience[k] = line.get(v);
-                         listCadence[k] = line.get(w);
-                         listBonus[k] = line.get(x);
-                         listStudy[k] = line.get(y);
-                         listBio[k] = line.get(z);
-                         k++;
-                    	 }
-                         i++; j += 13; p += 13; q += 13; r += 13; s += 13; t += 13; u += 13; v += 13; w += 13; x += 13; y += 13; z += 13;
-            		 }
-             }
-             if ( regionSrc.getValue().toString().equals("Tutte") && categorySrc.getValue().toString().equals("Tutte")) {
-            	 while (( line != null ) && ( i < cont ) && (k < 4)) {
-                     listRegion[k] = line.get(j);
-                     listCategory[k] = line.get(p);
-                     listTitle[k] = line.get(q);
-                     listLocation[k] = line.get(r);
-                     listTypeContract[k] = line.get(s);
-                     listPeriodContract[k] = line.get(t);
-                     listWage[k] = line.get(u);
-                     listExperience[k] = line.get(v);
-                     listCadence[k] = line.get(w);
-                     listBonus[k] = line.get(x);
-                     listStudy[k] = line.get(y);
-                     listBio[k] = line.get(z);
-                     i++; k++; j += 13; p += 13; q += 13; r += 13; s += 13; t += 13; u += 13; v += 13; w += 13; x += 13; y += 13; z += 13;
-        		 }
-          }
-             if ( regionSrc.getValue().toString() != "Tutte" && categorySrc.getValue().toString().equals("Tutte") ) {
-            	 while (( line != null ) && ( i < cont ) && (k < 4)) {
-                	 if ( regionSrc.getValue().toString().equals( line.get(j)) ) {
-                         listRegion[k] = line.get(j);
-                         listCategory[k] = line.get(p);
-                         listTitle[k] = line.get(q);
-                         listLocation[k] = line.get(r);
-                         listTypeContract[k] = line.get(s);
-                         listPeriodContract[k] = line.get(t);
-                         listWage[k] = line.get(u);
-                         listExperience[k] = line.get(v);
-                         listCadence[k] = line.get(w);
-                         listBonus[k] = line.get(x);
-                         listStudy[k] = line.get(y);
-                         listBio[k] = line.get(z);
-                         k++;
-                	 }
-                	 i++; j += 13; p += 13; q += 13; r += 13; s += 13; t += 13; u += 13; v += 13; w += 13; x += 13; y += 13; z += 13;
-        		 }
-             }
-             if ( regionSrc.getValue().toString() != "Tutte" && categorySrc.getValue().toString() != "Tutte" ) {
-            	 while (( line != null ) && ( i < cont ) && (k < 4)) {
-                	 if ( regionSrc.getValue().toString().equals( line.get(j)) && categorySrc.getValue().toString().equals( line.get(p) )) {
-                         listRegion[k] = line.get(j);
-                         listCategory[k] = line.get(p);
-                         listTitle[k] = line.get(q);
-                         listLocation[k] = line.get(r);
-                         listTypeContract[k] = line.get(s);
-                         listPeriodContract[k] = line.get(t);
-                         listWage[k] = line.get(u);
-                         listExperience[k] = line.get(v);
-                         listCadence[k] = line.get(w);
-                         listBonus[k] = line.get(x);
-                         listStudy[k] = line.get(y);
-                         listBio[k] = line.get(z);
-                         k++;
-                	 }
-                	 i++; j += 13; p += 13; q += 13; r += 13; s += 13; t += 13; u += 13; v += 13; w += 13; x += 13; y += 13; z += 13;
-                	 }
-             }
-         	  if ( k < 4 ) {
-           		  for ( i = k; i < 4; i++ ) {
+        // 4 possibili combinazioni di filtri (Regione / Settore)
+        try {
+        int i = 0;
+        List<Offer> allOfferList = offerService.findAllOffers(regionSrc.getValue().toString(), categorySrc.getValue().toString());
+         	  if ( allOfferList.size() < 4 ) {
+           		  for ( i = allOfferList.size(); i < 4; i++ ) {
            		    risultato[i].setVisible(false);
            		  }
-           		  }
-        	 for ( i = 0; i < k ; i++ ) {
-         	  	 risultato[i].setVisible(true);
-                 adtitle[i].setText(listTitle[i]);
-                 adregion[i].setText(listRegion[i]);
-                 adlocation[i].setText(listLocation[i]); 
-                 adcontract[i].setText(listTypeContract[i]); 
-                 adperiod[i].setText(listPeriodContract[i]);
-                 adwage[i].setText(listWage[i]);
-                 adexperience[i].setText(listExperience[i]); 
-                 adcadence[i].setText(listCadence[i]);
-                 adbonus[i].setText(listBonus[i]); 
-                 adstudy[i].setText(listStudy[i]); 
-                 adbio[i].setText(listBio[i]); 
-                 } 
-          	  read.close();
-    	} catch (FileNotFoundException ex) {
-        ex.printStackTrace();
-        } catch (IOException ex) {
-        ex.printStackTrace();
-        }
+           	  }
+         	  i = 0;
+        	  for ( Offer all: allOfferList ) {
+         		 risultato[i].setVisible(true);              		 
+         		 adtitle[i].setText(all.getTitle());
+         		 adlocation[i].setText(all.getPosition());
+     		     adregion[i].setText(all.getRegion());
+     		     adcontract[i].setText(all.getContractType()); 
+     		     adperiod[i].setText(all.getContractTime());
+     		     adwage[i].setText(all.getWage());
+     		     adcadence[i].setText(all.getWageTime());
+     		     adstudy[i].setText(all.getEducation());
+     		     adbonus[i].setText(all.getBonus());
+     		     adbio[i].setText(all.getInfo());
+     		     adexperience[i].setText(all.getExperience());  
+                 i++;
+               } 
+    	} catch (BusinessException e) {
+            e.printStackTrace();
+            throw new BusinessException(e);
+        } 
     } 
     
     // Pulsanti candidatura offerte
