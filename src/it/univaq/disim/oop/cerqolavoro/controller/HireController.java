@@ -17,10 +17,13 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+
+import it.univaq.disim.oop.cerqolavoro.business.BusinessException;
 import it.univaq.disim.oop.cerqolavoro.business.CerqoLavoroBusinessFactory;
 import it.univaq.disim.oop.cerqolavoro.business.OfferService;
 import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileCerqoLavoroBusinessFactoryImpl;
 import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMOfferServiceImpl;
+import it.univaq.disim.oop.cerqolavoro.domain.Candidacy;
 import it.univaq.disim.oop.cerqolavoro.domain.Offer;
 import it.univaq.disim.oop.cerqolavoro.domain.User;
 import it.univaq.disim.oop.cerqolavoro.view.ViewDispatcher;
@@ -192,27 +195,10 @@ public void initializeData(User user) {
 
 // Bottone mostra offerte pubblicate
 
-@FXML void ShowOffer(ActionEvent event4) throws IOException {
+@FXML void ShowOffer(ActionEvent event4) throws IOException, BusinessException {
 
-	//check se esiste il file
-	boolean OfferFileExistCheck = false;
-	File offerCheck = new File(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME);
-	  OfferFileExistCheck = offerCheck.exists();
-
-	  if (OfferFileExistCheck == false) {
-	    Alert errorAlert = new Alert(AlertType.ERROR);
-	      errorAlert.setHeaderText("ERRORE: Non Hai Creato Annunci");
-	      errorAlert.setContentText("Non hai creato alcun Annuncio,clicca sul pulsante 'Crea un Annuncio' per crearne uno");
-	      errorAlert.showAndWait();
-	  }
-	  
-	//array
-	  if (OfferFileExistCheck == true) {
-	//Pane
 	Pane annunci[] = { Annuncio1, Annuncio2, Annuncio3};
-	//textarea
 	TextArea embio[] = {EditWorkInfoArea,EditWorkInfoArea1,EditWorkInfoArea11};
-	//label
 	Label Titoli[] = { TitleLabel,TitleLabel1,TitleLabel11};
 	Label Posizioni[] = {PositionLabel,PositionLabel1,PositionLabel11};
 	Label TipoContratto[] = {ContractTypeLabel,ContractTypeLabel1,ContractTypeLabel11}; 
@@ -224,77 +210,36 @@ public void initializeData(User user) {
 	Label Bonus [] = {BonusLabel,BonusLabel1,BonusLabel11};
 	Label Studi[] = {DegreeLabel,DegreeLabel1,DegreeLabel11};
 	Label Esperienze[] = {ExpLabel,ExpLabel1,ExpLabel11};
-	//String
-	String listatitoli[] = new String [3];
-	String listaposizioni[] = new String [3];
-	String listatipocontratto[] = new String [3];
-	String listatempocontratto[] = new String [3];
-	String listaretribuzioni[] = new String [3];
-	String listasettori[] = new String [3];
-	String listaregioni[] = new String [3];
-	String listaRextempo[] = new String [3];
-	String listaStudi[] = new String [3];
-	String listaBonus[] = new String [3];
-	String listaBio[] = new String [3];  
-	String listaExp[] = new String [3];
 
-	BufferedReader reader = new BufferedReader(new FileReader(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME));
-	int lines = 0;
-	while (reader.readLine() != null) {
-	  lines++;
-	}
-	reader.close();
-	int cont = lines / 13;
-	BufferedReader read = new BufferedReader(
-	          new InputStreamReader(
-	              new FileInputStream(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME)));
-	 List<String> line = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME));
-	 int i = 0, k = 0, j = 0, p = 1, q = 2, email = 3, r = 4, s = 5, t = 6, u = 7, w = 8, v = 9, x = 10, y = 11, z = 12;
-	 try {   
-		  while ( ( line != null ) && ( i < cont ) && ( k < 3 )) {
-			if ( line.get(email).equals(employerEmail) ) {
-		    listaregioni[k] = line.get(j);
-		    listasettori[k] = line.get(p);
-		    listatitoli[k] = line.get(q);
-		    listaposizioni[k] = line.get(r);
-		    listatipocontratto[k] = line.get(s);
-		    listatempocontratto[k] = line.get(t);
-		    listaretribuzioni[k] = line.get(u);
-		    listaRextempo[k] = line.get(v);
-		    listaStudi[k] = line.get(y);
-		    listaBonus[k] = line.get(x);
-		    listaBio[k] = line.get(z);
-		    listaExp[k] = line.get(w);
-		    k++;
-		    }
-		    i++; j += 13; p += 13; q += 13; email += 13; r += 13; s += 13; t += 13; u += 13; v += 13; x += 13; y += 13; z += 13;
-		  }
-		  if ( k < 3 ) {
-		  for ( i = k; i < 3; i++ ) {
+    try {
+	int i = 0;
+	List<Offer> offerList = offerService.findMyOffers(eoEmail.getText().toString());
+		  if ( offerList.size() < 3 ) {
+		  for ( i = offerList.size(); i < 3; i++ ) {
 		    annunci[i].setVisible(false); }
 		  }
-		  for ( i = 0; i < k ; i++ ) {   
+		  i = 0;
+		  for (Offer o: offerList) {
 		     annunci[i].setVisible(true);
-		     Titoli[i].setText(listatitoli[i]);
-		     Posizioni[i].setText(listaposizioni[i]);
-		     Settori[i].setText(listasettori[i]);
-		     Regioni[i].setText(listaregioni[i]);
-		     TipoContratto[i].setText(listatipocontratto[i]); 
-		     TempoContratto[i].setText(listatempocontratto[i]);
-		     Retribuzioni[i].setText(listaretribuzioni[i]);
-		     RetxTempo[i].setText(listaRextempo[i]);
-		     Studi[i].setText(listaStudi[i]);
-		     Bonus[i].setText(listaBonus[i]);
-		     embio[i].setText(listaBio[i]);
-		     Esperienze[i].setText(listaExp[i]);
+		     Titoli[i].setText(o.getTitle());
+		     Posizioni[i].setText(o.getPosition());
+		     Settori[i].setText(o.getSector());
+		     Regioni[i].setText(o.getRegion());
+		     TipoContratto[i].setText(o.getContractType()); 
+		     TempoContratto[i].setText(o.getContractTime());
+		     Retribuzioni[i].setText(o.getWage());
+		     RetxTempo[i].setText(o.getWageTime());
+		     Studi[i].setText(o.getEducation());
+		     Bonus[i].setText(o.getBonus());
+		     embio[i].setText(o.getInfo());
+		     Esperienze[i].setText(o.getExperience());
+		     i++;
 		  }
-		  read.close();
-		    } catch (FileNotFoundException ex) {
-		   ex.printStackTrace();
-		    } catch (IOException ex) {
-		   ex.printStackTrace(); }
-		    }
-		}
+    } catch (BusinessException e) {
+          e.printStackTrace();
+          throw new BusinessException(e);
+    }
+}
 
 // Bottoni per modifica offerte
 
@@ -678,7 +623,7 @@ try {
 	candidates:
     while ( line != null && n < cont ) {
     	if ( k < 3 ) {
-                if ( line.get(m).equals( TitleLabel1.getText().toString() )) {
+                if ( line.get(m).equals( TitleLabel.getText().toString() )) {
                      emailcandidature1[k] = line.get(j).toString();
                      candidature1[k] = line.get(j).toString();
                      k++; }
@@ -789,7 +734,7 @@ try {
 	candidates:
     while ( line != null && n < cont ) {
     	if ( k < 3 ) {
-                if ( line.get(m).equals( TitleLabel1.getText().toString() )) {
+                if ( line.get(m).equals( TitleLabel11.getText().toString() )) {
                      emailcandidature2[k] = line.get(j).toString();
                      candidature2[k] = line.get(j).toString();
                      k++; }

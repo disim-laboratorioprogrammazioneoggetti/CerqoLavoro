@@ -19,6 +19,21 @@ public class RAMOfferServiceImpl implements OfferService {
 	}
 	
 	@Override
+	public List<Offer> findAllOffers(String region, String category) throws BusinessException {
+	    return new ArrayList<>();
+	}
+
+	@Override
+	public List<Offer> findMyOffers(String email) throws BusinessException {
+		return new ArrayList<>();
+	}
+	
+	@Override
+	public List<Offer> findLuckyOffers(String esperienza, String categoria, String istruzione) throws BusinessException {
+		return new ArrayList<>();
+	}
+	
+	@Override
 	public void deleteOffer(String titleOffer, String email) throws BusinessException {
 		
 	}
