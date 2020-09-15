@@ -16,9 +16,8 @@ public class Employer extends User {
 	  private Integer IVA;
 	  private String companyEmail;
 	  private String companyBio;
-	  private Set<Offer> myOffer = new HashSet<>();
+	  private ArrayList<Offer> myOffers = new ArrayList<>();
 	  private Set<Message> sentMessages = new HashSet<>();
-	  private ArrayList<Candidacy> candidates = new ArrayList<>();
 
 	  public String getName() {
 		    return name;
@@ -83,21 +82,13 @@ public class Employer extends User {
       public void setCompanyBio(String companyBio) {
 		    this.companyBio = companyBio;
 		  }
-	  
-		public Set<Offer> getOffer() {
-			return myOffer;
+      
+		public ArrayList<Offer> getOffer() {
+			return myOffers;
 		}
 
-		public void setOffer(Set<Offer> myOffer) {
-			this.myOffer = myOffer;
-		}
-		
-		public ArrayList<Candidacy> getCandidates() {
-			return candidates;
-		}
-
-		public void setCandidacy(ArrayList<Candidacy> candidates) {
-			this.candidates = candidates;
+		public void setOffer(ArrayList<Offer> myOffers) {
+			this.myOffers = myOffers;
 		}
 		
 		public Set<Message> getMessages() {
