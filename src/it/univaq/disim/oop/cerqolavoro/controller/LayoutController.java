@@ -22,12 +22,12 @@ public class LayoutController implements Initializable, DataInitializable<User> 
 
 	private static final MenuElement MENU_HOME = new MenuElement("Home", "home");
 
-	private static final MenuElement[] MENU_EMPLOYER = { new MenuElement("Cerca", "EmployerSearch"),
-			new MenuElement("Crea", "AddOffer"), new MenuElement("Offerte", "Hire") };
+	private static final MenuElement[] MENU_EMPLOYER = { new MenuElement("Cerca Candidati", "EmployerSearch"),
+			new MenuElement("Crea Annuncio", "AddOffer"), new MenuElement("Gestisci annunci", "Hire") };
 	
-	private static final MenuElement[] MENU_WORKER = { new MenuElement("Account", "UserAccount"),
-			new MenuElement("Cerca", "UserSearch"), new MenuElement("Candidature", "UserCandidacy"), 
-			new MenuElement("Messaggi", "UserMessage") };
+	private static final MenuElement[] MENU_WORKER = { new MenuElement("Profilo", "UserAccount"),
+			new MenuElement("Cerca annunci", "UserSearch"), new MenuElement("Gestisci candidature", "UserCandidacy"), 
+			new MenuElement("Messaggi ricevuti", "UserMessage") };
 
 	private User user;	
 	private ViewDispatcher dispatcher;
