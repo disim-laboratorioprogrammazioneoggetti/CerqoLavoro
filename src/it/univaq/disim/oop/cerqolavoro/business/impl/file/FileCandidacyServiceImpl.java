@@ -12,10 +12,12 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import it.univaq.disim.oop.cerqolavoro.business.BusinessException;
 import it.univaq.disim.oop.cerqolavoro.business.CandidacyService;
+import it.univaq.disim.oop.cerqolavoro.domain.Candidacy;
 
 public class FileCandidacyServiceImpl implements CandidacyService {
 	private CandidacyService candidacyService;
@@ -27,11 +29,10 @@ public class FileCandidacyServiceImpl implements CandidacyService {
 	}
 	
 	// Trova candidature nel file
-
 	@Override
-	public String[] findCandidacy(String email) throws BusinessException { 
+	public List<Candidacy> findMyCandidacy(String email) throws BusinessException { 
+		List<Candidacy> candidatesList = new ArrayList<Candidacy>(6);
     	try {
-    	     String[] candidates = new String[6];
     	     int n = 0, k = 0;   	                	
     	     BufferedReader reader = new BufferedReader(new FileReader(FileCerqoLavoroBusinessFactoryImpl.CANDIDATES_FILE_NAME));
     	     int lines = 0;
@@ -48,26 +49,25 @@ public class FileCandidacyServiceImpl implements CandidacyService {
     	         candidates:
     	         while ( line != null && n < cont ) {
     	            if ( k < 6 ) {
-    	                if ( line.get(j).equals( email )) {
-    	                candidates[k] = line.get(m).toString();
+    	                if ( line.get(j).equals( email ) ) {
+    	                	Candidacy candidacy = new Candidacy();
+    	                	candidacy.setTitle(line.get(m).toString());
+    	                	candidatesList.add(candidacy);
     	                k++;
     	                }
-    	            }
-    	             else {
-    	             break candidates;
-    	             }
+    	            } else {
+    	             break candidates; }
                      j += 2; m += 2; n++;
     	          }   	        
                   read.close();
-    	          return candidates;
+    	          return candidatesList;
     	    } catch (IOException e) {
 			e.printStackTrace();
 			throw new BusinessException(e);
 		}
 	}
 
-	// Pubblica candidatura
-	
+	// Pubblica candidatura	
 	@Override
 	public void createCandidacy(String email, String candidacyTitle) throws BusinessException {
     	try {
@@ -113,7 +113,6 @@ public class FileCandidacyServiceImpl implements CandidacyService {
 	}
 	
 	// Elimina candidatura
-
 	@Override
 	public void deleteCandidacy(String email, String candidacyTitle) throws BusinessException {
     	try {

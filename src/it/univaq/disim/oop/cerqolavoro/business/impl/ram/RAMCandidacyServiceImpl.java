@@ -20,8 +20,8 @@ public class RAMCandidacyServiceImpl implements CandidacyService {
 	}
 
 	@Override
-	public String[] findCandidacy(String email) throws BusinessException {
-		return new String[6];
+	public List<Candidacy> findMyCandidacy(String email) throws BusinessException {
+		return new ArrayList<>();
 	}
 
 	@Override

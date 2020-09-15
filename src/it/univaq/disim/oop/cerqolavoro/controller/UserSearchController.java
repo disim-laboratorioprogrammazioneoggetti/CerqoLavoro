@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 import org.controlsfx.control.SearchableComboBox;
 import it.univaq.disim.oop.cerqolavoro.business.BusinessException;
-import it.univaq.disim.oop.cerqolavoro.business.CandidacyNotFoundException;
 import it.univaq.disim.oop.cerqolavoro.business.CandidacyService;
 import it.univaq.disim.oop.cerqolavoro.business.CerqoLavoroBusinessFactory;
 import it.univaq.disim.oop.cerqolavoro.business.OfferService;
@@ -25,6 +24,7 @@ import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMOfferServiceImpl;
 import it.univaq.disim.oop.cerqolavoro.domain.Candidacy;
 import it.univaq.disim.oop.cerqolavoro.domain.Offer;
 import it.univaq.disim.oop.cerqolavoro.domain.User;
+import it.univaq.disim.oop.cerqolavoro.domain.Worker;
 import it.univaq.disim.oop.cerqolavoro.view.ViewDispatcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -98,10 +98,14 @@ public class UserSearchController implements Initializable, DataInitializable<Us
     public Stage stage = new Stage();  
     private ViewDispatcher dispatcher;   
 	private User user;	
+	private Worker worker;
 	private CandidacyService candidacyService;
 	private OfferService offerService;
 	private Candidacy candidacy;
 	private Offer offer;
+	private String esperienza;
+	private String istruzione;
+	private String categoria;
 	
 	public UserSearchController() {
 		dispatcher = ViewDispatcher.getInstance();
@@ -115,6 +119,9 @@ public class UserSearchController implements Initializable, DataInitializable<Us
 	@Override
 	public void initializeData(User user) {
 	      usEmail.setText(user.getEmail());
+	      this.esperienza = ((Worker) user).getExperience();
+	      this.istruzione = ((Worker) user).getEducation();
+	      this.categoria = ((Worker) user).getSector();
 	}
 	
 	// Ricerca offerte attinenti
@@ -148,17 +155,7 @@ public class UserSearchController implements Initializable, DataInitializable<Us
         String listCadence[] = new String[4];
         String charset = "UTF-8";
         
-        // Lettura informazioni utili ai fini della ricerca personalizzata
-        
-    	File a = new File(FileCerqoLavoroBusinessFactoryImpl.WORKER_FILE_DIRECTORY + usEmail.getText() + ".csv");
-    	FileReader user = new FileReader(a);
-        String exp = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.WORKER_FILE_DIRECTORY + usEmail.getText() + ".csv")).get(5);
-        String esperienza = exp;
-        String edu = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.WORKER_FILE_DIRECTORY + usEmail.getText() + ".csv")).get(6);
-        String istruzione = edu;
-        String cat = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.WORKER_FILE_DIRECTORY + usEmail.getText() + ".csv")).get(13);
-        String categoria = cat;
-        user.close();
+        // Lettura informazioni utili ai fini della ricerca personalizzata        
     	BufferedReader reader = new BufferedReader(new FileReader(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME));
     	int lines = 0;
     	while (reader.readLine() != null) {
@@ -167,8 +164,7 @@ public class UserSearchController implements Initializable, DataInitializable<Us
     	reader.close();
     	int cont = lines / 13;
     	
-    	// Ricerca nel file offerte
-    	
+    	// Ricerca nel file offerte    	
          BufferedReader read = new BufferedReader(
         	        new InputStreamReader(
         	            new FileInputStream(FileCerqoLavoroBusinessFactoryImpl.OFFERS_FILE_NAME), charset));
@@ -377,8 +373,6 @@ public class UserSearchController implements Initializable, DataInitializable<Us
     	try {
     		candidacyService.createCandidacy(usEmail.getText().toString(), ann1.getText().toString());
         	annuncio1.setVisible(false);
-		} catch (CandidacyNotFoundException e) {
-			e.getCause().printStackTrace();
 		} catch (BusinessException e) {
 			e.getCause().printStackTrace();
 			dispatcher.renderError(e);
@@ -391,8 +385,6 @@ public class UserSearchController implements Initializable, DataInitializable<Us
     	try {
     		candidacyService.createCandidacy(usEmail.getText().toString(), ann2.getText().toString());
         	annuncio2.setVisible(false);
-		} catch (CandidacyNotFoundException e) {
-			e.getCause().printStackTrace();
 		} catch (BusinessException e) {
 			e.getCause().printStackTrace();
 			dispatcher.renderError(e);
@@ -404,8 +396,6 @@ public class UserSearchController implements Initializable, DataInitializable<Us
     	try {
     		candidacyService.createCandidacy(usEmail.getText().toString(), ann3.getText().toString());
         	annuncio3.setVisible(false);
-		} catch (CandidacyNotFoundException e) {
-			e.getCause().printStackTrace();
 		} catch (BusinessException e) {
 			e.getCause().printStackTrace();
 			dispatcher.renderError(e);
@@ -417,8 +407,6 @@ public class UserSearchController implements Initializable, DataInitializable<Us
     	try {
     		candidacyService.createCandidacy(usEmail.getText().toString(), ann4.getText().toString());
         	annuncio4.setVisible(false);
-		} catch (CandidacyNotFoundException e) {
-			e.getCause().printStackTrace();
 		} catch (BusinessException e) {
 			e.getCause().printStackTrace();
 			dispatcher.renderError(e);

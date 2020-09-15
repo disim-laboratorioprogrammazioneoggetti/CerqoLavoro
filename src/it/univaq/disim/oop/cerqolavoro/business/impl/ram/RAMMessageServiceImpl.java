@@ -15,12 +15,16 @@ public class RAMMessageServiceImpl implements MessageService {
 	public RAMMessageServiceImpl(MessageService messageService) {
 		this.messageService = messageService;
 	}
+	
+	@Override
+	public List<Message> findMessages(String email) throws BusinessException {
+		return new ArrayList<>();
+	}
 
 	@Override
-	public Message createMessages(String workerEmail, String textMessage) throws BusinessException, IOException {
+	public void createMessages(String workerEmail, String textMessage) throws BusinessException, IOException {
 		Message message = new Message();
 		message.setText(textMessage);
-		return message;
 	}
 
 }

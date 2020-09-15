@@ -15,7 +15,7 @@
       <VBox fx:id="menuBar" prefHeight="535.0" prefWidth="150.0" style="-fx-background-color: #56ec50;" BorderPane.alignment="CENTER_LEFT" />
    </left>
    <top>
-      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="850.0" spacing="10.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="1121.0" spacing="10.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -28,7 +28,8 @@
                </font>
             </Text>
             <Separator orientation="VERTICAL" prefHeight="87.0" prefWidth="462.0" visible="false" />
-            <ImageView fx:id="esciButton" fitHeight="26.0" fitWidth="70.0" onMouseClicked="#logoutAction" pickOnBounds="true" preserveRatio="true">
+            <Separator orientation="VERTICAL" prefHeight="55.0" prefWidth="277.0" />
+            <ImageView fx:id="esciButton" fitHeight="35.0" fitWidth="130.0" onMouseClicked="#logoutAction" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/icon.jpg" />
                </image>

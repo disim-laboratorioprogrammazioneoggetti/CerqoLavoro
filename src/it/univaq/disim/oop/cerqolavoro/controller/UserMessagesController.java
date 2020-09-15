@@ -18,6 +18,7 @@ import it.univaq.disim.oop.cerqolavoro.business.CerqoLavoroBusinessFactory;
 import it.univaq.disim.oop.cerqolavoro.business.MessageService;
 import it.univaq.disim.oop.cerqolavoro.business.impl.file.FileCerqoLavoroBusinessFactoryImpl;
 import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMMessageServiceImpl;
+import it.univaq.disim.oop.cerqolavoro.domain.Candidacy;
 import it.univaq.disim.oop.cerqolavoro.domain.Message;
 import it.univaq.disim.oop.cerqolavoro.domain.User;
 import it.univaq.disim.oop.cerqolavoro.view.ViewDispatcher;
@@ -65,35 +66,24 @@ public class UserMessagesController implements Initializable, DataInitializable<
 		TextArea mex[] = { MexArea1, MexArea2, MexArea3 };
 		String preMex[] = new String [3];
 		String listaMex[] = new String [3];	
-		int i = 0, k = 0, a = 0,b = 1;		
-		BufferedReader reader = new BufferedReader(new FileReader(FileCerqoLavoroBusinessFactoryImpl.MESSAGES_FILE_DIRECTORY + umEmail.getText().toString() + "_mex.txt"));
-		int lines = 0;
-		while (reader.readLine() != null) {
-		  lines++; }
-		reader.close();
-		int cont = lines / 2;
-		BufferedReader read = new BufferedReader(
-		          new InputStreamReader(
-		              new FileInputStream(FileCerqoLavoroBusinessFactoryImpl.MESSAGES_FILE_DIRECTORY + umEmail.getText().toString() + "_mex.txt"), StandardCharsets.UTF_8));
-		 List<String> line = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.MESSAGES_FILE_DIRECTORY + umEmail.getText().toString() + "_mex.txt"), StandardCharsets.UTF_8);  
-			  while ( ( line != null ) && ( i < cont )) {		  
-				  preMex[i] = line.get(a);
-				  listaMex[i] = line.get(b);			  
-			    k++; i++; a += 2; b += 2;  	
-			  }
-			  read.close(); 
+		int i = 0, k = 0;		
+		List<Message> messagesList = messageService.findMessages(umEmail.getText().toString());
+    	for (Message m: messagesList) {
+    	    preMex[k] = m.getTitle();
+    	    listaMex[k] = m.getText();
+    	    k++;
+    	}
 			  if ( k < 3 ) {
 			  for ( i = k; i < 3; i++ ) {
 				  mex[i].setVisible(false); }
 			  }			  
-			  for ( i = 0; i < k ; i++ ) {   
+			  for ( i = 0; i < k ; i ++ ) {   
 				  mex[i].setVisible(true);
 				  mex[i].setText(preMex[i] + "\n" + listaMex[i]); }
 			  }
-	 } catch (FileNotFoundException ex) {
-		ex.printStackTrace();
-	 } catch (IOException ex) {
-		ex.printStackTrace();
+	 } catch (BusinessException e) {
+		e.printStackTrace();
+		throw new BusinessException(e);
 	 }
 	}
 

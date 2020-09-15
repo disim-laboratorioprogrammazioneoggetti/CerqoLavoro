@@ -11,10 +11,11 @@ public class Employer extends User {
 	  private String name;
 	  private String surname;
 	  private Integer phone;
-	  private String companyname;
-	  private Integer companyphone;
+	  private String companyName;
+	  private Integer companyPhone;
 	  private Integer IVA;
-	  
+	  private String companyEmail;
+	  private String companyBio;
 	  private Set<Offer> myOffer = new HashSet<>();
 	  private Set<Message> sentMessages = new HashSet<>();
 	  private ArrayList<Candidacy> candidates = new ArrayList<>();
@@ -23,19 +24,19 @@ public class Employer extends User {
 		    return name;
 		  }
 
-    public void setName(String name) {
+      public void setName(String name) {
 		    this.name = name;
 		  }
     
-    public String getSurame() {
+      public String getSurname() {
 		    return surname;
 		  }
 
-    public void setSurame(String surname) {
+      public void setSurname(String surname) {
 		    this.surname = surname;
 		  }
     
-    public Integer getPhone() {
+      public Integer getPhone() {
 	    return phone;
 	  }
 
@@ -43,20 +44,28 @@ public class Employer extends User {
 	    this.phone = phone;
 	  }
 	  
-	  public String getCompanyname() {
-		    return companyname;
+	  public String getCompanyName() {
+		    return companyName;
 		  }
 
-    public void setCompanyname(String companyname) {
-		    this.companyname = companyname;
+      public void setCompanyName(String companyName) {
+		    this.companyName = companyName;
 		  }
  
-	  public Integer getCompanyphone() {
-	    return companyphone;
+	  public String getCompanyEmail() {
+		    return companyEmail;
+		  }
+
+      public void setCompanyEmail(String companyEmail) {
+		    this.companyEmail = companyEmail;
+		  }
+
+	  public Integer getCompanyPhone() {
+	    return companyPhone;
 	  }
 
-	  public void setCompanyphone(Integer companyphone) {
-	    this.companyphone = companyphone;
+	  public void setCompanyPhone(Integer companyPhone) {
+	    this.companyPhone = companyPhone;
 	  }
 	  
 	  public Integer getIVA() {
@@ -66,6 +75,14 @@ public class Employer extends User {
 	  public void setIVA(Integer IVA) {
 	    this.IVA = IVA;
 	  }
+	  
+	  public String getCompanyBio() {
+		    return companyBio;
+		  }
+
+      public void setCompanyBio(String companyBio) {
+		    this.companyBio = companyBio;
+		  }
 	  
 		public Set<Offer> getOffer() {
 			return myOffer;

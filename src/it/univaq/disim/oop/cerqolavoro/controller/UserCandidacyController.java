@@ -2,9 +2,9 @@ package it.univaq.disim.oop.cerqolavoro.controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import it.univaq.disim.oop.cerqolavoro.business.BusinessException;
-import it.univaq.disim.oop.cerqolavoro.business.CandidacyNotFoundException;
 import it.univaq.disim.oop.cerqolavoro.business.CandidacyService;
 import it.univaq.disim.oop.cerqolavoro.business.CerqoLavoroBusinessFactory;
 import it.univaq.disim.oop.cerqolavoro.business.impl.ram.RAMCandidacyServiceImpl;
@@ -66,10 +66,10 @@ public class UserCandidacyController implements Initializable, DataInitializable
 	// Ricerca candidature nel file
     
     @FXML
-    void usrcCandidatesBtn(ActionEvent event) throws CandidacyNotFoundException, BusinessException {
+    void usrcCandidatesBtn(ActionEvent event) throws BusinessException {
         Pane risultato[] = { candann1, candann2, candann3, candann4, candann5, candann6 };
-        String candidature[] = new String[6];
         Label adcand[] = { caGet1, caGet2, caGet3, caGet4, caGet5, caGet6 };
+        String candidature[] = new String[6];
     	                try {
     	                    int i = 0, n = 0, k = 0;
     	                	for ( i = 0; i < 6; i++ ) {
@@ -77,8 +77,14 @@ public class UserCandidacyController implements Initializable, DataInitializable
 	                			risultato[i].setVisible(false);
 	                		    }
     	                	}
-                            candidature = candidacyService.findCandidacy(ucEmail.getText().toString());
-                            for ( i = 0; i < candidature.length; i++) {
+    	                	i = 0;
+    	                	// Candidacy workerCandidate;
+    	                	List<Candidacy> candidatesList = candidacyService.findMyCandidacy(ucEmail.getText().toString());
+    	                	for (Candidacy c: candidatesList) {
+    	                	    candidature[i] = c.getTitle();
+    	                	    i++;
+    	                	}
+                            for ( i = 0; i < 6; i++) {
                             	if ( candidature[i] != null ) {
                             		k++;
                             	}
@@ -96,14 +102,14 @@ public class UserCandidacyController implements Initializable, DataInitializable
     	    	        }
     	                } catch (BusinessException e) {
                             e.printStackTrace();
-                            throw new CandidacyNotFoundException(e);
+                            throw new BusinessException(e);
                           }
                         }
     
     // Pulsanti ritira candidatura
     
     @FXML
-    void rc1Button(ActionEvent event) throws CandidacyNotFoundException, IOException {
+    void rc1Button(ActionEvent event) throws IOException {
     	try {
             Pane risultato[] = { candann1, candann2, candann3, candann4, candann5, candann6 };
     		candidacyService.deleteCandidacy(ucEmail.getText().toString(), caGet1.getText().toString());
@@ -115,10 +121,10 @@ public class UserCandidacyController implements Initializable, DataInitializable
     }
 
     @FXML
-    void rc2Button(ActionEvent event) throws CandidacyNotFoundException, IOException {
+    void rc2Button(ActionEvent event) throws IOException {
     	try {
             Pane risultato[] = { candann1, candann2, candann3, candann4, candann5, candann6 };
-    		candidacyService.deleteCandidacy(ucEmail.getText().toString(), caGet1.getText().toString());
+    		candidacyService.deleteCandidacy(ucEmail.getText().toString(), caGet2.getText().toString());
     	    risultato[1].setVisible(false);
     	}
      catch (Exception e) {
@@ -127,10 +133,10 @@ public class UserCandidacyController implements Initializable, DataInitializable
     }
 
     @FXML
-    void rc3Button(ActionEvent event) throws CandidacyNotFoundException, IOException {
+    void rc3Button(ActionEvent event) throws IOException {
     	try {
             Pane risultato[] = { candann1, candann2, candann3, candann4, candann5, candann6 };
-    		candidacyService.deleteCandidacy(ucEmail.getText().toString(), caGet1.getText().toString());
+    		candidacyService.deleteCandidacy(ucEmail.getText().toString(), caGet3.getText().toString());
     	    risultato[2].setVisible(false);
     	}
      catch (Exception e) {
@@ -139,10 +145,10 @@ public class UserCandidacyController implements Initializable, DataInitializable
     }
 
     @FXML
-    void rc4Button(ActionEvent event) throws CandidacyNotFoundException, IOException {
+    void rc4Button(ActionEvent event) throws IOException {
     	try {
             Pane risultato[] = { candann1, candann2, candann3, candann4, candann5, candann6 };
-    		candidacyService.deleteCandidacy(ucEmail.getText().toString(), caGet1.getText().toString());
+    		candidacyService.deleteCandidacy(ucEmail.getText().toString(), caGet4.getText().toString());
     	    risultato[3].setVisible(false);
     	}
      catch (Exception e) {
@@ -151,10 +157,10 @@ public class UserCandidacyController implements Initializable, DataInitializable
     }
     
     @FXML
-    void rc5Button(ActionEvent event) throws CandidacyNotFoundException, IOException {
+    void rc5Button(ActionEvent event) throws IOException {
          try {
                 Pane risultato[] = { candann1, candann2, candann3, candann4, candann5, candann6 };
-        		candidacyService.deleteCandidacy(ucEmail.getText().toString(), caGet1.getText().toString());
+        		candidacyService.deleteCandidacy(ucEmail.getText().toString(), caGet5.getText().toString());
         	    risultato[4].setVisible(false);
         	}
          catch (Exception e) {
@@ -163,10 +169,10 @@ public class UserCandidacyController implements Initializable, DataInitializable
     }
     
     @FXML
-    void rc6Button(ActionEvent event) throws CandidacyNotFoundException, IOException {
+    void rc6Button(ActionEvent event) throws IOException {
          try {
                 Pane risultato[] = { candann1, candann2, candann3, candann4, candann5, candann6 };
-        		candidacyService.deleteCandidacy(ucEmail.getText().toString(), caGet1.getText().toString());
+        		candidacyService.deleteCandidacy(ucEmail.getText().toString(), caGet6.getText().toString());
         	    risultato[5].setVisible(false);
         	}
          catch (Exception e) {

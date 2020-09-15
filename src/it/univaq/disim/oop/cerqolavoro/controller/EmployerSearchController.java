@@ -204,7 +204,9 @@ public class EmployerSearchController implements Initializable, DataInitializabl
     @FXML
     void Contact1(ActionEvent event) throws IOException  {
     	try {
-    		Message message = messageService.createMessages( mailUser1.getText().toString(), mex1.getText().toString() );
+    		if(!mex1.getText().isEmpty()) {
+    		messageService.createMessages( mailUser1.getText().toString(), mex1.getText().toString() );
+    		}
     	} catch (BusinessException e) {
 			dispatcher.renderError(e);
     	}  
@@ -214,7 +216,7 @@ public class EmployerSearchController implements Initializable, DataInitializabl
     void Contact2(ActionEvent event) throws IOException  {
     	try {
     	if(!mex2.getText().isEmpty()) {
-    		Message message = messageService.createMessages( mailUser2.getText().toString(), mex2.getText().toString() );
+    		messageService.createMessages( mailUser2.getText().toString(), mex2.getText().toString() );
     	}   	
     	} catch (BusinessException e) {
 			dispatcher.renderError(e);
@@ -224,8 +226,8 @@ public class EmployerSearchController implements Initializable, DataInitializabl
     @FXML
     void Contact3(ActionEvent event) throws IOException  {
     	try {
-    	if(!mex1.getText().isEmpty()) {
-    		Message message = messageService.createMessages( mailUser3.getText().toString(), mex1.getText().toString() );
+    	if(!mex3.getText().isEmpty()) {
+    		messageService.createMessages( mailUser3.getText().toString(), mex3.getText().toString() );
     	}   	
     	} catch (BusinessException e) {
 			dispatcher.renderError(e);
@@ -235,8 +237,8 @@ public class EmployerSearchController implements Initializable, DataInitializabl
     @FXML
     void Contact4(ActionEvent event) throws IOException  {
     	try {
-    	if(!mex1.getText().isEmpty()) {
-    		Message message = messageService.createMessages( mailUser4.getText().toString(), mex1.getText().toString() );
+    	if(!mex4.getText().isEmpty()) {
+    		messageService.createMessages( mailUser4.getText().toString(), mex4.getText().toString() );
     	}   	
     	} catch (BusinessException e) {
 			dispatcher.renderError(e);
@@ -246,8 +248,8 @@ public class EmployerSearchController implements Initializable, DataInitializabl
     @FXML
     void Contact5(ActionEvent event) throws IOException  {
     	try {
-    	if(!mex1.getText().isEmpty()) {
-    		Message message = messageService.createMessages( mailUser5.getText().toString(), mex1.getText().toString() );
+    	if(!mex5.getText().isEmpty()) {
+    		messageService.createMessages( mailUser5.getText().toString(), mex5.getText().toString() );
     	}   	
     	} catch (BusinessException e) {
 			dispatcher.renderError(e);
@@ -257,8 +259,8 @@ public class EmployerSearchController implements Initializable, DataInitializabl
     @FXML
     void Contact6(ActionEvent event) throws IOException  {
     	try {
-    	if(!mex1.getText().isEmpty()) {
-    		Message message = messageService.createMessages( mailUser6.getText().toString(), mex1.getText().toString() );
+    	if(!mex6.getText().isEmpty()) {
+    		messageService.createMessages( mailUser6.getText().toString(), mex6.getText().toString() );
     	}   	
     	} catch (BusinessException e) {
 			dispatcher.renderError(e);

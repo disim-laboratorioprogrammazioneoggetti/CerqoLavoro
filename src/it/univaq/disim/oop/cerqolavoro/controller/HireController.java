@@ -82,6 +82,7 @@ public class HireController implements Initializable, DataInitializable<User> {
 @FXML private ChoiceBox<String> EditExpbox11;
 
 @FXML private Label eoEmail;
+private String email;
 
 // Label Annuncio n. 1
 @FXML private Label TitleLabel;
@@ -174,6 +175,7 @@ private User user;
 public Stage stage = new Stage();
 private OfferService offerService;
 private Offer offer;
+private String employerEmail;
 
 public HireController() {
 	dispatcher = ViewDispatcher.getInstance();
@@ -185,6 +187,7 @@ public HireController() {
 @Override
 public void initializeData(User user) {
       eoEmail.setText(user.getEmail());
+      this.employerEmail = user.getEmail();
 }
 
 // Bottone mostra offerte pubblicate
@@ -249,7 +252,7 @@ public void initializeData(User user) {
 	 int i = 0, k = 0, j = 0, p = 1, q = 2, email = 3, r = 4, s = 5, t = 6, u = 7, w = 8, v = 9, x = 10, y = 11, z = 12;
 	 try {   
 		  while ( ( line != null ) && ( i < cont ) && ( k < 3 )) {
-			if ( line.get(email).equals(eoEmail.getText().toString()) ) {
+			if ( line.get(email).equals(employerEmail) ) {
 		    listaregioni[k] = line.get(j);
 		    listasettori[k] = line.get(p);
 		    listatitoli[k] = line.get(q);

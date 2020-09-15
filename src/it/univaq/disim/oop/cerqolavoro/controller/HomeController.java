@@ -25,13 +25,13 @@ public class HomeController implements Initializable, DataInitializable<User> {
 
 		if (user instanceof Worker) {
 			Worker worker = (Worker) user;
-			testo.append(user.getEmail());
+			testo.append(((Worker) user).getName());
 			testo.append(",");
 			testo.append(" in cerca di lavoro? ");
 		}
 		if (user instanceof Employer) {
 			Employer employer = (Employer) user;
-			testo.append(user.getEmail());
+			testo.append(((Employer) user).getName());
 			testo.append(",");
 			testo.append(" in cerca di dipendenti? ");
 		}

@@ -1,7 +1,7 @@
 package it.univaq.disim.oop.cerqolavoro.domain;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Set;
 import java.util.HashSet;
 
@@ -10,17 +10,18 @@ public class Worker extends User {
 	private String name;
 	private String surname;
 	private String sector;
+	private Integer phone;
 	private String region;
 	private String province;
 	private String city;
-	private String cap;
+	private Integer cap;
 	private String address;
-	private Date birthdate;
+	private LocalDate birthdate;
 	private String education;
 	private String experience;
-	private Set<Message> receivedMessages = new HashSet<>();
-	private Set<Skills> mySkills;
-    private ArrayList<Candidacy> myCandidates = new ArrayList<>();
+	private String bio;
+	private Set<Message> messagesList = new HashSet<>();
+    private ArrayList<Candidacy> candidatesList = new ArrayList<>();
 	
 public String getName() {
 	return name;
@@ -42,8 +43,16 @@ public String getSector() {
     return sector;
 }
 
-public void setSe(String sector) {
+public void setSector(String sector) {
 this.sector = sector;
+}
+
+public Integer getPhone() {
+	return phone;
+}
+
+public void setPhone(Integer phone) {
+this.phone = phone;
 }
 
 public String getRegion() {
@@ -70,11 +79,11 @@ public void setCity(String city) {
 this.city = city;
 }
 
-public String getCap() {
+public Integer getCap() {
     return cap;
 }
 
-public void setCap(String cap) {
+public void setCap(Integer cap) {
 this.cap = cap;
 }
 
@@ -94,11 +103,11 @@ public void setEducation(String education) {
 this.education = education;
 }
 
-public Date getBirthdate() {
+public LocalDate getBirthdate() {
     return birthdate;
 }
 
-public void setBirthdate(Date birthdate) {
+public void setBirthdate(LocalDate birthdate) {
 this.birthdate = birthdate;
 }
 
@@ -110,28 +119,28 @@ public void setExperience(String experience) {
 this.experience = experience;
 }
 
+public String getBio() {
+	return bio;
+}
+
+public void setBio(String bio) {
+this.bio = bio;
+}
+
 public ArrayList<Candidacy> getCandidates() {
-	return myCandidates;
+	return candidatesList;
 }
 
-public void setCandidacy(ArrayList<Candidacy> myCandidates) {
-	this.myCandidates = myCandidates;
-}
-
-public Set<Skills> getSkills() {
-	return mySkills;
-}
-
-public void setSkills(Set<Skills> mySkills) {
-	this.mySkills = mySkills;
+public void setCandidacy(ArrayList<Candidacy> candidatesList) {
+	this.candidatesList = candidatesList;
 }
 
 public Set<Message> getMessages() {
-	return receivedMessages;
+	return messagesList;
 }
 
-public void setMessages(Set<Message> receivedMessages) {
-	this.receivedMessages = receivedMessages;
+public void setMessages(Set<Message> messagesList) {
+	this.messagesList = messagesList;
 }
 
 }
