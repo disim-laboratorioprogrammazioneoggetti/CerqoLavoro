@@ -6,7 +6,7 @@ public class Message {
 	private String text;
 	
 	public String getTitle() {
-		return text;
+		return title;
 	}
 
 	public void setTitle(String title) {

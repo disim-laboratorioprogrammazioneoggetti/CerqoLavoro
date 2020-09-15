@@ -66,18 +66,18 @@ public class UserMessagesController implements Initializable, DataInitializable<
 		TextArea mex[] = { MexArea1, MexArea2, MexArea3 };
 		String preMex[] = new String [3];
 		String listaMex[] = new String [3];	
-		int i = 0, k = 0;		
+		int i = 0;		
 		List<Message> messagesList = messageService.findMessages(umEmail.getText().toString());
     	for (Message m: messagesList) {
-    	    preMex[k] = m.getTitle();
-    	    listaMex[k] = m.getText();
-    	    k++;
+    	    preMex[i] = m.getTitle().toString();
+    	    listaMex[i] = m.getText().toString();
+    	    i++;
     	}
-			  if ( k < 3 ) {
-			  for ( i = k; i < 3; i++ ) {
+			  if ( messagesList.size() < 3 ) {
+			  for ( i = messagesList.size(); i < 3; i++ ) {
 				  mex[i].setVisible(false); }
 			  }			  
-			  for ( i = 0; i < k ; i ++ ) {   
+			  for ( i = 0; i < messagesList.size() ; i++ ) {   
 				  mex[i].setVisible(true);
 				  mex[i].setText(preMex[i] + "\n" + listaMex[i]); }
 			  }

@@ -42,16 +42,16 @@ public class FileMessageServiceImpl implements MessageService{
 				while (reader.readLine() != null) {
 				  lines++; }
 				reader.close();
+				int cont = lines / 2;
 				BufferedReader read = new BufferedReader(
 				          new InputStreamReader(
 				              new FileInputStream(FileCerqoLavoroBusinessFactoryImpl.MESSAGES_FILE_DIRECTORY + email + "_mex.txt"), StandardCharsets.UTF_8));
 				 List<String> line = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.MESSAGES_FILE_DIRECTORY + email + "_mex.txt"), StandardCharsets.UTF_8);  
-					  while ( (line != null) && (i < lines) ) {		  
+					  while ( (line != null) && (i < cont) ) {		  
 						  Message message = new Message();
 						  message.setTitle(line.get(a).toString());
-						  message.setText(line.get(b).toString());
-  	                	  messagesList.add(message);
-					      i += 2; a += 2; b += 2;	
+						  message.setText(line.get(b).toString()); 
+					      i++; a += 2; b += 2; messagesList.add(message);
 					  }
 					  read.close(); 
 			}
