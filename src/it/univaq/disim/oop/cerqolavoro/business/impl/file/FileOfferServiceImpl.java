@@ -288,6 +288,7 @@ public class FileOfferServiceImpl implements OfferService {
 		      BufferedWriter writer = new BufferedWriter(new FileWriter(f, true));
 		      writer.append(sb.toString());
 		      writer.close();
+		      
 	          } catch (IOException e) {
 	      		e.printStackTrace();
 	    		throw new BusinessException(e);

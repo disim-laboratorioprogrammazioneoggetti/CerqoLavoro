@@ -18,6 +18,8 @@ import java.util.Scanner;
 import it.univaq.disim.oop.cerqolavoro.business.BusinessException;
 import it.univaq.disim.oop.cerqolavoro.business.CandidacyService;
 import it.univaq.disim.oop.cerqolavoro.domain.Candidacy;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class FileCandidacyServiceImpl implements CandidacyService {
 	private CandidacyService candidacyService;
@@ -105,6 +107,12 @@ public class FileCandidacyServiceImpl implements CandidacyService {
             bw.append(ca);
             bw.close();
         	}
+        	if ( cand == false ) {
+        	    Alert confirmAlert = new Alert(AlertType.ERROR);
+        	    confirmAlert.setHeaderText("Attenzione");
+        	    confirmAlert.setContentText("La candidatura è già presente nel sistema");
+        	    confirmAlert.showAndWait();
+        	}
     	}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -160,6 +168,10 @@ public class FileCandidacyServiceImpl implements CandidacyService {
     	    BufferedWriter writer = new BufferedWriter(new FileWriter(f, true));
     	    writer.append(sb.toString());
     	    writer.close();
+    	    Alert confirmAlert = new Alert(AlertType.CONFIRMATION);
+    	    confirmAlert.setHeaderText("Avviso");
+    	    confirmAlert.setContentText("La candidatura è stata rimossa con successo");
+    	    confirmAlert.showAndWait();
     	}
          catch (IOException e) {
 			e.printStackTrace();
