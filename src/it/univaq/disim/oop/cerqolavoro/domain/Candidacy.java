@@ -4,6 +4,8 @@ public class Candidacy {
 
 	private String email;
 	private String title;
+	private Worker worker;
+	private Offer offer;
 	
 	public String getEmail() {
 		return email;

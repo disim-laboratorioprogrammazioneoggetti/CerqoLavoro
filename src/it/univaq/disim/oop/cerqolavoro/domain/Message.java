@@ -4,6 +4,8 @@ public class Message {
 
 	private String title;
 	private String text;
+	private Employer employer;
+	private Worker worker;
 	
 	public String getTitle() {
 		return title;
