@@ -26,8 +26,6 @@ public class RAMCandidacyServiceImpl implements CandidacyService {
 
 	@Override
 	public void createCandidacy(String email, String candidacyTitle) throws BusinessException {
-		
-		// throw new UserNotFoundException();
 	}
 
 	@Override
