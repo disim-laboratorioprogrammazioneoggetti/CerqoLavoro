@@ -148,7 +148,7 @@
             <Text layoutX="335.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tempo Contratto:" wrappingWidth="93.6328125" />
          </children>
       </Pane>
-      <Button fx:id="luckyOffers" layoutX="802.0" layoutY="32.0" mnemonicParsing="false" onAction="#luckyOff" style="-fx-background-color: #70c456;" text="Offerte per te" textFill="WHITE">
+      <Button fx:id="luckyOffers" layoutX="802.0" layoutY="32.0" mnemonicParsing="false" onAction="#luckyOff" style="-fx-background-color: #70c456;" text="Offerte per me" textFill="WHITE">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
