@@ -153,8 +153,8 @@
             <Font name="Segoe UI" size="14.0" />
          </font>
       </Button>
-      <Separator layoutX="-3.0" layoutY="194.0" prefHeight="6.0" prefWidth="805.0" />
-      <Separator layoutX="3.0" layoutY="325.0" prefHeight="6.0" prefWidth="805.0" />
-      <Separator layoutX="3.0" layoutY="467.0" prefHeight="0.0" prefWidth="805.0" />
+      <Separator layoutX="-3.0" layoutY="194.0" prefHeight="0.0" prefWidth="1024.0" />
+      <Separator layoutX="3.0" layoutY="325.0" prefHeight="6.0" prefWidth="1024.0" />
+      <Separator layoutX="3.0" layoutY="464.0" prefHeight="6.0" prefWidth="1024.0" />
    </children>
 </AnchorPane>
