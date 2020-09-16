@@ -20,7 +20,7 @@
                      <font>
                         <Font name="Segoe UI" size="14.0" />
                      </font></Button>
-                  <Label fx:id="eoEmail" prefHeight="15.0" prefWidth="144.0" textFill="DODGERBLUE">
+                  <Label fx:id="eoEmail" prefHeight="14.0" prefWidth="131.0" textFill="DODGERBLUE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -30,7 +30,7 @@
             <Pane layoutY="40.0" />
             <Pane fx:id="Annuncio1" layoutY="40.0" prefHeight="184.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
                <children>
-                  <Button fx:id="Editbtn1" layoutX="627.0" layoutY="148.0" mnemonicParsing="false" onAction="#editbtnpushed" prefHeight="25.0" prefWidth="72.0" styleClass="button2" stylesheets="@../../Stylesheet/fullpackstyling.css" text="Modifica " />
+                  <Button fx:id="Editbtn1" layoutX="627.0" layoutY="148.0" mnemonicParsing="false" onAction="#editbtnpushed" prefHeight="25.0" prefWidth="72.0" styleClass="button2" stylesheets="@../Stylesheet/fullpackstyling.css" text="Modifica " />
                   <TextField fx:id="EditTitleField" layoutX="14.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Titolo" />
                   <TextField fx:id="EditPositionField" layoutX="14.0" layoutY="40.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Posizione" />
                   <TextField fx:id="EditRetribution" layoutX="14.0" layoutY="138.0" prefHeight="25.0" prefWidth="159.0" promptText="MIN-MAX" />
@@ -116,7 +116,7 @@
             </Pane>
             <Pane fx:id="Annuncio2" layoutY="228.0" prefHeight="184.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
                <children>
-                  <Button fx:id="Editbtn2" layoutX="627.0" layoutY="149.0" mnemonicParsing="false" onAction="#editbtn2pushed" prefHeight="25.0" prefWidth="72.0" styleClass="button2" stylesheets="@../../Stylesheet/fullpackstyling.css" text="Modifica" />
+                  <Button fx:id="Editbtn2" layoutX="627.0" layoutY="149.0" mnemonicParsing="false" onAction="#editbtn2pushed" prefHeight="25.0" prefWidth="72.0" styleClass="button2" stylesheets="@../Stylesheet/fullpackstyling.css" text="Modifica" />
                   <TextField fx:id="EditTitleField1" layoutX="14.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Titolo" />
                   <TextField fx:id="EditPositionField1" layoutX="14.0" layoutY="40.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Posizione" />
                   <TextField fx:id="EditRetribution1" layoutX="14.0" layoutY="138.0" prefHeight="25.0" prefWidth="159.0" promptText="MIN-MAX" />
@@ -202,7 +202,7 @@
             </Pane>
             <Pane fx:id="Annuncio3" layoutY="416.0" prefHeight="184.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
                <children>
-                  <Button fx:id="Editbtn3" layoutX="627.0" layoutY="148.0" mnemonicParsing="false" onAction="#editbtn3pushed" prefHeight="25.0" prefWidth="72.0" styleClass="button2" stylesheets="@../../Stylesheet/fullpackstyling.css" text="Modifica" />
+                  <Button fx:id="Editbtn3" layoutX="627.0" layoutY="148.0" mnemonicParsing="false" onAction="#editbtn3pushed" prefHeight="25.0" prefWidth="72.0" styleClass="button2" stylesheets="@../Stylesheet/fullpackstyling.css" text="Modifica" />
                   <TextField fx:id="EditTitleField11" layoutX="14.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Titolo" />
                   <TextField fx:id="EditPositionField11" layoutX="14.0" layoutY="40.0" prefHeight="25.0" prefWidth="159.0" promptText="Modifica Posizione" />
                   <TextField fx:id="EditRetribution11" layoutX="14.0" layoutY="138.0" prefHeight="25.0" prefWidth="159.0" promptText="MIN-MAX" />

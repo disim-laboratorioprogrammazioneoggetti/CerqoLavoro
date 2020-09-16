@@ -957,7 +957,7 @@ public void initialize(URL url, ResourceBundle resources) {
     mailc3p1.setVisible(false);
     mailc2p1.setVisible(false);
     mailc1p1.setVisible(false);
-    
+    eoEmail.setVisible(false);
 // Combobox
     // Annuncio n. 1
     EditTypeContBox.getItems().addAll("Modifica Tipo Contratto","Tempo indeterminato","Tempo determinato","In somministrazione","Lavoro a Chiamata",
