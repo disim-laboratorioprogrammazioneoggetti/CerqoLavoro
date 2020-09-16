@@ -63,10 +63,10 @@ public class FileOfferServiceImpl implements OfferService {
  			        offer.setContractTime(line.get(t));
  			        offer.setWage(line.get(u));
  			        offer.setWageTime(line.get(v));
- 			        offer.setEducation(line.get(y));
- 			        offer.setBonus(line.get(x));
- 			        offer.setInfo(line.get(z));
  			        offer.setExperience(line.get(w));
+ 			        offer.setBonus(line.get(x));
+ 			        offer.setEducation(line.get(y));
+ 			        offer.setInfo(line.get(z));
                     k++; allOffers.add(offer);
                 	 }
                      i++; j += 13; p += 13; q += 13; r += 13; s += 13; t += 13; u += 13; v += 13; w += 13; x += 13; y += 13; z += 13;

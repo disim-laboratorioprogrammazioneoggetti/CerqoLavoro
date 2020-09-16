@@ -30,7 +30,7 @@
             <Label fx:id="wageann2" layoutX="412.0" layoutY="11.0" prefHeight="17.0" prefWidth="63.0" text="€" />
             <Label fx:id="ctypeann2" layoutX="117.0" layoutY="65.0" text="Tipo di Contratto" />
             <Label fx:id="ctimeann2" layoutX="512.0" layoutY="12.0" text="Cadenza" />
-            <Label fx:id="wgtimeann2" layoutX="336.0" layoutY="65.0" text="Info" />
+            <Label fx:id="wgtimeann2" layoutX="336.0" layoutY="65.0" prefHeight="17.0" prefWidth="243.0" text="Info" />
             <Label fx:id="bonusann2" layoutX="669.0" layoutY="11.0" text="Bonus" />
             <Label fx:id="expann2" layoutX="443.0" layoutY="91.0" text="Esperienza" />
             <Text layoutX="140.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Presso" />
@@ -55,7 +55,7 @@
             <Label fx:id="wageann3" layoutX="411.0" layoutY="13.0" prefHeight="17.0" prefWidth="63.0" text="€" />
             <Label fx:id="ctypeann3" layoutX="119.0" layoutY="72.0" text="Tipo di Contratto" />
             <Label fx:id="ctimeann3" layoutX="512.0" layoutY="13.0" text="Cadenza" />
-            <Label fx:id="wgtimeann3" layoutX="341.0" layoutY="72.0" prefHeight="17.0" prefWidth="21.0" text="Info" />
+            <Label fx:id="wgtimeann3" layoutX="335.0" layoutY="72.0" prefHeight="17.0" prefWidth="243.0" text="Info" />
             <Label fx:id="bonusann3" layoutX="669.0" layoutY="13.0" text="Bonus" />
             <Label fx:id="expann3" layoutX="442.0" layoutY="106.0" text="Esperienza" />
             <TextArea fx:id="annBio3" layoutX="592.0" layoutY="48.0" prefHeight="65.0" prefWidth="300.0" />
@@ -81,7 +81,7 @@
             <Label fx:id="wageann4" layoutX="412.0" layoutY="13.0" prefHeight="17.0" prefWidth="63.0" text="€" />
             <Label fx:id="ctypeann4" layoutX="118.0" layoutY="66.0" text="Tipo di Contratto" />
             <Label fx:id="ctimeann4" layoutX="512.0" layoutY="13.0" text="Cadenza" />
-            <Label fx:id="wgtimeann4" layoutX="335.0" layoutY="72.0" text="Info" />
+            <Label fx:id="wgtimeann4" layoutX="335.0" layoutY="72.0" prefHeight="17.0" prefWidth="243.0" text="Info" />
             <Label fx:id="bonusann4" layoutX="671.0" layoutY="13.0" text="Bonus" />
             <Label fx:id="expann4" layoutX="443.0" layoutY="97.0" text="Esperienza">
                <font>
@@ -131,7 +131,7 @@
             <Label fx:id="ctypeann1" layoutX="117.0" layoutY="59.0" text="Tipo di Contratto" />
             <Label fx:id="ctimeann1" layoutX="512.0" layoutY="10.0" text="Cadenza" />
             <Label fx:id="wageann1" layoutX="408.0" layoutY="10.0" prefHeight="17.0" prefWidth="63.0" text="€" />
-            <Label fx:id="wgtimeann1" layoutX="382.0" layoutY="59.0" text="Info" />
+            <Label fx:id="wgtimeann1" layoutX="338.0" layoutY="59.0" prefHeight="17.0" prefWidth="243.0" text="Info" />
             <Text layoutX="329.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retribuzione:" wrappingWidth="72.728515625" />
             <Label fx:id="expann1" layoutX="439.0" layoutY="91.0" text="Esperienza" />
             <TextArea fx:id="annBio1" layoutX="590.0" layoutY="42.0" prefHeight="65.0" prefWidth="300.0" />
