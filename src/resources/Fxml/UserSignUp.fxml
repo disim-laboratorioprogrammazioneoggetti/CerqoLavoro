@@ -15,116 +15,119 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.UserSignUpController">
+<AnchorPane prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.UserSignUpController">
    <children>
-      <Pane layoutX="38.0" layoutY="131.0" prefHeight="442.0" prefWidth="782.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="97.0" layoutY="133.0" prefHeight="442.0" prefWidth="830.0" style="-fx-background-color: #a9ff83;">
          <children>
-            <TextField fx:id="cityField" layoutX="419.0" layoutY="140.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci città di residenza" />
+            <TextField fx:id="cityField" layoutX="464.0" layoutY="170.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci città di residenza" />
             <TextField fx:id="nameField" layoutX="100.0" layoutY="15.0" prefHeight="16.0" prefWidth="232.0" promptText="Inserisci il tuo nome" />
-            <TextField fx:id="surnameField" layoutX="419.0" layoutY="14.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci il tuo cognome" />
-            <TextField fx:id="numberField" layoutX="419.0" layoutY="78.0" prefHeight="16.0" prefWidth="232.0" promptText="Inserisci un numero di cellulare valido" />
-            <TextField fx:id="provinceField" layoutX="101.0" layoutY="174.0" prefHeight="16.0" prefWidth="232.0" promptText="Inserisci provincia di residenza" />
-            <ChoiceBox fx:id="regionChoice" layoutX="101.0" layoutY="141.0" prefHeight="16.0" prefWidth="232.0" />
-            <Text layoutX="32.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" wrappingWidth="43.48779296875">
+            <TextField fx:id="surnameField" layoutX="464.0" layoutY="14.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci il tuo cognome" />
+            <TextField fx:id="numberField" layoutX="464.0" layoutY="91.0" prefHeight="16.0" prefWidth="232.0" promptText="Inserisci un numero di cellulare valido" />
+            <TextField fx:id="provinceField" layoutX="101.0" layoutY="213.0" prefHeight="16.0" prefWidth="232.0" promptText="Inserisci provincia di residenza" />
+            <ChoiceBox fx:id="regionChoice" layoutX="101.0" layoutY="171.0" prefHeight="16.0" prefWidth="232.0" />
+            <Text layoutX="27.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" wrappingWidth="43.48779296875">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="347.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cognome:" wrappingWidth="58.0">
+            <Text layoutX="372.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cognome:" wrappingWidth="58.0">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="32.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" wrappingWidth="34.0">
+            <Text layoutX="24.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" wrappingWidth="34.0">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="32.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data di nascita:" wrappingWidth="47.51953125">
+            <Text layoutX="25.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data di nascita:" wrappingWidth="47.51953125">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="348.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cellulare:" wrappingWidth="52.552734375">
+            <Text layoutX="375.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cellulare:" wrappingWidth="52.552734375">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="32.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regione:" wrappingWidth="47.51953125">
+            <Text layoutX="25.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regione:" wrappingWidth="47.51953125">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="33.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Provincia:" wrappingWidth="54.345703125">
+            <Text layoutX="22.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Provincia:" wrappingWidth="54.345703125">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="349.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Città:" wrappingWidth="34.0">
+            <Text layoutX="380.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Città:" wrappingWidth="34.0">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="34.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cap:" wrappingWidth="43.48779296875">
+            <Text layoutX="27.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cap:" wrappingWidth="43.48779296875">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <TextField fx:id="capField" layoutX="101.0" layoutY="206.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci codice postale" />
-            <Text layoutX="33.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Istruzione:">
+            <TextField fx:id="capField" layoutX="100.0" layoutY="256.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci codice postale" />
+            <Text layoutX="26.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Istruzione:">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="348.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrizione:">
+            <Text layoutX="375.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrizione:">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <DatePicker fx:id="dateField" layoutX="101.0" layoutY="78.0" prefHeight="25.0" prefWidth="232.0" promptText="Inserisci la tua data di nascita" />
-            <Text layoutX="348.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+            <DatePicker fx:id="dateField" layoutX="101.0" layoutY="88.0" prefHeight="25.0" prefWidth="232.0" promptText="Inserisci la tua data di nascita" />
+            <Text layoutX="375.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <PasswordField fx:id="passwordField" layoutX="419.0" layoutY="46.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci una password difficile" />
-            <TextField fx:id="emailField" layoutX="101.0" layoutY="47.0" prefHeight="25.0" prefWidth="232.0" promptText="Inserisci una email valida" />
-            <TextField fx:id="addressField" layoutX="419.0" layoutY="172.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci il tuo indirizzo" />
-            <Text layoutX="349.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indirizzo:">
+            <PasswordField fx:id="passwordField" layoutX="464.0" layoutY="53.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci una password difficile" />
+            <TextField fx:id="emailField" layoutX="100.0" layoutY="53.0" prefHeight="25.0" prefWidth="232.0" promptText="Inserisci una email valida" />
+            <TextField fx:id="addressField" layoutX="464.0" layoutY="212.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci il tuo indirizzo" />
+            <Text layoutX="377.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indirizzo:">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <TextArea fx:id="descriptionArea" layoutX="419.0" layoutY="207.0" prefHeight="134.0" prefWidth="232.0" promptText="Descrivi brevemente le tue esperienze lavorative.." text="Nessuna Descrizione" />
-            <Text layoutX="33.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settore d'interesse:" wrappingWidth="64.0">
+            <TextArea fx:id="descriptionArea" layoutX="464.0" layoutY="252.0" prefHeight="110.0" prefWidth="310.0" promptText="Descrivi brevemente le tue esperienze lavorative.." text="Nessuna Descrizione" />
+            <Text layoutX="24.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settore d'interesse:" wrappingWidth="64.0">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <ChoiceBox fx:id="sectorChoice" layoutX="101.0" layoutY="109.0" prefHeight="25.0" prefWidth="232.0" />
-            <ChoiceBox fx:id="ExpChoice" layoutX="419.0" layoutY="109.0" prefHeight="16.0" prefWidth="232.0" />
-            <Text layoutX="348.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esperienza" wrappingWidth="64.00000000000006">
+            <ChoiceBox fx:id="sectorChoice" layoutX="101.0" layoutY="128.0" prefHeight="25.0" prefWidth="232.0" />
+            <ChoiceBox fx:id="ExpChoice" layoutX="464.0" layoutY="128.0" prefHeight="16.0" prefWidth="232.0" />
+            <Text layoutX="375.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esperienza" wrappingWidth="64.00000000000006">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <TextField fx:id="instructionField" layoutX="101.0" layoutY="239.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci il tuo livello di istruzione" />
-            <Button fx:id="workerSUButton" layoutX="321.0" layoutY="363.0" mnemonicParsing="false" onAction="#workerSignUpButton" prefHeight="35.0" prefWidth="104.0" stylesheets="@../Stylesheet/fullpackstyling.css" text="Iscriviti" />
+            <TextField fx:id="instructionField" layoutX="100.0" layoutY="300.0" prefHeight="26.0" prefWidth="232.0" promptText="Inserisci il tuo livello di istruzione" />
+            <Button fx:id="workerSUButton" layoutX="345.0" layoutY="381.0" mnemonicParsing="false" onAction="#workerSignUpButton" prefHeight="35.0" prefWidth="104.0" stylesheets="@../Stylesheet/fullpackstyling.css" text="Iscriviti">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font></Button>
          </children>
       </Pane>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutY="-2.0" stroke="WHITE" strokeType="INSIDE" width="850.0" />
-      <Text fill="WHITE" layoutX="118.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRAZIONE DIPENDENTE" wrappingWidth="338.296875">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#56ec50" height="100.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="1024.0" />
+      <Text fill="WHITE" layoutX="139.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRAZIONE DIPENDENTE" wrappingWidth="557.296875">
          <font>
-            <Font name="Aharoni Bold" size="44.0" />
+            <Font name="Segoe UI" size="40.0" />
          </font>
       </Text>
       <Label fx:id="nameLabel" layoutX="388.0" layoutY="39.0" textFill="WHITE" />
-      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/logoCQcrop.png" />
          </image>
       </ImageView>
-      <Button layoutX="722.0" layoutY="7.0" mnemonicParsing="false" onAction="#usersignupBackopening" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: WHITE; -fx-background-radius: 5em;" text="&lt;-" />
+      <Button fx:id="usExitButton" layoutX="975.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: WHITE; -fx-background-radius: 5em;" text="&lt;-" />
       <Label fx:id="workerSUStatus" layoutX="217.0" layoutY="105.0" prefHeight="17.0" prefWidth="416.0">
          <font>
             <Font name="Segoe UI" size="14.0" />

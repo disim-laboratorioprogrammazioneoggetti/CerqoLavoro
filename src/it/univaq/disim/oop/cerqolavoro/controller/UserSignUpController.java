@@ -41,6 +41,7 @@ public class UserSignUpController implements Initializable, DataInitializable<Ob
     @FXML private ChoiceBox <String> sectorChoice;    
     @FXML private ChoiceBox <String> ExpChoice;    
     @FXML private TextArea descriptionArea;
+    @FXML private Button usExitButton;
     @FXML private Button workerSUButton;
     @FXML private Label workerSUStatus;
     
@@ -49,13 +50,9 @@ public class UserSignUpController implements Initializable, DataInitializable<Ob
     // Pulsante Torna al Login
     
     @FXML
-    void usersignupBackopening(ActionEvent event) throws IOException { 		
-      try {
-		ViewDispatcher viewDispatcher = ViewDispatcher.getInstance();
-		viewDispatcher.loginView(stage);
-	} catch (ViewException e) {
-		e.printStackTrace();
-	}
+    void exitButtonAction(ActionEvent event) { 		
+      	Stage stage = (Stage) usExitButton.getScene().getWindow();
+        stage.close();
     }
     
     // Pulsante Registrazione Impiegato

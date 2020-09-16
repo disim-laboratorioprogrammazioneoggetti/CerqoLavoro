@@ -32,7 +32,7 @@ public class EmployerSignUpController implements Initializable, DataInitializabl
     @FXML private TextField PhoneField;
     @FXML private TextField CPhoneField;    
     @FXML private TextArea DescriptionArea;
-    @FXML private Button empSUBack;
+    @FXML private Button esExitButton;
     @FXML private Button employerSUButton;
     @FXML private Label employerSUStatus;
     
@@ -41,13 +41,9 @@ public class EmployerSignUpController implements Initializable, DataInitializabl
     // Pulsante Torna al Login
     
     @FXML
-    void employerGoToLoginButton(ActionEvent event) throws IOException {
-        try {
-    		ViewDispatcher viewDispatcher = ViewDispatcher.getInstance();
-    		viewDispatcher.loginView(stage);
-    	} catch (ViewException e) {
-    		e.printStackTrace();
-    	}
+    void exitButtonAction(ActionEvent event) {
+    	Stage stage = (Stage) esExitButton.getScene().getWindow();
+        stage.close();
     }
     
     // Pulsante Registrazione Impiegato

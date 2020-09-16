@@ -14,13 +14,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.EmployerSignUpController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.EmployerSignUpController">
    <children>
-      <Pane layoutX="26.0" layoutY="145.0" prefHeight="310.0" prefWidth="372.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="78.0" layoutY="138.0" prefHeight="310.0" prefWidth="372.0" style="-fx-background-color: #a9ff83;">
          <children>
-            <TextField fx:id="Namefield" layoutX="87.0" layoutY="68.0" prefHeight="25.0" prefWidth="156.0" promptText="Inserisci il tuo nome" />
-            <TextField fx:id="Surnamefield" layoutX="87.0" layoutY="113.0" prefHeight="25.0" prefWidth="156.0" promptText="Inserisci il tuo cognome" />
-            <TextField fx:id="EmailField" layoutX="87.0" layoutY="163.0" prefHeight="25.0" prefWidth="268.0" promptText="Inserisci la tua E-Mail" />
+            <TextField fx:id="Namefield" layoutX="87.0" layoutY="68.0" prefHeight="25.0" prefWidth="268.0" promptText="Inserisci il tuo nome" />
+            <TextField fx:id="Surnamefield" layoutX="87.0" layoutY="113.0" prefHeight="25.0" prefWidth="268.0" promptText="Inserisci il tuo cognome" />
+            <TextField fx:id="EmailField" layoutX="87.0" layoutY="163.0" prefHeight="25.0" prefWidth="268.0" promptText="Inserisci la tua migliore e-mail" />
             <Text layoutX="24.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
                <font>
                   <Font name="Segoe UI" size="12.0" />
@@ -41,7 +41,7 @@
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <PasswordField fx:id="PasswordField" layoutX="87.0" layoutY="221.0" prefHeight="25.0" prefWidth="268.0" promptText="Inserisci una password" />
+            <PasswordField fx:id="PasswordField" layoutX="87.0" layoutY="221.0" prefHeight="25.0" prefWidth="268.0" promptText="Inserisci una password difficile" />
             <TextField fx:id="PhoneField" layoutX="87.0" layoutY="271.0" prefHeight="25.0" prefWidth="268.0" promptText="Inserisci il tuo numero di telefono" />
             <Text layoutX="23.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono:">
                <font>
@@ -55,11 +55,11 @@
             </Text>
          </children>
       </Pane>
-      <Pane layoutX="446.0" layoutY="145.0" prefHeight="395.0" prefWidth="372.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="569.0" layoutY="138.0" prefHeight="395.0" prefWidth="372.0" style="-fx-background-color: #a9ff83;">
          <children>
-            <TextField fx:id="CMailField" layoutX="121.0" layoutY="120.0" prefHeight="25.0" prefWidth="223.0" promptText="inserisci l' E-Mail Aziendale." />
-            <TextField fx:id="CNameField" layoutX="121.0" layoutY="72.0" prefHeight="25.0" prefWidth="223.0" promptText="inserisci il nome dell' azienda." />
-            <TextField fx:id="IVAFIeld" layoutX="121.0" layoutY="163.0" prefHeight="25.0" prefWidth="223.0" promptText="Inserisci la Partita IVA." />
+            <TextField fx:id="CMailField" layoutX="121.0" layoutY="120.0" prefHeight="25.0" prefWidth="229.0" promptText="Inserisci l'e-mail aziendale" />
+            <TextField fx:id="CNameField" layoutX="121.0" layoutY="72.0" prefHeight="25.0" prefWidth="229.0" promptText="Inserisci il nome dell'azienda" />
+            <TextField fx:id="IVAFIeld" layoutX="121.0" layoutY="163.0" prefHeight="25.0" prefWidth="229.0" promptText="Inserisci la partita IVA" />
             <TextArea fx:id="DescriptionArea" layoutX="23.0" layoutY="272.0" prefHeight="109.0" prefWidth="326.0" promptText="Descrivi la tua azienda." />
             <Text layoutX="23.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Azienda:">
                <font>
@@ -76,7 +76,7 @@
                   <Font name="Segoe UI" size="12.0" />
                </font>
             </Text>
-            <TextField fx:id="CPhoneField" layoutX="121.0" layoutY="209.0" prefHeight="25.0" prefWidth="223.0" promptText="Inserisci il numero di telefono aziendale." />
+            <TextField fx:id="CPhoneField" layoutX="121.0" layoutY="209.0" prefHeight="25.0" prefWidth="229.0" promptText="Inserisci il numero di telefono aziendale." />
             <Text layoutX="24.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono:" wrappingWidth="60.83203125">
                <font>
                   <Font name="Segoe UI" size="12.0" />
@@ -94,28 +94,26 @@
             </Text>
          </children>
       </Pane>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d5de8" height="100.0" stroke="BLACK" strokeType="INSIDE" width="850.0" />
-      <Text fill="WHITE" layoutX="92.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRAZIONE" textAlignment="CENTER" wrappingWidth="339.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#56ec50" height="100.0" stroke="BLACK" strokeType="INSIDE" width="1024.0" />
+      <Text fill="WHITE" layoutX="160.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRAZIONE TITOLARE" textAlignment="CENTER" wrappingWidth="595.0">
          <font>
             <Font name="Aharoni Bold" size="44.0" />
          </font>
       </Text>
-      <Button fx:id="employerSUButton" layoutX="380.0" layoutY="540.0" mnemonicParsing="false" onAction="#employerSignUpButton" prefHeight="32.0" prefWidth="77.0" stylesheets="@../Stylesheet/fullpackstyling.css" text="Registrati" />
-      <Button fx:id="empSUBack" layoutX="800.0" layoutY="15.0" mnemonicParsing="false" onAction="#employerGoToLoginButton" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: WHITE; -fx-background-radius: 5em;" text="&lt;-">
+      <Button fx:id="employerSUButton" layoutX="470.0" layoutY="542.0" mnemonicParsing="false" onAction="#employerSignUpButton" prefHeight="32.0" prefWidth="97.0" stylesheets="@../Stylesheet/fullpackstyling.css" text="Registrati">
+         <font>
+            <Font name="Segoe UI" size="14.0" />
+         </font></Button>
+      <Button fx:id="esExitButton" layoutX="974.0" layoutY="10.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="32.0" prefWidth="36.0" style="-fx-background-color: WHITE; -fx-background-radius: 5em;" text="&lt;-">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Text fill="WHITE" layoutX="94.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TITOLARE" textAlignment="CENTER" wrappingWidth="195.0">
-         <font>
-            <Font name="Aharoni Bold" size="44.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="9.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/logoCQcrop.png" />
          </image>
       </ImageView>
-      <Separator layoutX="418.0" layoutY="147.0" orientation="VERTICAL" prefHeight="338.0" prefWidth="0.0" />
+      <Separator layoutX="509.0" layoutY="138.0" orientation="VERTICAL" prefHeight="310.0" prefWidth="2.0" />
       <Label fx:id="employerSUStatus" layoutX="229.0" layoutY="111.0" prefHeight="17.0" prefWidth="378.0">
          <font>
             <Font name="Segoe UI" size="14.0" />
