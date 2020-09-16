@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="55.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.HomeController">
+<VBox prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.HomeController">
    <children>
-      <Label fx:id="benvenutoLabel" prefHeight="51.0" prefWidth="599.0" text="Benvenuto">
+      <Label fx:id="benvenutoLabel" prefHeight="53.0" prefWidth="1004.0" text="Benvenuto">
          <font>
             <Font size="18.0" />
          </font>
@@ -20,4 +20,3 @@
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
 </VBox>
-
