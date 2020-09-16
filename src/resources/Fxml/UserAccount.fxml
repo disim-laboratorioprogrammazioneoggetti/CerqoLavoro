@@ -8,9 +8,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="540.0" prefWidth="700.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.UserAccountController">
+<AnchorPane prefHeight="600.0" prefWidth="1024.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.univaq.disim.oop.cerqolavoro.controller.UserAccountController">
    <children>
-      <Pane layoutX="39.0" layoutY="21.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="127.0" layoutY="34.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:">
                <font>
@@ -23,7 +23,7 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="41.0" layoutY="87.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="127.0" layoutY="100.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cognome:">
                <font>
@@ -36,20 +36,20 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="41.0" layoutY="156.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="127.0" layoutY="168.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
                <font>
                   <Font name="Segoe UI" size="14.0" />
                </font>
             </Text>
-            <Label fx:id="upEmail" layoutX="125.0" layoutY="12.0" prefHeight="17.0" prefWidth="112.0" text="email">
+            <Label fx:id="upEmail" layoutX="125.0" layoutY="11.0" prefHeight="17.0" prefWidth="112.0" text="email">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="41.0" layoutY="222.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="127.0" layoutY="238.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data di nascita:">
                <font>
@@ -62,7 +62,7 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="41.0" layoutY="289.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="127.0" layoutY="309.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cellulare:">
                <font>
@@ -75,7 +75,7 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="39.0" layoutY="361.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="127.0" layoutY="379.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <Text layoutX="14.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regione:">
                <font>
@@ -88,7 +88,7 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="41.0" layoutY="427.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="127.0" layoutY="447.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
          <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Provincia:">
                <font>
@@ -101,7 +101,7 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="41.0" layoutY="497.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="127.0" layoutY="520.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <Text layoutX="11.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Città:">
                <font>
@@ -111,7 +111,7 @@
             <Label fx:id="upCity" layoutX="125.0" layoutY="12.0" text="città" />
          </children>
       </Pane>
-      <Pane layoutX="411.0" layoutY="21.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="636.0" layoutY="34.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <Text layoutX="13.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cap:">
                <font>
@@ -124,7 +124,7 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="411.0" layoutY="87.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="636.0" layoutY="100.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indirizzo:">
                <font>
@@ -137,7 +137,7 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="411.0" layoutY="222.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="636.0" layoutY="238.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Istruzione:">
                <font>
@@ -150,7 +150,7 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="411.0" layoutY="156.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="636.0" layoutY="168.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esperienza:">
                <font>
@@ -163,7 +163,7 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="411.0" layoutY="289.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="636.0" layoutY="309.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <Text layoutX="14.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settore:">
                <font>
@@ -176,7 +176,7 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="411.0" layoutY="367.0" prefHeight="120.0" prefWidth="250.0" style="-fx-background-color: #f1efef;">
+      <Pane layoutX="636.0" layoutY="376.0" prefHeight="120.0" prefWidth="250.0" style="-fx-background-color: #a9ff83;">
          <children>
             <TextArea fx:id="upBioArea" layoutX="8.0" layoutY="17.0" prefHeight="93.0" prefWidth="233.0" />
             <Text layoutX="8.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrizione:">
@@ -186,17 +186,17 @@
             </Text>
          </children>
       </Pane>
-      <Separator layoutX="66.0" layoutY="75.0" prefWidth="200.0" />
-      <Separator layoutX="64.0" layoutY="141.0" prefWidth="200.0" />
-      <Separator layoutX="64.0" layoutY="208.0" prefWidth="200.0" />
-      <Separator layoutX="64.0" layoutY="278.0" prefWidth="200.0" />
-      <Separator layoutX="66.0" layoutY="342.0" prefWidth="200.0" />
-      <Separator layoutX="64.0" layoutY="413.0" prefWidth="200.0" />
-      <Separator layoutX="64.0" layoutY="480.0" prefHeight="3.0" prefWidth="200.0" />
-      <Separator layoutX="436.0" layoutY="74.0" prefHeight="3.0" prefWidth="200.0" />
-      <Separator layoutX="436.0" layoutY="140.0" prefHeight="3.0" prefWidth="200.0" />
-      <Separator layoutX="436.0" layoutY="208.0" prefHeight="3.0" prefWidth="200.0" />
-      <Separator layoutX="436.0" layoutY="278.0" prefHeight="3.0" prefWidth="200.0" />
-      <Separator layoutX="436.0" layoutY="344.0" prefWidth="200.0" />
+      <Separator layoutX="152.0" layoutY="86.0" prefWidth="200.0" />
+      <Separator layoutX="152.0" layoutY="155.0" prefWidth="200.0" />
+      <Separator layoutX="152.0" layoutY="222.0" prefWidth="200.0" />
+      <Separator layoutX="152.0" layoutY="292.0" prefHeight="3.0" prefWidth="200.0" />
+      <Separator layoutX="152.0" layoutY="364.0" prefWidth="200.0" />
+      <Separator layoutX="152.0" layoutY="433.0" prefWidth="200.0" />
+      <Separator layoutX="152.0" layoutY="504.0" prefHeight="3.0" prefWidth="200.0" />
+      <Separator layoutX="661.0" layoutY="88.0" prefHeight="3.0" prefWidth="200.0" />
+      <Separator layoutX="661.0" layoutY="157.0" prefHeight="3.0" prefWidth="200.0" />
+      <Separator layoutX="661.0" layoutY="224.0" prefHeight="3.0" prefWidth="200.0" />
+      <Separator layoutX="661.0" layoutY="291.0" prefHeight="3.0" prefWidth="200.0" />
+      <Separator layoutX="661.0" layoutY="361.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
