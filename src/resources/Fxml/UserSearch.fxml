@@ -29,7 +29,7 @@
             <Text layoutX="336.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retribuzione:" wrappingWidth="72.728515625" />
             <Label fx:id="wageann2" layoutX="412.0" layoutY="11.0" prefHeight="17.0" prefWidth="63.0" text="€" />
             <Label fx:id="ctypeann2" layoutX="117.0" layoutY="65.0" text="Tipo di Contratto" />
-            <Label fx:id="ctimeann2" layoutX="372.0" layoutY="67.0" prefHeight="17.0" prefWidth="206.0" text="Tempo Contratto" />
+            <Label fx:id="ctimeann2" layoutX="435.0" layoutY="67.0" prefHeight="17.0" prefWidth="137.0" text="Tempo Contratto" />
             <Label fx:id="wgtimeann2" layoutX="512.0" layoutY="11.0" prefHeight="17.0" prefWidth="91.0" text="Cadenza" />
             <Label fx:id="bonusann2" layoutX="669.0" layoutY="11.0" text="Bonus" />
             <Label fx:id="expann2" layoutX="447.0" layoutY="91.0" text="Esperienza" />
@@ -39,7 +39,7 @@
             <Text layoutX="336.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esperienza richiesta:" />
             <Text layoutX="624.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bonus:" />
             <Text layoutX="519.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrizione:" />
-            <Text layoutX="271.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tempo Contratto:" />
+            <Text layoutX="336.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tempo Contratto:" />
          </children></Pane>
       <Pane fx:id="annuncio3" layoutY="328.0" prefHeight="132.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
          <children>
@@ -55,7 +55,7 @@
             <Text layoutX="337.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retribuzione:" wrappingWidth="72.728515625" />
             <Label fx:id="wageann3" layoutX="411.0" layoutY="13.0" prefHeight="17.0" prefWidth="63.0" text="€" />
             <Label fx:id="ctypeann3" layoutX="119.0" layoutY="72.0" text="Tipo di Contratto" />
-            <Label fx:id="ctimeann3" layoutX="373.0" layoutY="72.0" prefHeight="17.0" prefWidth="206.0" text="Tempo Contratto" />
+            <Label fx:id="ctimeann3" layoutX="441.0" layoutY="72.0" prefHeight="17.0" prefWidth="137.0" text="Tempo Contratto" />
             <Label fx:id="wgtimeann3" layoutX="512.0" layoutY="13.0" prefHeight="17.0" prefWidth="91.0" text="Cadenza" />
             <Label fx:id="bonusann3" layoutX="669.0" layoutY="13.0" text="Bonus" />
             <Label fx:id="expann3" layoutX="442.0" layoutY="106.0" text="Esperienza" />
@@ -66,7 +66,7 @@
             <Text layoutX="335.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esperienza richiesta:" />
             <Text layoutX="625.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bonus:" />
             <Text layoutX="521.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrizione:" />
-            <Text layoutX="272.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tempo Contratto:" />
+            <Text layoutX="335.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tempo Contratto:" />
          </children></Pane>
       <Pane fx:id="annuncio4" layoutY="467.0" prefHeight="132.0" prefWidth="1024.0" style="-fx-background-color: #f1efef;">
          <children>
@@ -82,7 +82,7 @@
             <Text layoutX="337.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retribuzione:" wrappingWidth="72.728515625" />
             <Label fx:id="wageann4" layoutX="412.0" layoutY="13.0" prefHeight="17.0" prefWidth="63.0" text="€" />
             <Label fx:id="ctypeann4" layoutX="118.0" layoutY="66.0" text="Tipo di Contratto" />
-            <Label fx:id="ctimeann4" layoutX="373.0" layoutY="66.0" prefHeight="17.0" prefWidth="206.0" text="Tempo Contratto" />
+            <Label fx:id="ctimeann4" layoutX="440.0" layoutY="66.0" prefHeight="17.0" prefWidth="137.0" text="Tempo Contratto" />
             <Label fx:id="wgtimeann4" layoutX="512.0" layoutY="13.0" prefHeight="17.0" prefWidth="91.0" text="Cadenza" />
             <Label fx:id="bonusann4" layoutX="671.0" layoutY="13.0" text="Bonus" />
             <Label fx:id="expann4" layoutX="443.0" layoutY="97.0" text="Esperienza">
@@ -96,7 +96,7 @@
             <Text layoutX="334.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esperienza richiesta:" />
             <Text layoutX="624.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bonus:" />
             <Text layoutX="525.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrizione:" />
-            <Text layoutX="271.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tempo Contratto:" />
+            <Text layoutX="334.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tempo Contratto:" />
          </children></Pane>
       <Label fx:id="usEmail" layoutX="527.0" layoutY="12.0" prefHeight="17.0" prefWidth="101.0" textFill="WHITE" />
       <SearchableComboBox fx:id="categorySrc" layoutX="318.0" layoutY="34.0" />
@@ -132,7 +132,7 @@
                </font>
             </Label>
             <Label fx:id="ctypeann1" layoutX="117.0" layoutY="59.0" text="Tipo di Contratto" />
-            <Label fx:id="ctimeann1" layoutX="373.0" layoutY="59.0" prefHeight="17.0" prefWidth="206.0" text="Tempo Contratto:" />
+            <Label fx:id="ctimeann1" layoutX="439.0" layoutY="59.0" prefHeight="17.0" prefWidth="137.0" text="Tempo Contratto:" />
             <Label fx:id="wageann1" layoutX="408.0" layoutY="10.0" prefHeight="17.0" prefWidth="63.0" text="€" />
             <Label fx:id="wgtimeann1" layoutX="512.0" layoutY="10.0" prefHeight="17.0" prefWidth="91.0" text="Cadenza" />
             <Text layoutX="329.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retribuzione:" wrappingWidth="72.728515625" />
@@ -145,7 +145,7 @@
             <Text layoutX="623.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bonus:" />
             <Label fx:id="bonusann1" layoutX="668.0" layoutY="10.0" text="Bonus" />
             <Text layoutX="518.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrizione:" />
-            <Text layoutX="273.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tempo Contratto:" />
+            <Text layoutX="335.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tempo Contratto:" wrappingWidth="93.6328125" />
          </children>
       </Pane>
       <Button fx:id="luckyOffers" layoutX="802.0" layoutY="32.0" mnemonicParsing="false" onAction="#luckyOff" style="-fx-background-color: #70c456;" text="Offerte per te" textFill="WHITE">

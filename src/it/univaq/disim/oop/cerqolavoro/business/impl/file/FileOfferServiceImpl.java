@@ -62,8 +62,8 @@ public class FileOfferServiceImpl implements OfferService {
  			        offer.setContractType(line.get(s));
  			        offer.setContractTime(line.get(t));
  			        offer.setWage(line.get(u));
- 			        offer.setWageTime(line.get(v));
- 			        offer.setExperience(line.get(w));
+ 			        offer.setExperience(line.get(v));
+ 			        offer.setWageTime(line.get(w));
  			        offer.setBonus(line.get(x));
  			        offer.setEducation(line.get(y));
  			        offer.setInfo(line.get(z));
@@ -81,12 +81,12 @@ public class FileOfferServiceImpl implements OfferService {
 			        offer.setPosition(line.get(r));
 			        offer.setContractType(line.get(s));
 			        offer.setContractTime(line.get(t));
-			        offer.setWage(line.get(u));
-			        offer.setWageTime(line.get(v));
-			        offer.setEducation(line.get(y));
-			        offer.setBonus(line.get(x));
-			        offer.setInfo(line.get(z));
-			        offer.setExperience(line.get(w));
+ 			        offer.setWage(line.get(u));
+ 			        offer.setExperience(line.get(v));
+ 			        offer.setWageTime(line.get(w));
+ 			        offer.setBonus(line.get(x));
+ 			        offer.setEducation(line.get(y));
+ 			        offer.setInfo(line.get(z));
 			        allOffers.add(offer);
                  i++; k++; j += 13; p += 13; q += 13; r += 13; s += 13; t += 13; u += 13; v += 13; w += 13; x += 13; y += 13; z += 13;
     		 }
@@ -102,11 +102,11 @@ public class FileOfferServiceImpl implements OfferService {
  			        offer.setContractType(line.get(s));
  			        offer.setContractTime(line.get(t));
  			        offer.setWage(line.get(u));
- 			        offer.setWageTime(line.get(v));
- 			        offer.setEducation(line.get(y));
+ 			        offer.setExperience(line.get(v));
+ 			        offer.setWageTime(line.get(w));
  			        offer.setBonus(line.get(x));
+ 			        offer.setEducation(line.get(y));
  			        offer.setInfo(line.get(z));
- 			        offer.setExperience(line.get(w));
  			        k++; allOffers.add(offer);
             	 }
             	 i++; j += 13; p += 13; q += 13; r += 13; s += 13; t += 13; u += 13; v += 13; w += 13; x += 13; y += 13; z += 13;
@@ -123,11 +123,11 @@ public class FileOfferServiceImpl implements OfferService {
  			        offer.setContractType(line.get(s));
  			        offer.setContractTime(line.get(t));
  			        offer.setWage(line.get(u));
- 			        offer.setWageTime(line.get(v));
- 			        offer.setEducation(line.get(y));
+ 			        offer.setExperience(line.get(v));
+ 			        offer.setWageTime(line.get(w));
  			        offer.setBonus(line.get(x));
+ 			        offer.setEducation(line.get(y));
  			        offer.setInfo(line.get(z));
- 			        offer.setExperience(line.get(w));
  			        k++; allOffers.add(offer);
             	 }
             	 i++; j += 13; p += 13; q += 13; r += 13; s += 13; t += 13; u += 13; v += 13; w += 13; x += 13; y += 13; z += 13;
@@ -174,12 +174,12 @@ public class FileOfferServiceImpl implements OfferService {
 			        offer.setPosition(line.get(r));
 			        offer.setContractType(line.get(s));
 			        offer.setContractTime(line.get(t));
-			        offer.setWage(line.get(u));
-			        offer.setWageTime(line.get(v));
-			        offer.setEducation(line.get(y));
-			        offer.setBonus(line.get(x));
-			        offer.setInfo(line.get(z));
-			        offer.setExperience(line.get(w));
+ 			        offer.setWage(line.get(u));
+ 			        offer.setExperience(line.get(v));
+ 			        offer.setWageTime(line.get(w));
+ 			        offer.setBonus(line.get(x));
+ 			        offer.setEducation(line.get(y));
+ 			        offer.setInfo(line.get(z));
 			        k++; myOffers.add(offer);
 			       }
 			    i++; j += 13; p += 13; q += 13; em += 13; r += 13; s += 13; t += 13; u += 13; v += 13; x += 13; y += 13; z += 13;
@@ -218,12 +218,12 @@ public class FileOfferServiceImpl implements OfferService {
 			        offer.setPosition(line.get(r));
 			        offer.setContractType(line.get(s));
 			        offer.setContractTime(line.get(t));
-			        offer.setWage(line.get(u));
-			        offer.setWageTime(line.get(v));
-			        offer.setEducation(line.get(y));
-			        offer.setBonus(line.get(x));
-			        offer.setInfo(line.get(z));
-			        offer.setExperience(line.get(w));
+ 			        offer.setWage(line.get(u));
+ 			        offer.setExperience(line.get(v));
+ 			        offer.setWageTime(line.get(w));
+ 			        offer.setBonus(line.get(x));
+ 			        offer.setEducation(line.get(y));
+ 			        offer.setInfo(line.get(z));
 			        k++; luckyOffers.add(offer);
 			       }
 		    	i++; j += 13; p += 13; q += 13; r += 13; s += 13; t += 13; u += 13; v += 13; w += 13; x += 13; y += 13; z += 13;
