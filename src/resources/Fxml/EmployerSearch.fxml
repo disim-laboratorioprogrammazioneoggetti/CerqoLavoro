@@ -26,7 +26,7 @@
          </font>
       </Text>
       <SearchableComboBox fx:id="regionSrc" layoutX="65.0" layoutY="28.0" />
-      <Button fx:id="srcImp" layoutX="773.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchImp" style="-fx-background-color: #70c456;" text="Cerca" textFill="WHITE">
+      <Button fx:id="srcImp" layoutX="773.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchImp" style="-fx-background-color: #70c456;" text="Cerca">
          <font>
             <Font name="Segoe UI" size="14.0" />
          </font>
