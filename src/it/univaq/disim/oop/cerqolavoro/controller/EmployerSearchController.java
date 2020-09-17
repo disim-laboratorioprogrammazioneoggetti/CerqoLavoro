@@ -309,18 +309,18 @@ public class EmployerSearchController implements Initializable, DataInitializabl
          List<String> line = Files.readAllLines(Paths.get(FileCerqoLavoroBusinessFactoryImpl.USER_FILE_NAME), StandardCharsets.UTF_8);         
          try {
              i = 0; k = 0; j = 0; p = 1; q = 2; r = 3; s = 4; t = 5; u = 6; v = 7; w = 8; x = 9;
-            	 while (( line != null ) && ( i < cont )) {
+            	 while (( line != null ) && ( i < cont ) && ( k < 6 )) {
             	 if ( regionSrc.getValue().toString().equals( line.get(t)) && SectorSrc.getValue().toString().equals( line.get(w)) ) {              
-                 listName[i] = line.get(j); 
-                 listSurname[i] = line.get(p); 
-                 listExp[i] = line.get(r);
-                 listEmail[i] = line.get(q);
-                 listStudy[i] = line.get(s);
-                 listRegion[i] = line.get(t);
-                 listProvince[i] = line.get(u);
-                 listLocation[i] = line.get(v);
-                 listCategory[i] = line.get(w);
-                 listBio[i] = line.get(x);
+                 listName[k] = line.get(j); 
+                 listSurname[k] = line.get(p); 
+                 listExp[k] = line.get(r);
+                 listEmail[k] = line.get(q);
+                 listStudy[k] = line.get(s);
+                 listRegion[k] = line.get(t);
+                 listProvince[k] = line.get(u);
+                 listLocation[k] = line.get(v);
+                 listCategory[k] = line.get(w);
+                 listBio[k] = line.get(x);
                  k++;                
             	 }
                  i++; j += 10; p += 10; q += 10; r += 10; s += 10; t += 10; u += 10; v += 10; w += 10; x += 10;
@@ -382,7 +382,7 @@ public class EmployerSearchController implements Initializable, DataInitializabl
 	    // Combobox Settore
 		SectorSrc.getItems().addAll("Acquisti-Logica-Trasporti","Affari legali","Amministrazione-Segreteria","Architettura-Arti grafiche-Design","Assistenza Anziani",
                 "Commerciale","Commercio-Negozi","Contabilita'-Finanza","Direzione-Consulenza","Edilizia","Editoria-Giornalismo","Estetica-Cura della Persona","Formazione-Istruzione",
-                "Informatica-Telecomunicazioni","Ingegneria","Marketing-Comunicazione","Medicina-Salute","Produzione-Operai","Project Managment","Qualita'-Ambiente","Risorse Umane",
+                "Informatica-Telecomunicazioni","Ingegneria","Marketing-Comunicazione","Medicina-Salute","Produzione-Operai","Project Management","Qualita'-Ambiente","Risorse Umane",
                 "Sicurezza-Vigilanza","Supporto al cliente","Turismo-Ristorazione","Altro");
         SectorSrc.setValue("Altro");
         

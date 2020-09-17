@@ -25,9 +25,11 @@ import it.univaq.disim.oop.cerqolavoro.view.ViewDispatcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class UserMessagesController implements Initializable, DataInitializable<User> {
@@ -81,6 +83,12 @@ public class UserMessagesController implements Initializable, DataInitializable<
 				  mex[i].setVisible(true);
 				  mex[i].setText(preMex[i] + "\n" + listaMex[i]); }
 			  }
+	if ( !mexCheck.exists() ) {
+		Alert errorAlert = new Alert(AlertType.ERROR);
+	    errorAlert.setHeaderText("Avviso");
+	    errorAlert.setContentText("Non sono presenti messaggi");
+	    errorAlert.showAndWait();
+	}
 	 } catch (BusinessException e) {
 		e.printStackTrace();
 		throw new BusinessException(e);
